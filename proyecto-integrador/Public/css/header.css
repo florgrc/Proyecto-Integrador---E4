@@ -1,0 +1,53 @@
+/* Aplicando el estilo del header con un fondo gris y padding*/
+.header {
+  overflow: hidden;
+  background-color: #d9d9d9;
+  padding: 20px 10px;
+}
+
+/* Estilo de los links del header */
+.header a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Estilo del link del logo (Se mantiene el mismo valor de line-height de arriba con el font-size de esta seccion para que el header no cambie el tamaño cuando la fuente sea mas grande */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Cambia el color del fondo cuando el mouse pasa por encima */
+.header a:hover {
+  background-color: #712C38;
+  color: #ffffff;
+}
+
+/* Estilo del link Inicio */
+.header a.inicio {
+  background-color: #1996f8;
+  color: #ffffff;
+}
+
+/* Alinear la seccion de enlaces hacia la derecha */
+.header-der {
+  float: right;
+}
+
+/* Agrega media queries para responsive - cuando la pantalla sea 500px de ancho o menos, stackear los enlaces uno arriba del otro */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-der {
+    float: none;
+  }
+}
