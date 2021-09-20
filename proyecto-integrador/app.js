@@ -1,13 +1,19 @@
-const express = require ('express');
-const app = express ();
+const express = require('express');
+const path = require('path')
+const app = express();
+const puerto = 3000;
 
-/*const path = require('path');
+/*
+const publicPath = path.resolve (__dirname, './public') 
+Este es el comando que estaba en los videos de DH, a mi (Juan) no me funciono. Tuve que buscar en internet y encontre el de abajo que si me funciono para aplicar el CSS.
+*/
 
-app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(express.static(__dirname + '/public'));
 
+app.listen(puerto, () => {
+    console.log(`Servidor listo en http://localhost:${puerto}`)
+  });
 
-app.get('/', (req,res) => {
-    res.sendFile(path.resolve(__dirname, './views/home.html'));
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './views/home.html'));
 })
-
-app.listen(3000, () => console.log('Server corriendo en el puerto 3000')*/

@@ -6,9 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Grupo 4",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
-  }
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/florgrc/Proyecto-Integrador---E4.git"
+  },
+  "bugs": {
+    "url": "https://github.com/florgrc/Proyecto-Integrador---E4/issues"
+  },
+  "homepage": "https://github.com/florgrc/Proyecto-Integrador---E4#readme"
 }
