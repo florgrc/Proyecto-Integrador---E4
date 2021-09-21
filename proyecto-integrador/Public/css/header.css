@@ -1,32 +1,84 @@
 /* Aplicando el estilo del header con un fondo gris y padding*/
 .header {
   overflow: hidden;
-  background-color: #d9d9d9;
+  background-color: rgb(54, 24, 24);
   padding: 20px 10px;
 }
 
-/* Estilo de los links del header */
+/* Estilo de los links del header*/
 .header a {
-  float: left;
-  color: #000000;
+  color: #ffffff;
   text-align: center;
   padding: 12px;
   text-decoration: none;
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
+  margin: 0;
 }
+
+/* Estilo de la barra de secciones*/
+.sections {
+  display: flex;
+  justify-content: space-around;
+  border-top: solid 1px grey;
+}
+
+.sections a {
+  font-size: 110%;
+}
+
+/* Estilo del header arriba*/
+.header-top {
+  display: flex;
+  justify-content: space-between
+}
+
+/* Estilo del barra busqueda */
+.search-bar {
+  align-self: flex-end;
+  flex-grow: 0.40;
+}
+
+/* Estilo iconos */
+.icons {
+  align-self: flex-end;
+}
+
+.fa-shopping-cart {
+  font-size: 2vw;
+  color: #ffffff;
+}
+
+.fa-user-circle {
+  font-size: 2vw;
+  color: #ffffff;
+} 
+
 
 /* Estilo del link del logo (Se mantiene el mismo valor de line-height de arriba con el font-size de esta seccion para que el header no cambie el tamaño cuando la fuente sea mas grande */
 .header a.logo {
-  font-size: 25px;
+  font-size: 40px;
   font-weight: bold;
 }
 
+.logo2 {
+  align-self: flex-end
+}
+
+/* Barra de busqueda*/
+
+.search-design {
+  border: 0;
+  width: 90%;
+  text-align: left;
+
+}
+
 /* Cambia el color del fondo cuando el mouse pasa por encima */
-.header a:hover {
-  background-color: #712C38;
-  color: #ffffff;
+.sections a:hover {
+  background-color: #ffffff;
+  color: #000000;
 }
 
 /* Estilo del link Inicio */

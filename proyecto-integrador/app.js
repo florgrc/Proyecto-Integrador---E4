@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path')
 const app = express();
-const puerto = 3000;
+const puerto=3000
 
 /*
 const publicPath = path.resolve (__dirname, './public') 
@@ -11,7 +11,7 @@ Este es el comando que estaba en los videos de DH, a mi (Juan) no me funciono. T
 app.use(express.static(__dirname + '/public'));
 
 app.listen(puerto, () => {
-    console.log(`Servidor listo en http://localhost:${puerto}`)
+    console.log(`Servidor corriendo en puerto 3000`)
   });
 
 app.get('/', (req, res) => {

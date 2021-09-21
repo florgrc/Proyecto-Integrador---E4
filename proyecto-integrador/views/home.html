@@ -5,22 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOREM IPSUM VINOS</title>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet" />
+    <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/header.css'>
-    
-    <div class="header">
-      <img width="50px" src="images/LogoWeb.svg" alt="logo" />
-      <a href="#home" class="logo">LOREM IPSUM VINOS</a>
-      <div class="header-der">
-        <a class="inicio" href="#home">Inicio</a>
-        <a href="#contacto">Contacto</a>
-        <a href="#acerca">Acerca de nosotros</a>
-      </div>
-
-    </div>
+    <link rel="stylesheet" href='/css/footer.css'>
 </head>
-
+ 
 <body>
+  <header class="header">
+    <article class="header-top">
+      <div class="logo2"><a href="#"><img width="100px" src="images/LogoWeb.svg" alt="logo" class="logo"></a></div>
+      <div class="search-bar"><form action="/busqueda" method="GET">
+        <label for="busqueda"></label>
+        <input type="text" name="busqueda" placeholder="¿Qué estás buscando?" class="search-design">
+      </form>
+      </div>
+      <div class="icons">
+        <i class="fas fa-user-circle"></i>
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+    </article>
+      <a href="#home" class="logo"></a>
+    <article class="sections">
+        <a href="#">Vinos</a>
+        <a href="#">Espumantes</a>
+        <a href="#">Combos</a>
+        <a href="#">Promociones</a>
+        <a href="#">Viví tu experiencia</a>
+        <a href="#">Quienes somos</a>
+        <a href="#">Contacto</a>
+    </article>
+   
+  </header>
     <h1>Pagina principal de Lorem Ipsum Vinos</h1>
     <h2>Subtitulo</h2>
 
@@ -40,5 +57,36 @@
 
     <a href= 'https://google.com.ar/'>Ir a Google</a>
 
+    <footer>
+      <img src="/images/logo-tienda-vinos.svg" width="" alt="">
+      <h3>Menu</h3>
+       <ul>
+           <li>Vinos</li>
+           <li>Espumantes</li>
+           <li>Combos</li>
+           <li>Promociones</li>
+       </ul>
+      <h3>Ayuda</h3>
+       <ul>
+           <li>Envios</li>
+           <li>Formas de Pago</li>
+           <li>Preguntas Frecuentes</li>
+           <li>Terminos y condiciones</li>
+       </ul>
+      <h3>Contacto</h3>
+       <ul>
+           <li>Email:usuario@tusitio.com</li>
+           <li>Whatsapp:0000000000</li>
+      
+       </ul>
+      <h2>SEGUINOS</h2>
+      <P>lugar para poner 3 circulos rellenos</P>
+       <ul>
+          <li>instagram</li>
+          <li>facebook</li>
+          <li>Email</li> 
+       </ul>
+
+  </footer>
 </body>
 </html>
