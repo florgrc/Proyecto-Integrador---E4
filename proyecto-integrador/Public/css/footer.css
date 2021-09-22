@@ -1,0 +1,36 @@
+/* Aplicando el estilo del footer con un rojo vino y padding*/
+.header {
+  overflow: hidden;
+  background-color: rgb(54, 24, 24);
+  padding: 20px 10px;
+}
+
+
+/* Mati - Columnas y colores aplicados según paleta subida al repo*/
+
+.flex-container {
+  display: flex;
+  background-color: rgb(54, 24, 24);
+}
+
+.flex-item-left {
+  background-color: rgb(54, 24, 24);
+  padding: 10px;
+  flex: 50%;
+  color: #ffffff;
+}
+
+.flex-container > div {
+  background-color: rgb(54, 24, 24);
+  margin: 10px;
+  padding: 20px;
+  font-size: 18px;
+}
+
+/* Estilo logos redes sociales - se paso de 40px en header a 30px en footer */
+
+.header a.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: whitesmoke;
+}
