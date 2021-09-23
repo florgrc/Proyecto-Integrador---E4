@@ -1,0 +1,57 @@
+/* Estilo del formulario con un fondo transparente*/
+form {
+    background-color: transparent;
+    margin: 15px auto;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo de secciones*/
+.formulario-registro {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 3px;
+}
+
+/* Estilo de etiquetas*/
+.formulario-registro label {
+    width: 100%;
+}
+.formulario-registro input {
+    width: 100%;
+}
+
+/* Estilo de buttons*/
+.enviar {
+    background-color: rgb(243, 236, 236);
+    border-radius: 5px;
+    padding: 5px;
+}
+.enviar:hover {
+    background-color: rgb(75, 243, 75);
+    color: rgb(203, 142, 246);
+}
+
+.borrar {
+    background-color: rgb(238, 138, 138);
+}
+
+/* Medias para responsive*/
+
+@media (min-width: 361px){
+    form{ 
+        display: block;
+    }
+    .formulario-registro {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+@media (min-width: 769px){
+    .formulario-registro {
+        width: 22%;}
+    }
+    }
