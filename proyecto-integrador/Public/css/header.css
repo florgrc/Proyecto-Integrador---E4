@@ -1,3 +1,12 @@
+/*General*/
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Quicksand:wght@300&display=swap');
+* {
+  font-family: "Quicksand";
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 /* Aplicando el estilo del header con un fondo gris y padding*/
 .header {
   overflow: hidden;
@@ -25,7 +34,7 @@
 }
 
 .sections a {
-  font-size: 110%;
+  font-size: 100%;
 }
 
 /* Estilo del header arriba*/
@@ -76,6 +85,9 @@
 }
 
 /* Cambia el color del fondo cuando el mouse pasa por encima */
+.sections a{
+  transition: all 0.75s;
+}
 .sections a:hover {
   background-color: #ffffff;
   color: #000000;

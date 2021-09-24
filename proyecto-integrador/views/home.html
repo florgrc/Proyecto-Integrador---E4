@@ -55,57 +55,14 @@
         <li>Item 2</li>
         <li>Item 3</li>
     </ul>
-    <form action="/register" method="POST">
-    <h3>Registrate</h3>
 
-    <div class="formulario-registro">
-        <label for="">Nombre y apellido</label>
-        <input type="text" name="fullname">
-    </div>
-
-    <div class="formulario-registro">
-        <label for="">DNI</label>
-        <input type="dni" name="dni">
-    </div>
-
-    <div class="formulario-registro">
-        <label for="">Fecha de nacimiento</label>
-        <input type="date" name="">
-    </div>
-
-    <div class="formulario-registro">
-        <label for="">Codigo Postal</label>
-        <input type="cp" name="cp">
-    </div>
-
-    <div class="formulario-registro">
-        <label for="">Email</label>
-        <input type="mail" name="mail">
-    </div>
-      
-    <div class="formulario-registro">
-        <label for="">Contraseña</label>
-         <input type="password" name="password">
-    </div>
-
-    <div class="formulario-registro">
-        <label for="">Repetir Contraseña</label>
-        <input type="password" name="repassword">
-    </div>
-
-    <button type="submit" class="enviar">Registrarme</button><br>
-    <button type="reset" class="borrar">Borrar</button>
-  </form>
-    <a href= 'https://google.com.ar/'>Ir a Google</a>
-
-    <footer class="footer">
-
+    <footer class="footer-style">
 
       <div class="flex-container">
+        <div class="logo-footer"><a href="#"><img width="100px" src="images/LogoWeb.svg" alt="logo" class="logo"></a></div>
         <div class="flex-item-left">
-                <img src="/images/logo-tienda-vinos.svg" width="" alt="">
                 <h3>Menu</h3>                  
-                <ul>
+          <ul class="lista">
                   <li><a href="#">Vinos</a></li>
                   <li><a href="#">Espumantes</a></li>
                   <li><a href="#">Combos</a></li>
@@ -115,32 +72,32 @@
         </div>   
         <div class="flex-item-left">
                 <h3 class="footer a">Ayuda</h3>
-                <ul>
+          <ul class="lista">
                   <li><a href="#">Envios</a></li>
                   <li><a href="#">Formas de Pago</a></li>
                   <li><a href="#">Preguntas Frecuentes</a></li>
                   <li><a href="#">Términos y condiciones</a></li>
-                </ul>                    
+                </ul>
+
         </div>
         <div class="flex-item-left">
           <h3>Contacto</h3>
-          <ul>
-              <li><a href="#"><img src="/icons/icons8-mail-30.png" width="30" alt="30"></a>               
+          <ul class="lista">
+              <li><a href="#"><i class="fas fa-envelope"></i></a>               
               <a href="#"> contacto@tiendadevinos.com</a></li>
-              <li><a href="#"><img src="/icons/icons8-whatsapp-30.png" width="30" alt="30"></a> 
-              <a href="#">+54-9-11 6 111 11 19</a></li>          
+              <li><a href="#"><i class="fas fa-phone-alt"></i></a> 
+              <a href="#">+549 11 6111 1119</a></li>          
           </ul>
         </div>
+
         <div class="flex-item-left">
           <h3>Seguinos</h3>
-          <img src="/icons/icons8-dots-loading-48.png" width="30" alt="30">
-           <ul>
-            <a href="#"><img src="/icons/icons8-instagram-30.png" width="30" alt="30"></a>
-            <a href="#"><img src="/icons/icons8-facebook-30.png"  width="30" alt="30"></a>
-            <a href="#"><img src="/icons/icons8-twitter-30.png"  width="30" alt="30"></a> 
+           <ul class="lista">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a> 
            </ul>
-        </div>  
-   
+        </div> 
         </div>
   </footer>
 </body>
