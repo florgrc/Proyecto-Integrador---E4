@@ -30,3 +30,5 @@ Nuestro proyecto de ecommerce esta orientado a satisfacer la creciente demanda d
  [http://www.bodegasalentein.com/](http://www.bodegasalentein.com/ "http://www.bodegasalentein.com/")  
  [https://vinotecaligier.com/](https://vinotecaligier.com/ "https://vinotecaligier.com/")  
  [https://tienda.altavistawines.com/](https://tienda.altavistawines.com/ "https://tienda.altavistawines.com/")  [https://observatoriova.com/2021/08/analisis-del-consumo-de-vinos-en-el-mercado-interno-argentino/]
+
+ TABLERO TRELLO: https://trello.com/b/kArVcxCA/digital-house-g4

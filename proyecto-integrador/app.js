@@ -1,27 +1,33 @@
 const express = require('express');
 const path = require('path')
 const app = express();
-const puerto=3000
 
-/*
-const publicPath = path.resolve (__dirname, './public') 
-Este es el comando que estaba en los videos de DH, a mi (Juan) no me funciono. Tuve que buscar en internet y encontre el de abajo que si me funciono para aplicar el CSS.
-*/
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.resolve(__dirname,'public')));
 
-app.listen(puerto, () => {
+app.listen(3000, () => {
     console.log(`Servidor corriendo en puerto 3000`)
   });
-
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, './views/index.html'));
 })
 
 app.get("/register", (req,res) => {
-  res.sendFile(path.resolve(__dirname, "views/index.html"));
+  res.sendFile(path.resolve(__dirname, "./views/register.html"));
 })
 
 app.post("/register", (req,res) => {
   res.send("Te registraste con exito!")
+})
+
+app.get('/login', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './views/login.html'));
+})
+
+app.get('/productDetail', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './views/productDetail.html'));
+})
+
+app.get('/productCart', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './views/productCart.html'));
 })

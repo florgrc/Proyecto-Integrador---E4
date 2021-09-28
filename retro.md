@@ -10,7 +10,7 @@ Entregamos el sprint 1 pero esperamos la devolucion para evaluar las observacion
 
 3.  Continuar haciendo: reuniones de trabajo y tiempos para conocernos mas como equipo entre todos los integrantes. Distribucion de las tareas y feedback ante las dudas o inconvenientes.
 
-4.  Hacer menos: 
+4.  Hacer menos: dejar tareas para último momento
 
-5.  Dejar de hacer: 
+5.  Dejar de hacer: superponer cambios en GitHub
 
