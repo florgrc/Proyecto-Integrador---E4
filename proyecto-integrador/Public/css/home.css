@@ -14,23 +14,23 @@
     position: absolute;
     right: 0;
     top: 100px;
-    text-align: left;
-    width: 64%;
+    text-align: right;
+    width: 60%;
+    font-size: 30px;
 }
 
+/* Seccion Productos destacados */
 .seccion {
     text-decoration: underline;
     margin-bottom: 30px;
 }
 
-.products2 {
-    padding-top: 30px;
-    display: flex;
-    justify-content: space-around;
-}
 .products {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 15px;
 }
 
 .productos-destacados {
@@ -39,19 +39,120 @@
 
 .product {
     border: solid 1px rgb(196, 195, 195);
-    width: 20%;
+    width: 22%;
     align-items: center;
     box-shadow: 0px 0px 10px rgb( 100 , 100 , 100 );
     transition: all 0.25s;
     display:flex;
     flex-direction: column;
-    justify-items:center;
+    margin-top: 15px;
 }
 
 .product:hover {
-  width: 35%;
+  width: 33%;
 }
 
 .img-botella {
     align-items: center;
+}
+
+.main-article {
+    border-top: solid 1px rgb(170, 166, 166);
+    margin: 15px
+}
+
+/*Collage fotos*/
+.pic {
+    width: 100%;
+    position:relative;
+    left:40%;
+    border-radius: 5px;
+}
+
+.pic2 {
+    width: 70%;
+    position:relative;
+    left:20%;
+    border-radius: 5px;
+}
+
+
+.pic-collage {
+    position:relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px
+    
+}
+
+.pic-collage1 {
+    position:relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.pic-collage2 {
+    position:relative;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.text-pic1 {
+    background-color:rgb(255, 255, 255);
+    opacity: 0.75;
+    position: absolute;
+    top: 10%;
+    text-align: left;
+    width: 25%;
+    font-size: 14px;
+    left: 40%;
+    z-index: 100;
+}
+.text-pic2 {
+    background-color:rgb(255, 255, 255);
+    opacity: 0.75;
+    position: absolute;
+    top: 80%;
+    text-align: left;
+    width: 40%;
+    font-size: 14px;
+    left:100%;
+    z-index: 100;
+}
+.text-pic3 {
+    background-color:rgb(255, 255, 255);
+    opacity: 0.75;
+    position: absolute;
+    top: 85%;
+    text-align: right;
+    width: 50%;
+    font-size: 16px;
+    left:40%;
+    z-index: 100;
+}
+
+/*Info adicional*/
+.aditional-info {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(228, 228, 228, 0.884);
+}
+
+.dato {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 15px;
+}
+.fa-credit-card,
+.fa-gift,
+.fa-wine-glass-alt {
+    margin: 15px;
+    color:rgb(77, 34, 34);
+    font-size: 40px;
 }
