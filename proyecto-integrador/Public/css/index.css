@@ -62,21 +62,22 @@
 }
 
 /*Collage fotos*/
+    /* Fotos*/
 .pic {
-    width: 100%;
+    width: 112%;
     position:relative;
-    left:40%;
+    left:29%;
     border-radius: 5px;
 }
 
 .pic2 {
-    width: 70%;
+    width: 78%;
     position:relative;
     left:20%;
     border-radius: 5px;
 }
 
-
+    /*Collage*/
 .pic-collage {
     position:relative;
     display: flex;
@@ -98,17 +99,16 @@
     flex-direction: column;
 }
 
-
-
+    /*Texto*/
 .text-pic1 {
     background-color:rgb(255, 255, 255);
     opacity: 0.75;
     position: absolute;
-    top: 10%;
+    top: 8%;
     text-align: left;
-    width: 25%;
-    font-size: 14px;
-    left: 40%;
+    width: 35%;
+    font-size: 18px;
+    left: 30%;
     z-index: 100;
 }
 .text-pic2 {
@@ -116,10 +116,10 @@
     opacity: 0.75;
     position: absolute;
     top: 80%;
-    text-align: left;
-    width: 40%;
-    font-size: 14px;
-    left:100%;
+    text-align: right;
+    width: 46%;
+    font-size: 18px;
+    left:95%;
     z-index: 100;
 }
 .text-pic3 {
@@ -128,9 +128,9 @@
     position: absolute;
     top: 85%;
     text-align: right;
-    width: 50%;
-    font-size: 16px;
-    left:40%;
+    width: 60%;
+    font-size: 20px;
+    left:38%;
     z-index: 100;
 }
 
@@ -150,7 +150,7 @@
     margin: 15px;
 }
 .fa-credit-card,
-.fa-gift,
+.fa-shipping-fast,
 .fa-wine-glass-alt {
     margin: 15px;
     color:rgb(77, 34, 34);
