@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOREM IPSUM VINOS</title>
+    <!--Favicon, iconito que se ve en el tab del navegador-->
+    <link rel="icon" type="image/png" href="images/LogoWeb.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet" />
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/header.css'>
+    <link rel="stylesheet" href='/css/footer.css'>
+    <link rel="stylesheet" href='/css/productDetail.css'>
+    <link rel="stylesheet" href='/css/register.css'>
+</head>
+ 
+<body>
+  <header class="header">
+    <article class="header-top">
+      <div class="logo2"><a href="#home"><img width="100px" src="images/LogoWeb.svg" alt="logo" class="logo"></a></div>
+      <div class="search-bar"><form action="/busqueda" method="GET">
+        <label for="busqueda"></label>
+        <input type="text" name="busqueda" placeholder="¿Qué estás buscando?" class="search-design">
+      </form>
+      </div>
+      <div class="icons">
+        <i class="fas fa-user-circle"></i>
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+    </article>
+      
+    <article class="sections">
+        <a href="#">Vinos</a>
+        <a href="#">Espumantes</a>
+        <a href="#">Combos</a>
+        <a href="#">Promociones</a>
+        <a href="#">Viví tu experiencia</a>
+        <a href="#">Quienes somos</a>
+        <a href="#">Contacto</a>
+    </article>
+   
+  </header>
+  <form action="/login" method="POST">
+    <h3>Ingresa</h3>
+
+    <div class="formulario-registro">
+        <label for="">Email</label>
+        <input type="text" name="mail">
+    </div>
+ 
+    <div class="formulario-registro">
+        <label for="">Contraseña</label>
+         <input type="password" name="password">
+         <label><input type="checkbox" id="box1" value="password"> Recordar en este sitio</label>
+    </div>
+
+     <div class="formulario-registro">
+        <label for="">Recuperar contraseña</label>
+        <input type="password" name="repassword" placeholder="usuario@tudominio.com" class="">
+    </div>
+
+    <button type="submit" class="enviar">Ingresar</button><br>
+    <button type="reset" class="borrar">Borrar</button>
+  </form>
+
+
+
+  <footer class="footer-style">
+
+    <div class="flex-container">
+      <div class="logo-footer"><a href="#"><img width="100px" src="images/LogoWeb.svg" alt="logo" class="logo"></a></div>
+      <div class="flex-item-left">
+
+          <h3>Menu</h3>                  
+        <ul class="lista">
+                <li><a href="#">Vinos</a></li>
+                <li><a href="#">Espumantes</a></li>
+                <li><a href="#">Combos</a></li>
+                <li><a href="#">Promociones</a></li>
+            </ul>                    
+
+      </div>   
+      <div class="flex-item-left">
+          <h3 class="footer a">Ayuda</h3>
+        <ul class="lista">
+                <li><a href="#">Envios</a></li>
+                <li><a href="#">Formas de Pago</a></li>
+                <li><a href="#">Preguntas Frecuentes</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+              </ul>
+
+      </div>
+      <div class="flex-item-left">
+          <h3>Contacto</h3>
+        <ul class="lista">
+            <li><a href="#"><i class="fas fa-envelope"></i></a>               
+            <a href="#"> contacto@tiendadevinos.com</a></li>
+            <li><a href="#"><i class="fas fa-phone-alt"></i></a> 
+            <a href="#">+549 11 6111 1119</a></li>          
+        </ul>
+      </div>
+
+      <div class="flex-item-left">
+        <h3>Seguinos</h3>
+         <ul class="lista">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-square"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a> 
+         </ul>
+      </div> 
+      </div>
+</footer>
+</body>
+</html>
