@@ -1,0 +1,30 @@
+.cart-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    background-color: #ebebeb;
+    border: 0.5px solid #050505;
+
+}
+
+.cart-product-frame {
+    align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    background-color: #757373;
+    border: 2em solid #ebebeb;
+}
+
+.cart-icons {
+    display: flex;
+    align-self: flex-end;
+    
+  }
+  
+  .cart-box-price {
+    display: flex;
+    align-self: flex-end;  
+  }
