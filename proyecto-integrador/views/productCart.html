@@ -45,40 +45,52 @@
 <section>
   <div class="cart-product-frame">
         <div>
-            <h3>Mis carrito</h3>
+            <h3 class="title">Mi carrito</h3>
         </div>    
         <div class="cart-product">
             <img src="/images/vinos/Vino1.jpg" alt="Vino" width="80" height="80">
             <div class="name">Cuesta del Madero</div >
             <div class="type">Malbec</div >
-            <div  class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quis deleniti, expedita veritatis, aspernatur suscipit ipsam optio, aliquam repellendus nesciunt repudiandae nam sequi. Voluptate blanditiis nobis nesciunt est accusantium rem.</div >
-            <div  class="info">x1 Un. </div >
-            <div  class="cart-box-price">$1.770</div >
-            <div  class="discount">5% OFF</div >
+            <div  class="info">
+              <select name="cantidad" id="cantidad">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select> 
+          </div >
+              <div  class="discount">5% OFF</div >
+              <div  class="cart-box-price">$1.770</div >
+              <div><a href="/productDetail"><i class="far fa-trash-alt"></i><button type="submit" class="addToCart">Eliminar</button></a><br></div>
         </div>
-        <div>
-            <h3>Total</h3>
-            <div  class="cart-box-price">$1.681,5</div >
-        </div>    
-    </div>
-</section>
-<section>
+      </div>
+    </section>
+    <section>
+        <div class="checkout">
+        <div class="pre-payment">
+            <h3>Total  </h3>
+            <div  class="cart-box-price">$1.681,5</div >  
+        </div> 
     <div class="cart-product-frame">
-      <div>
+      <div class="payment">
         <h3>Medios de pago  </h3>
-        <select name="cantidad" id="cantidad">
-            <option value="0" selected disabled>Seleccione una opción</option>
-            <option value="1">1. transferencia o depósito (10% de descuento)</option>
-            <option value="2">2. Tarjeta de crédito o débito</option>
-            <option value="3">3. Mercado Pago</option>
-            <option value="4">4. Pago Facil</option>
+        <select name="pago" id="pago">
+              <option value="0" selected disabled>Seleccione una opción</option>
+              <option value="1">Transferencia o depósito (10% de descuento)</option>
+              <option value="2">Tarjeta de crédito o débito</option>
+              <option value="3">Mercado Pago</option>
+              <option value="4">Pago Facil</option>
         </select>
       </div>    
           <div class="cart-icons">
-              <a href="/productDetail"><i class="fas fa-shopping-cart"></i><button type="submit" class="addToCart">Seguir comprando</button></a><br>
-              <a href="/Checkout"><i class="fas fa-shopping-cart"></i><button type="submit" class="addToCart">Ir al checkout</button></a><br>
+              <a href="/productDetail"><i class="fas fa-shopping-basket"></i><button type="submit" class="addToCart">Seguir comprando</button></a><br>
+              <a href="/Checkout"><i class="fas fa-sign-out-alt"></i><button type="submit" class="addToCart">Ir al checkout</button></a><br>
           </div>
       </div>
+   
   </section>
     <footer class="footer-style">
 
