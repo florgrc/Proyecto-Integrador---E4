@@ -1,37 +1,35 @@
 .cart-product {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    background-color: #ffffff;
-    border: solid 1px rgb(196, 195, 195);
-    align-items: center;
-    margin: 15px;
-    padding: 10px;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  background-color: #ffffff;
+  border: solid 1px rgb(196, 195, 195);
+  align-items: center;
+  margin: 15px;
+  padding: 10px;
 }
 
 .cart-product-frame {
-    align-self: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    flex-wrap: nowrap;
-    font-size: 17px;
-    margin:15px;
-  }
+  align-self: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  font-size: 17px;
+  margin: 15px 15px 0 15px;
+}
 
 .title {
   font-size: 25px;
 }
 
 .cart-icons {
-    display: flex;
-    align-self: flex-end;
-    margin-top: 20px;
-    align-self: center;
-    
-  }
+  display: flex;
+  align-self: flex-end;
+  margin-top: 20px;
+  align-self: center;
+}
 
 .name {
   font-weight: bold;
@@ -55,7 +53,6 @@
   justify-content: space-evenly;
   width: 100%;
   font-size: 22px;
-
 }
 
 .fa-shopping-basket {
@@ -67,4 +64,19 @@
   color: rgb(71, 29, 29);
   font-size: 18px;
   margin-left: 5px;
+}
+
+.cart-icons .addToCart {
+  padding: 5px;
+  border-radius: 9px;
+}
+
+.cart-icons .addToCart:hover {
+  color: #ffffff;
+  padding: 5px;
+}
+
+.checkout {
+  padding: 20px;
+  border: rgb(195, 195, 195) solid 1px;
 }

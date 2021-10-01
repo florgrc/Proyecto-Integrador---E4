@@ -1,6 +1,6 @@
 /* Estilo del formulario con un fondo transparente*/
+
 .form-style {
-    
     background-color: gainsboro;
     margin: 15px auto;
     width: 80%;
@@ -8,39 +8,45 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
-}
-
-/* Estilo de secciones*/
-.formulario-registro {
+ }
+ 
+ 
+ /* Estilo de secciones*/
+ 
+ .formulario-registro {
     width: 100%;
     flex-direction: column;
     margin-bottom: 3px;
     padding: 10px;
-   
-}
-
-/* Estilo de etiquetas*/
-.formulario-registro label {
+ }
+ 
+ 
+ /* Estilo de etiquetas*/
+ 
+ .formulario-registro label {
     width: 100%;
-}
-.formulario-registro input {
+ }
+ 
+ .formulario-registro input {
     width: 100%;
     transition: border 2s;
-}
-
-/* Estilo de buttons*/
-.enviar {
+ }
+ 
+ 
+ /* Estilo de buttons*/
+ 
+ .enviar {
     background-color: rgb(87, 51, 51);
     color: white;
     border-radius: 5px;
     padding: 5px;
-}
-.enviar:hover {
-    background-color: #30aa00;
+ }
+ 
+ .enviar:hover {
+    background-color: #199b40;
     color: white;
-}
-
-.borrar {
-    background-color: rgb(184, 50, 50);
-    color: white
-}
+ }
+ 
+ .resetPassword {
+    margin-top: 10px;
+ }
