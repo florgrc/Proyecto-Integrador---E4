@@ -2,12 +2,13 @@ const express = require('express');
 const path = require('path')
 const app = express();
 
+app.set("view engine", "ejs");
 
 app.use(express.static(path.resolve(__dirname,'../public')));
 
 app.listen(3000, () => {
     console.log('Servidor corriendo en puerto 3000')
-  });
+  }); 
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, './views/index.html'));
 })
@@ -31,3 +32,19 @@ app.get('/productDetail', (req, res) => {
 app.get('/productCart', (req, res) => {
   res.sendFile(path.resolve(__dirname, './views/products/productCart.html'));
 })
+
+/*Editar Producto */
+
+let routesEditarProducto = require ("./routes/editarProducto.js"); 
+
+app.use ("/editarproducto", routesEditarProducto);
+
+app.get('/editarProducto', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './views/editarProducto.ejs'));
+})
+
+
+/*Fin Editarproducto */
+
+
+module.exports = app;

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/editarProducto.css' />
+  </head>
+  <body>
+    <%- include("./partials/head") %>
+    <h1><%= title %></h1>
+    <p>Productos funciona Ok <%= title %></p>
+    <form action="POST" action="/users/register">
+      <label for="">Nombre </label>
+      <p>Hobbies</p>  
+    <% for (let i=0; i<10;i++) { %>
+      <% if (i%2 ==0) { %>
+        <input class="par" type="text" name="hobbies[]">
+      <%} else { %>
+        <input class="impar" type="text" name="hobbies[]">
+      <%}
+    %>
+      <br>  
+    <%}
+    %>
+  
+    </form>  
+
+  </body>
+</html>
