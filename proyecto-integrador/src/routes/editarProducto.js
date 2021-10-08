@@ -3,8 +3,8 @@ let express = require('express');
 
 let router = express.Router();
 
-let productosController = require ("../controllers/editarProductoController.js");
+let editarProductoController = require ("../controllers/editarProductoController");
 
-router.get("/detalle", editarproductoController.detalle);
+router.get("/detalle", editarProductoController.detalle);
 
 module.exports = router;

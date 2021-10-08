@@ -40,7 +40,7 @@ let routesEditarProducto = require ("./routes/editarProducto.js");
 app.use ("/editarproducto", routesEditarProducto);
 
 app.get('/editarProducto', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/editarProducto.ejs'));
+  res.render(path.resolve(__dirname, './views/editarProducto.ejs'));
 })
 
 
