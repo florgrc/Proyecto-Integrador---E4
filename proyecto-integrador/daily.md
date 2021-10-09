@@ -5,3 +5,14 @@ Matías:
     Se implementaron carpetas views, routes, controllers
     Se debe sacar el file app.js y la carpeta views fuera de la carpeta src
     Se debe implementar la carpeta y el file Bin
+
+
+** 10/10/2021
+
+    Grupo: 
+    - Actualizar Tablero Trello 
+     Problemas para vincular las rutas (Mati y Juan)
+    - Subir formulario en formato .ejs pero sin rutear de 
+        Formulario de Creación (Diana HTML y Flor CSS)
+        Formulario  de Edición (Mati HTML y Juan CSS)
+    - 

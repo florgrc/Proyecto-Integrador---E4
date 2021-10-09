@@ -20,6 +20,7 @@ let editarProductoController = {
     crear: function () {},
     detalle: function (req,res) {
         res.send ("Bienvenidos al detalle de producto" )
+        /*res.render('index', { title: 'Ejemplo de Mati'})*/
     },
 
 };

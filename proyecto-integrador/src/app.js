@@ -39,9 +39,9 @@ let routesEditarProducto = require ("./routes/editarProducto.js");
 
 app.use ("/editarproducto", routesEditarProducto);
 
-app.get('/editarProducto', (req, res) => {
+/*app.get('/editarProducto', (req, res) => {
   res.render(path.resolve(__dirname, './views/editarProducto.ejs'));
-})
+}) */
 
 
 /*Fin Editarproducto */
