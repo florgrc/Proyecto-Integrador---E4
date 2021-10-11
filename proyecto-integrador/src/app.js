@@ -1,8 +1,10 @@
 const express = require('express');
-const path = require('path')
+const path = require('path');
+const createProductController = require('./controllers/createProductController.js');
 const app = express();
 
 app.set("view engine", "ejs");
+app.set("views", "./views/users");
 
 app.use(express.static(path.resolve(__dirname,'../public')));
 
@@ -49,3 +51,6 @@ app.use ("/editarproducto", routesEditarProducto);
 
 
 module.exports = app;
+
+
+app.get ("/createProduct", createProductController.create);
