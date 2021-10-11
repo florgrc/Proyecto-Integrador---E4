@@ -92,7 +92,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 40px
+    margin: 40px;
+
  }
  
  .pic-collage1 {
@@ -119,7 +120,7 @@
     width: 35%;
     font-size: 18px;
     left: 30%;
-    z-index: 100;
+    z-index: 50;
  }
  
  .text-pic2 {
@@ -131,7 +132,7 @@
     width: 46%;
     font-size: 18px;
     left: 95%;
-    z-index: 100;
+    z-index: 50;
  }
  
  .text-pic3 {
@@ -143,7 +144,7 @@
     width: 60%;
     font-size: 20px;
     left: 38%;
-    z-index: 100;
+    z-index: 50;
  }
  
  

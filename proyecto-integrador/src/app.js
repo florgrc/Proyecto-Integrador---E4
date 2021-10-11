@@ -33,6 +33,7 @@ app.get('/productCart', (req, res) => {
   res.sendFile(path.resolve(__dirname, './views/products/productCart.html'));
 })
 
+
 /*Editar Producto */
 
 let routesEditarProducto = require ("./routes/editarProducto.js"); 

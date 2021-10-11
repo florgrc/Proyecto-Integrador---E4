@@ -1,0 +1,49 @@
+.form-newpproduct-style {
+    font-weight: bold;
+}
+
+.img-newProduct {
+    width: 30%;
+}
+
+.contenedor-newProduct {
+    margin-left: 30%;
+}
+
+.form-foto,
+.formulario-producto {
+    margin-bottom: 10px;
+}
+
+
+ /* Estilo de buttons*/
+ 
+ .create {
+    background-color: rgb(87, 51, 51);
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+ }
+ 
+ .create:hover {
+    background-color: #699159;
+    color: white;
+ }
+ 
+ .delete {
+    background-color: rgb(87, 51, 51);
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+ }
+
+ .delete:hover {
+    background-color: #a17272;
+    color: white;
+ }
+ 
+ input[type=checkbox] {
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+ }

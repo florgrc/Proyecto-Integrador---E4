@@ -15,11 +15,10 @@
 .header {
    overflow: hidden;
    background-color: rgb(54, 24, 24);
-   position: fixed;
    z-index: 100;
    width: 100%;
    padding: 10px 10px 0px 10px;
-   position: relative;
+   position: sticky;
    top: 0;
 }
 
