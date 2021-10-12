@@ -6,7 +6,20 @@ const productsController = {
          res.render("products/productCart")
     },
     edit: (req,res) => {
-        res.render("products/productEdit")
+        
+     let idProduct = req.params.idProduct;
+
+     let product = [
+          {id:1, name:"vinoDiana"},
+          {id:2, name:"vinoFlor"},
+          {id:3, name:"vinoJuan"},
+          {id:4, name:"vinoMati"}
+     ];
+     
+     let productToEdit = product[idProduct];
+ 
+     res.render("products/productEdit", {productToEdit: productToEdit});
+
    },
     create: (req,res) => {
         res.render("products/createProduct")
