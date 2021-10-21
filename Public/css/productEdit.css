@@ -8,7 +8,11 @@
     display: flex;
     flex-direction: column;
     margin: 5px;
-    width: 13%;
+    width: 12.5%; 
+ }
+ .back-edit {
+    background-color: rgba(231, 229, 229, 0.959);
+    margin: 10px;
  }
 
  .contenedor-editProduct {
@@ -16,6 +20,7 @@
     flex-direction: row;
     width: 100% ;
     font-weight: bold;
+   
  }
 
 .input-style {
