@@ -2,13 +2,13 @@
 
 .flex-container {
   display: flex;
-  background-color: rgb(49, 22, 22);
+  background-color:  rgb(53, 25, 25);
   color: #ffffff;
   justify-content: space-around;
 }
 
 .flex-item-left {
-  background-color: rgb(49, 22, 22);
+  background-color:  rgb(53, 25, 25);
   padding: 10px;
   color: #ffffff;
   align-self: flex-start;
