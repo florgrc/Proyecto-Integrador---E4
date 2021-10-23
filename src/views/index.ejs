@@ -42,7 +42,7 @@
     <div class="products">
     <% featured.forEach(product => { %>
       <article class="product">
-      <a href="/products/detail/idProducto">
+      <a href="/products/detail/<%= product.idProduct %>">
           <img src="/images/botella-producto.jpg" width= 80% alt="producto1" class="img-botella">
           <div class="main-article">
           <h4 class="description"><%= product.name %></h4>
