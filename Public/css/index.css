@@ -151,6 +151,10 @@
     margin: 15px;
  }
  
+ a {
+    text-decoration: none;
+    color: rgb(34, 31, 31);
+ }
  .productos-destacados {
     padding: 5px;
  }
@@ -170,13 +174,11 @@
     width: 33%;
  }
  
- .img-botella {
-    align-items: center;
- }
  
  .main-article {
     border-top: solid 1px rgb(170, 166, 166);
-    margin: 15px
+    margin: 15px;
+    font-size: 80%;
  }
  
  
@@ -195,7 +197,7 @@
  .pic2 {
     width: 78%;
     position: relative;
-    left: 20%;
+    left: 21%;
     border-radius: 5px;
  }
  
