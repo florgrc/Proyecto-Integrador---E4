@@ -20,13 +20,15 @@
       <form action="/product-detail" method="POST" class="createProduct-form">
          <h3>Detalle del producto</h3>
          <div class="productDetail">
-            <img src="/images/vinos/Vino1.jpg" alt="Vino">
-            <div class="product">
-               <p class="name">Vino Cuesta del Madero</p>
-               <p class="type">Malbec</p>
-               <p class="price">$1.770</p>
-               <p class="discount">5% OFF</p>
-               <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quis deleniti, expedita veritatis, aspernatur suscipit ipsam optio, aliquam repellendus nesciunt repudiandae nam sequi. Voluptate blanditiis nobis nesciunt est accusantium rem.</p>
+         
+               <% productSelected.forEach(product => { %>
+                  <img src=<%= product.image %> alt="Vino">
+                  <div class="product">
+                     <p class="name"><%= product.name %></p>
+                     <p class="type"><%= product.variety %></p>
+                     <p class="price"><%= product.price %></p>
+                     <p class="discount">5% OFF</p>
+                     <p class="info"><%= product.description %></p>
                <select name="cantidad" id="cantidad">
                   <option value="0" selected disabled>Seleccione una cantidad</option>
                   <option value="1">1</option>
@@ -36,6 +38,8 @@
                </select>
                <button type="submit" class="addToCart">Agregar al Carrito</button><br>
             </div>
+                <% }) %>;
+
          </div>
       </form>
       <div class="related">

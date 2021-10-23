@@ -1,6 +1,28 @@
+const path = require("path");
+const fs = require("fs");
+
+/*Traer Productos*/
+
+let jsonProducts = fs.readFileSync(path.resolve(__dirname,"../db/products.json"),"utf-8");
+let products = JSON.parse(jsonProducts);
+
 const productsController = {
     detail: (req,res) => {
-        res.render("products/productDetail")
+
+        let productSelected = [];
+        let others = [];
+        let id = req.params.idProduct
+
+        products.forEach(product => {
+            if (id == product.idProduct) {
+                productSelected.push(product);
+            } else {
+                others.push(product)
+            }
+        });
+        
+         res.render("products/productDetail" , {productSelected,others});
+
    },
     cart: (req,res) => {
          res.render("products/productCart")
