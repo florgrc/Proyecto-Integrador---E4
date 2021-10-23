@@ -17,15 +17,20 @@
     <link rel="stylesheet" href='/css/login.css'>
     <link rel="stylesheet" href='/css/productDetail.css'>
     <link rel="stylesheet" href='/css/productcart.css'>
-    <link rel="stylesheet" href='/css/productoCreate.css'>
-    <link rel='stylesheet' href='/css/productEdit.css' />
+    <link rel="stylesheet" href='/css/productCreate.css'>
+    <link rel="stylesheet" href='/css/productEdit.css'>
 </head>
 <body>
+ 
+  <%- include('../partials/header.ejs')  %> 
   
-  <%- include('../partials/header.ejs')  %>
-<section>
+      <form action="/productCreate" method="POST" class="form-newpproduct-style">
+
+      </form>
+
+
       <form action="/products/edit/:idProduct?_method=PUT" method="POST" class="form-editpproduct-style">
-         <h3>Modificar Productos</h3>
+         <h3>Crear Producto</h3>
          <div class="back-edit">
          <div class="contenedor-editProduct">
             <div class="formulario-producto">
@@ -53,47 +58,16 @@
             <input type="file" name="avatar" class="input-style">
         </div>
          
-         <button type="submit" onclick="alert('Vas a modificar este producto. Estás seguro?')" class="button-style-save">Guardar</button><br>
-         <button type="reset" class="button-style-show">Publicar</button>
-         <button type="reset" class="button-style-hide">Ocultar</button>
+         <button type="submit" onclick="alert('Producto Guardado')" class="button-style-save">Guardar</button><br>
+         <button type="reset" onclick="alert('Producto Eliminado')" class="button-style-hide">Eliminar</button><br>
       </div>
 
-   <div class="contenedor-editProduct">
-      <div class="formulario-producto">
-         <label for=""></label>
-         <input type="number" name="productID" class="input-style">            
-      </div>
-   <div class="formulario-producto">
-      <label for=""></label>
-      <input type="text" name="productName" class="input-style">            
-   </div>
-   <div class="formulario-producto">
-      <label for=""></label>
-      <input type="text" name="productDetail" class="input-style">
-   </div>
-   <div class="formulario-producto">
-      <label for=""></label>
-      <input type="text" name="productClass" class="input-style">
-</div>
-<div class="formulario-producto">
-   <label for=""></label>
-    <input type="text" name="productPrice" class="input-style">
-</div>
-   <div class="formulario-producto">
-      <label for=""></label>
-      <input type="file" name="avatar" class="input-style">
-  </div>
-   
-   <button type="submit" onclick="alert('Vas a modificar este producto. Estás seguro?')" class="button-style-save">Guardar</button><br>
-   <button type="reset" class="button-style-show">Mostrar</button>
-   <button type="reset" class="button-style-hide">Ocultar</button>
 </div>
 </div>
 </div>
 
-      </form>
-   </section>
-      <%- include('../partials/footer.ejs')  %>
+      </form>  
 
+     <%- include('../partials/footer.ejs')  %>
    </body>
 </html>

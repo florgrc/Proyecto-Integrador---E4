@@ -22,7 +22,15 @@ const productsController = {
 
    },
     create: (req,res) => {
-        res.render("products/createProduct")
+     
+     let idProduct = [
+          {id:1, name:"vinoDiana"},
+          {id:2, name:"vinoFlor"},
+          {id:3, name:"vinoJuan"},
+          {id:4, name:"vinoMati"}
+     ];
+
+     res.render("products/productCreate")
    },
 };
 

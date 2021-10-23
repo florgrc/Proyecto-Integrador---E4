@@ -23,3 +23,16 @@
     - Qué Hice: Terminar modulo 4.
     - Qué voy a hacer: completar TRELLO
     - Qué problemas tuve: falta de conceptos.
+
+    MATI 22.10.2021:
+
+    Problemas:  
+        Además tiene debería haber una ruta de Edición para el usuario y otra para el Administrador.
+        http://localhost:3000/users/register
+        http://localhost:3000/users/login
+        http://localhost:3000/products/edit
+        http://localhost:3000/products/cart#
+        http://localhost:3000/products/edit
+        http://localhost:3000/products/create
+
+    Qué Falta    - ProductList.html, checkout.html, profile.html
