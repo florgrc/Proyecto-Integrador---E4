@@ -10,6 +10,7 @@ router.put("/edit/:idProduct", function (req,res) {
     res.send("fui por PUT");
 });
 router.get("/create", productsController.create);
+router.get('/', productsController.product);
 
 /*Procesamiento de datos*/
 
