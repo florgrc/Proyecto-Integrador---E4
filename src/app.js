@@ -6,6 +6,9 @@ const app = express();
 const methodOverride = require ("method-override");
 app.use (methodOverride("_method"));
 
+app.use (express.urlencoded({ extended: false }))
+app.use(express.json());
+
 /* Implementamos utilizar varias carpetas de vistas */
 
 app.set("view engine", "ejs");

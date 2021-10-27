@@ -24,7 +24,7 @@
   
   <%- include('../partials/header.ejs')  %>
 <section>
-      <form action="/products/edit/:idProduct?_method=PUT" method="POST" class="form-editpproduct-style">
+   <form action="/products/edit/:idProduct?_method=PUT" method="POST" class="form-editpproduct-style"></form>      
          <h3>Listado de Productos</h3>
          <div class="back-edit">
          <div class="contenedor-editProduct">
@@ -52,39 +52,20 @@
             <label for="">Foto</label>
             <input type="file" name="avatar" class="input-style">
         </div>
-         
-         <button type="submit" onclick="alert('Vas a editar este producto')" class="button-style-save">Editar</button><br>
-         
-      </div>
 
-   <div class="contenedor-editProduct">
-      <div class="formulario-producto">
-         <label for=""></label>
-         <input type="number" name="productID" class="input-style">            
+        <button type="submit" onclick="alert('Vas a Guardar un nuevo producto')" class="button-style-save">Guardar</button><br>
+         
       </div>
-   <div class="formulario-producto">
-      <label for=""></label>
-      <input type="text" name="productName" class="input-style">            
+      <div>
+      <h2>Listado de Productos a Editar</h2>
+      <ul>
+         <% for (let i =0; i< product.length ;i++) { %>
+            <li>
+               <a href="/products/edit/<%= product[i].id %>"><button type="submit" value="Search" onclick="alert('Vas a editar este producto')" class="button-style-save"> Editar <%= product[i].name %></button></a><br>
+            </li>
+         <% } %>
+      </ul>
    </div>
-   <div class="formulario-producto">
-      <label for=""></label>
-      <input type="text" name="productDetail" class="input-style">
-   </div>
-   <div class="formulario-producto">
-      <label for=""></label>
-      <input type="text" name="productClass" class="input-style">
-</div>
-<div class="formulario-producto">
-   <label for=""></label>
-    <input type="text" name="productPrice" class="input-style">
-</div>
-   <div class="formulario-producto">
-      <label for=""></label>
-      <input type="file" name="avatar" class="input-style">
-  </div>
-   
-  <button type="submit" onclick="alert('Vas a editar este producto')" class="button-style-save">Editar</button><br>
-</div>
 </div>
 </div>
 

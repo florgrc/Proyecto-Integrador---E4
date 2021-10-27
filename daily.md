@@ -20,6 +20,17 @@ MATI
         - Botones Dashboard
 
 
+
+
+MATI
+    APP.JS
+        app.use (express.urlencoded({ extended: false }))
+        app.use(express.json());
+    ROUTES - PRODUCT.JS
+    PRODUCTSCONTROLLER      
+
+
+
         PENDIENTE: 
         - Repasar clase adicional CRUD del sábado (Guardado de información desde formularios). 
         - BUG: Centrar fotos de botellas en el index y del carrousel.
