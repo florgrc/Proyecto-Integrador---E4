@@ -1,3 +1,21 @@
+    DAILY 27.10.2021:
+
+FLOR
+    - Qué Hice: Repasando clases, tareas de trello.
+    - Qué voy a hacer: Seguir repasando contenidos y agregando cosas que falten en el proyecto.
+    - Qué problemas tuve: acomodar la superposicion de cambios.
+JUAN
+    - Qué Hice: Tareas de trello. creacion del users.json
+    - Qué voy a hacer: Seguir practicando y estudiando.
+    - Qué problemas tuve: No pude aplicar correctamente DELETE.
+DIANA
+    - Qué Hice: Listado de productos. Insercion de tabla en archivo.
+    - Qué voy a hacer: Estilo del listado.
+    - Qué problemas tuve: No sabia como hacer la tabla.
+MATI
+    - Qué Hice: Flujo de edicion de productos. app.js. Especificacion de rutas.
+    - Qué voy a hacer: Seguir trabajando sobre los cambios, cerrar el ciclo de flujo.
+    - Qué problemas tuve: Superposicion de cambios en git.
 
     DAILY 24.10.2021:
 
@@ -67,7 +85,3 @@ MATI
     - Qué Hice: Terminar modulo 4.
     - Qué voy a hacer: completar TRELLO
     - Qué problemas tuve: falta de conceptos.
-
- 
-
-
