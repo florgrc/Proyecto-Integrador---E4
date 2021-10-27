@@ -105,19 +105,9 @@ const productsController = {
 
      res.render("products/productCreate")
    },
-    product: (req, res) => {
-     
-
-        let idProduct = [
-            {id:1, name:"vinoDiana"},
-            {id:2, name:"vinoFlor"},
-            {id:3, name:"vinoJuan"},
-            {id:4, name:"vinoMati"}
-       ];
-  
-       res.render('products/product', {'product': idProduct})
-        /* res.render("products/product") */
-      },
+   product: (req, res) => {
+    res.render("products/product", {products})
+  },
 
 };
 

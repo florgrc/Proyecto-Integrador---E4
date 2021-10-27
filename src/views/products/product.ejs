@@ -21,56 +21,42 @@
     <link rel='stylesheet' href='/css/productEdit.css' />
 </head>
 <body>
-  
+  <header>
   <%- include('../partials/header.ejs')  %>
-<section>
-   <form action="/products/edit/:idProduct?_method=PUT" method="POST" class="form-editpproduct-style"></form>      
-         <h3>Listado de Productos</h3>
-         <div class="back-edit">
-         <div class="contenedor-editProduct">
-            <div class="formulario-producto">
-               <label for="">ID</label>
-               <input type="number" name="productID" class="input-style">            
-            </div>
-         <div class="formulario-producto">
-            <label for="">Nombre</label>
-            <input type="text" name="productName" class="input-style">            
-         </div>
-         <div class="formulario-producto">
-            <label for="">Descripción</label>
-            <input type="text" name="productDetail" class="input-style">
-         </div>
-         <div class="formulario-producto">
-            <label for="">Clasificación</label>
-            <input type="text" name="productClass" class="input-style">
-      </div>
-      <div class="formulario-producto">
-         <label for="">Precio</label>
-          <input type="text" name="productPrice" class="input-style">
-    </div>
-         <div class="formulario-producto">
-            <label for="">Foto</label>
-            <input type="file" name="avatar" class="input-style">
-        </div>
+  </header>
+   <main>
+      <h3>Listado de Productos</h3><br>
+      <table>
+            <thead>
+               <th> Id </th>
+               <th> Nombre </th>
+               <th> Descripción </th>
+               <th> Clasificación </th>
+               <th> Variedad  </th>
+               <th> Precio </th>
+               <th> Featured </th>
+            </thead>
+            <tbody
+               <% products.forEach(product => { %>
+               <tr>
+                   <td><%= product.idProduct%> </td>
+                   <td><%= product.name%></td>
+                   <td><%= product.description%></td>
+                   <td><%= product.classification%></td>
+                   <td><%= product.variety%></td>
+                   <td><%= product.price%></td>
+                   <td><%= product.featured%></td>
+                   <td><form method="GET" action="/products/edit/<%= product.idProducto %>">
+                     <input type="submit" value="EDITAR">
+                       </form>
+               </td>
+               </tr>
+               <%  }) %>
+            </tbody>
+         </table>
 
-        <button type="submit" onclick="alert('Vas a Guardar un nuevo producto')" class="button-style-save">Guardar</button><br>
-         
-      </div>
-      <div>
-      <h2>Listado de Productos a Editar</h2>
-      <ul>
-         <% for (let i =0; i< product.length ;i++) { %>
-            <li>
-               <a href="/products/edit/<%= product[i].id %>"><button type="submit" value="Search" onclick="alert('Vas a editar este producto')" class="button-style-save"> Editar <%= product[i].name %></button></a><br>
-            </li>
-         <% } %>
-      </ul>
-   </div>
-</div>
-</div>
+      </main>
 
-      </form>
-   </section>
       <%- include('../partials/footer.ejs')  %>
 
    </body>

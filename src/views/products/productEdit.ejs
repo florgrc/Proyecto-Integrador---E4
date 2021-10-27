@@ -25,16 +25,16 @@
   <%- include('../partials/header.ejs')  %>
 <section>
       <form action="/products/edit/:idProduct?_method=PUT" method="POST" class="form-editpproduct-style">
-         <h3>Modificar Product Id: <%- productToEdit.id %></h3>
+         <h3>Modificar Productos</h3>
          <div class="back-edit">
          <div class="contenedor-editProduct">
             <div class="formulario-producto">
                <label for="">ID</label>
-               <input type="number" name="productId" value="<%- productToEdit.id %>" class="input-style">            
+               <input type="number" name="productId" value="" class="input-style">            
             </div>
          <div class="formulario-producto">
             <label for="">Nombre</label>
-            <input type="text" name="productName" value="<%- productToEdit.name %>" class="input-style">            
+            <input type="text" name="productName" value="" class="input-style">            
          </div>
          <div class="formulario-producto">
             <label for="">Descripción</label>
