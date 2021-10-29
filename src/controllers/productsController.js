@@ -44,9 +44,9 @@ const productsController = {
    },
     edit: (req,res) => {
         
-       /* let loQueBuscoElUsuario = req.query;
+
         let id = req.params.idProduct;
-        res.send(id); */
+        /* res.send(id); */
         
         let idProduct = req.params.idProduct -1;
 
@@ -83,7 +83,7 @@ const productsController = {
         ]
         
         let productToEdit = product[idProduct];
-        /* res.send(productToEdit);*/
+        /* res.send(productToEdit); */ 
         res.render ("products/productEdit", {productToEdit: productToEdit}); 
 
    },

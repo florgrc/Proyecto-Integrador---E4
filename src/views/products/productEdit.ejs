@@ -25,16 +25,15 @@
   <%- include('../partials/header.ejs')  %>
 <section>
       <form action="/products/edit/:idProduct?_method=PUT" method="POST" class="form-editpproduct-style">
-         <h3>Modificar Productos</h3>
+         <h3>Modificar Producto: <%- productToEdit.name %></h3>
          <div class="back-edit">
          <div class="contenedor-editProduct">
             <div class="formulario-producto">
-               <label for="">ID</label>
-               <input type="number" name="productId" value="" class="input-style">            
+               <label for="">ID</label><td><%= productToEdit.id%> </td>
             </div>
          <div class="formulario-producto">
             <label for="">Nombre</label>
-            <input type="text" name="productName" value="" class="input-style">            
+            <input type="text" name="productName" value="<%- productToEdit.name %>" class="input-style">            
          </div>
          <div class="formulario-producto">
             <label for="">Descripción</label>
@@ -52,10 +51,7 @@
             <label for="">Foto</label>
             <input type="file" name="avatar" class="input-style">
         </div>
-         
          <button type="submit" onclick="alert('Vas a modificar este producto. Estás seguro?')" class="button-style-save">Modificar</button><br>
-         <button type="reset" class="button-style-show">Publicar</button>
-         <button type="reset" class="button-style-hide">Ocultar</button>
       </div>
 
 </div>

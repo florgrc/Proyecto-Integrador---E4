@@ -46,9 +46,10 @@
                    <td><%= product.variety%></td>
                    <td><%= product.price%></td>
                    <td><%= product.featured%></td>
-                   <td><form method="GET" action="/products/edit/<%= product.idProducto %>">
-                     <input type="submit" value="EDITAR">
-                       </form>
+                   <td><form method="GET" action="/products/edit/<%= product.idProduct %>">
+                     <input type="submit" value="Search" class="button-style-save"><br>
+                  
+                  </form>
                </td>
                </tr>
                <%  }) %>
