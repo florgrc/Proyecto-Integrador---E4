@@ -1,1 +1,12 @@
-/*dar estilo a la Tabla. Las imagenes no van */
+* {
+    box-sizing: border-box;
+ }
+ .button-new {
+    background-color: rgb(53, 25, 25);
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    height: 50%;
+    align-self: center;
+    margin: 2px;
+  }

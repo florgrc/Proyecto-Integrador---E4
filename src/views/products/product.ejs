@@ -19,22 +19,24 @@
     <link rel="stylesheet" href='/css/productcart.css'>
     <link rel="stylesheet" href='/css/productoCreate.css'>
     <link rel='stylesheet' href='/css/productEdit.css' />
+    <link rel="stylesheet" href='/css/product.css'> 
 </head>
 <body>
   <header>
   <%- include('../partials/header.ejs')  %>
   </header>
    <main>
-      <h3>Listado de Productos</h3><br>
+      <h2>Listado de Productos</h2><br>
       <table>
             <thead>
                <th> Id </th>
                <th> Nombre </th>
-               <th> Descripción </th>
                <th> Clasificación </th>
                <th> Variedad  </th>
                <th> Precio </th>
                <th> Featured </th>
+               <td><button class="button button-new"> Nuevo producto</button></td>
+
             </thead>
             <tbody>
                <% products.forEach(product => { %>
