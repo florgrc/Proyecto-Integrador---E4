@@ -7,7 +7,7 @@ router.post("/", productsController.store);
 router.get("/detail/:idProduct", productsController.detail);
 router.get("/cart", productsController.cart);
 router.get("/edit/:idProduct", productsController.edit);
-router.put("/edit/:idProduct", productsController.update); 
+router.put("/", productsController.update); 
 router.get("/create", productsController.create);
 
 /*Procesamiento de datos*/

@@ -2,26 +2,11 @@
     box-sizing: border-box;
  }
  
-
- 
- .formulario-producto {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-    width: 12.5%; 
- }
- .back-edit {
-    background-color: rgba(231, 229, 229, 0.959);
-    margin: 10px;
- }
-
- .contenedor-editProduct {
-    display: flex;
-    flex-direction: row;
-    width: 100% ;
-    font-weight: bold;
-   
- }
+ .title-h3 {
+   font-size: 36px;
+   text-align: center;
+   margin: 15px;
+}
 
 .input-style {
    margin: 10px 5px;
@@ -38,7 +23,7 @@
 }
 
 .button-style-save {
-   background-color: rgb(70, 106, 136);
+   background-color: rgb(35, 53, 33);
    color: white;
    border-radius: 5px;
    padding: 5px;
@@ -47,7 +32,7 @@
    margin: 2px;
 }
 
-.button-style-hide {
+.button-style-delete {
    background-color: rgb(109, 35, 35);
    color: white;
    border-radius: 5px;
@@ -55,5 +40,4 @@
    height: 50%;
    align-self: center;
    margin: 2px;
-
 }

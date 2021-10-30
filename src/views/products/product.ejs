@@ -26,33 +26,42 @@
   <%- include('../partials/header.ejs')  %>
   </header>
    <main>
-      <h2>Listado de Productos</h2><br>
+      <h2 class="titulo">Listado de Productos</h2><br>
+      <a href="/products/create"><button class="button button-new"> Nuevo producto</button></a>
       <table>
             <thead>
                <th> Id </th>
                <th> Nombre </th>
+               <th> Descripción </th>
                <th> Clasificación </th>
                <th> Variedad  </th>
                <th> Precio </th>
                <th> Featured </th>
-               <td><button class="button button-new"> Nuevo producto</button></td>
-
+               <th> Foto </th>
             </thead>
             <tbody>
                <% products.forEach(product => { %>
                <tr>
-                   <td><%= product.idProduct%> </td>
-                   <td><%= product.name%></td>
-                   <td><%= product.description%></td>
-                   <td><%= product.classification%></td>
-                   <td><%= product.variety%></td>
-                   <td><%= product.price%></td>
-                   <td><%= product.featured%></td>
-                   <td><form method="GET" action="/products/edit/<%= product.idProduct %>">
-                     <input type="submit" value="Modificar" class="button-style-save"><br>
+                   <td class="detail-product"><%= product.idProduct%> </td>
+                   <td class="detail-product"><%= product.name%></td>
+                   <td class="detail-product"><%= product.description%></td>
+                   <td class="detail-product"><%= product.classification%></td>
+                   <td class="detail-product"><%= product.variety%></td>
+                   <td class="detail-product"><%= product.price%></td>
+                   <td class="detail-product"><%= product.featured%></td>
+                   <td class="detail-product"><%= product.image%></td>
                   
+                   <td class="detail-product">
+                     <form method="GET" action="/products/edit/<%= product.idProduct %>">
+                     <input type="submit" value="Modificar" class="button-style-modify">
+                     </form>
+                  </td>
+                  <td class="detail-product">
+                     <form method="GET" action="/products">
+                     <input type="submit" value="Ocultar" class="button-style-hide">
                   </form>
-               </td>
+                  </td>
+            
                </tr>
                <%  }) %>
             </tbody>

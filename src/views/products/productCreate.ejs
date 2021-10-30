@@ -17,61 +17,75 @@
     <link rel="stylesheet" href='/css/login.css'>
     <link rel="stylesheet" href='/css/productDetail.css'>
     <link rel="stylesheet" href='/css/productcart.css'>
-    <link rel="stylesheet" href='/css/productCreate.css'>
-    <link rel="stylesheet" href='/css/productEdit.css'>
+    <link rel="stylesheet" href='/css/productoCreate.css'>
+    <link rel='stylesheet' href='/css/productEdit.css' />
+    <link rel="stylesheet" href='/css/product.css'> 
 </head>
 <body>
- 
-  <%- include('../partials/header.ejs')  %> 
-  
-      <form action="/productCreate" method="POST" class="form-newpproduct-style">
+  <header>
+  <%- include('../partials/header.ejs')  %>
+  </header>
+   <main>
+      <form action="/products" method="POST" class="form-editpproduct-style">
+         <h3 class="title-h3">Crear Producto</h3>
+      <table>
+         <thead>
+            <th> Id </th>
+            <th> Nombre </th>
+            <th> Descripción </th>
+            <th> Clasificación </th>
+            <th> Variedad  </th>
+            <th> Precio </th>
+            <th> Featured </th>
+            <th> Foto </th>
+         </thead>
+         <tbody>
+            <tr>
+                <td> 
+                  <input  style="width : 50px;" type="number" name="idProduct" class="input-style">      
+               </td>
+               <td> 
+                  <input style="width : 130px;" type="number" name="name" class="input-style">      
+               </td>
+               <td> 
+                  <input style="width : 130px;" type="number" name="description" class="input-style">      
+               </td>
+               <td> 
+                  <input style="width : 130px;" type="number" name="classification" class="input-style">      
+               </td>
+               <td> 
+                  <input style="width : 130px;" type="number" name="variety" class="input-style">      
+               </td>
+               <td> 
+                  <input style="width : 70px;" type="number" name="price" class="input-style">      
+               </td>
+               <td> 
+                  <input style="width : 130px;" type="number" name="featured" class="input-style">      
+               </td>
+               <td>
+                  <input style="width : 130px;" type="file" name="image" class="input-style">
+               </td>
+               <td class="detail-product">
+                  <button type="submit" onclick="alert('Producto Guardado')" class="button-style-save">Guardar</button><br>
+            </td>
+            </tr>
+            
+          
+         </tbody>
+      </table>
+   </form>
+      </main>
 
-      </form>
+      <%- include('../partials/footer.ejs')  %>
 
-
-      <form action="/products/edit/:idProduct?_method=PUT" method="POST" class="form-editpproduct-style">
-         <h3>Crear Producto</h3>
-         <div class="back-edit">
-         <div class="contenedor-editProduct">
-            <div class="formulario-producto">
-               <label for="">ID</label>
-               <input type="number" name="productID" class="input-style">            
-            </div>
-         <div class="formulario-producto">
-            <label for="">Nombre</label>
-            <input type="text" name="productName" class="input-style">            
-         </div>
-         <div class="formulario-producto">
-            <label for="">Descripción</label>
-            <input type="text" name="productDetail" class="input-style">
-         </div>
-         <div class="formulario-producto">
-            <label for="">Clasificación</label>
-            <input type="text" name="productClass" class="input-style">
-      </div>
-      <div class="formulario-producto">
-         <label for="">Variedad</label>
-          <input type="text" name="variety" class="input-style">
-    </div>
-      <div class="formulario-producto">
-         <label for="">Precio</label>
-          <input type="text" name="productPrice" class="input-style">
-    </div>
-         <div class="formulario-producto">
-            <label for="">Foto</label>
-            <input type="file" name="avatar" class="input-style">
-        </div>
-         
-         <button type="submit" onclick="alert('Producto Guardado')" class="button-style-save">Guardar</button><br>
-         <button type="reset" onclick="alert('Producto Eliminado')" class="button-style-hide">Eliminar</button><br>
-      </div>
-
-</div>
-</div>
-</div>
-
-      </form>  
-
-     <%- include('../partials/footer.ejs')  %>
    </body>
 </html>
+<!--Falta incluir
+
+/products (GET)
+Listado de productos
+
+/products (POST)
+Acción de creación (a donde se envía el formulario)
+
+-->

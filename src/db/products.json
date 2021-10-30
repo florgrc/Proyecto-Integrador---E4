@@ -150,21 +150,33 @@
         "image": "/images/vinos/vino1.jpg"
     },
     {
-        "idProduct": "16",
-        "name": "Gran Enemigo",
-        "description": "Cata – Color: Granate intenso. Aromas: Se muestra elegante, con notas de fruta negra madura, especias, hierbas aromáticas, con un final a chocolate. Boca: Es complejo, su entrada es dulce, taninos pulidos, estructurado, final largo, lleno de matices.",
-        "classification": "Tinto",
-        "variety": "Malbec",
-        "price": "4000",
-        "avatar": "vino2.jpg"
-    },
-    {
-        "idProduct": "17",
-        "name": "dsakj",
-        "description": "ksa",
+        "idProduct": "",
+        "name": "",
+        "description": "",
         "classification": "",
         "variety": "",
         "price": "",
-        "avatar": ""
+        "featured": "",
+        "image": ""
+    },
+    {
+        "idProduct": 1,
+        "name": "Sauce - Hoisin",
+        "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+        "classification": "lectus suspendisse potenti in eleifend",
+        "variety": "Malbec",
+        "price": "$21",
+        "featured": "true",
+        "image": ""
+    },
+    {
+        "idProduct": 1,
+        "name": "Sauce - Hoisin",
+        "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+        "classification": "lectus suspendisse potenti in eleifend",
+        "variety": "Malbec",
+        "price": "$21",
+        "featured": "true",
+        "image": ""
     }
-]   
+]
