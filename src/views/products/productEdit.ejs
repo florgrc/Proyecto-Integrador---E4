@@ -24,12 +24,16 @@
   
   <%- include('../partials/header.ejs')  %>
 <section>
-      <form action="/products/edit/:idProduct?_method=PUT" method="POST" class="form-editpproduct-style">
-         <h3>Modificar Producto: <%- productToEdit.name %></h3>
-         <div class="back-edit">
+      
+   <div>
+      <h2>Modificar Producto: <%- productToEdit.name %></h2>
+      <form action="/products/edit/<%= productToEdit.idProduct%>?_method=PUT" method="POST" class="form-editpproduct-style">
+      <input type="submit" onclick="alert('Vas a modificar este producto. Estás seguro?')" value="Modificar" class="button-style-save"><br>      
+   </div>   
+   <div class="back-edit">
          <div class="contenedor-editProduct">
             <div class="formulario-producto">
-               <label for="">ID</label><td><%= productToEdit.id%> </td>
+               <label for="">ID</label><td><%= productToEdit.idProduct%> </td>
             </div>
          <div class="formulario-producto">
             <label for="">Nombre</label>
@@ -37,28 +41,34 @@
          </div>
          <div class="formulario-producto">
             <label for="">Descripción</label>
-            <input type="text" name="productDetail" class="input-style">
+            <input type="text" name="productDescription" value="<%- productToEdit.description %>" class="input-style">
          </div>
-         <div class="formulario-producto">
+      <div class="formulario-producto">
             <label for="">Clasificación</label>
-            <input type="text" name="productClass" class="input-style">
+            <input type="text" name="productClassification" value="<%- productToEdit.classification %>" class="input-style">
+      </div>
+      <div class="formulario-producto">
+         <label for="">Variedad</label>
+         <input type="text" name="productVariety" value="<%- productToEdit.variety %>" class="input-style">
       </div>
       <div class="formulario-producto">
          <label for="">Precio</label>
-          <input type="text" name="productPrice" class="input-style">
-    </div>
-         <div class="formulario-producto">
+          <input type="text" name="productPrice" value="<%- productToEdit.price%>" class="input-style">
+      </div>
+      <div class="formulario-producto">
+         <label for="">Featured</label>
+          <input type="text" name="productFeatured" value="<%- productToEdit.featured%>" class="input-style">
+      </div>
+      <div class="formulario-producto">
             <label for="">Foto</label>
-            <input type="file" name="avatar" class="input-style">
-        </div>
-         <button type="submit" onclick="alert('Vas a modificar este producto. Estás seguro?')" class="button-style-save">Modificar</button><br>
+            <input type="file" name="productImage" class="input-style">
       </div>
 
-</div>
+
 </div>
 
-      </form>
-   </section>
+   </form>
+</section>
       <%- include('../partials/footer.ejs')  %>
 
    </body>

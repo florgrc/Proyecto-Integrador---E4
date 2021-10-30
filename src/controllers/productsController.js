@@ -39,71 +39,51 @@ const productsController = {
     cart: (req,res) => {
          res.render("products/productCart")
     },
-    editView: (req,res) => {
-        res.render("products/productEdit")
-   },
+
     edit: (req,res) => {
-        
-
-        let id = req.params.idProduct;
-        /* res.send(id); */
-        
+                
         let idProduct = req.params.idProduct -1;
-
-        let product = 
-        [
-            {
-                id: 1,
-                name:'VinoDiana',
-                detail: 'Malbec',
-                class: 'Espumante',
-                price: 1000,
-                avatar: '',
-           
-             },
-             {
-                id: 2,
-                name:'VinoFlor',
-                detail: 'Cabernet',
-                class: 'Tinto',
-                price: 1500,
-                avatar: '',
-           
-             },
-             {
-                id: 3,
-                name:'VinoJuan',
-                detail: 'Cabernet',
-                class: 'Tinto',
-                price: 1500,
-                avatar: '',
-           
-             }
-
-        ]
-        
-        let productToEdit = product[idProduct];
+        let productToEdit = products[idProduct];
         /* res.send(productToEdit); */ 
         res.render ("products/productEdit", {productToEdit: productToEdit}); 
 
    },
     update: (req,res) => {
+
+    
+   /*  let idProduct = req.params.idProduct -1;
+
+    let productUpdate = req.body; */     
+   
+    /* let productUpdate = [
         
-     let product = {
-        id: req.body.productId,
-        name:req.body.productName,
-        detail: req.body.productDetail,
-        class: req.body.productClass,
-        price: req.body.productPrice,
-        avatar: req.body.avatar,
+            "idProduct": req.params -1,
+            "name": "Sauce - Hoisin",
+            "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.",
+            "classification": "lectus suspendisse potenti in eleifend",
+            "variety": "Malbec",
+            "price": "$21203.00",
+            "featured": true,
+            "image": "/images/vinos/vino1.jpg"
+        
+    ]; */
+    let productUpdate = {
+        "idProduct": req.params.idProduct -1,
+        "name":req.body.productName,
+        "description": req.body.productDetail,
+        "classification": req.body.productClass,
+        "variety": req.body.productVariety, 
+        "price": req.body.productPrice,
+        "featured": true,
+        "image": "/images/vinos/vino1.jpg",
    
-     }
-          
-   
-     /*res.send(product);*/
-     res.redirect('/products');
-     /* res.send (req.body);*/
-     /*res.render("/product", {product: product}); */
+     };
+     products [productUpdate.idProduct] = productUpdate;       
+     /* res.send('va por put'); */
+     /* res.redirect('/products'); */
+     /* products [productUpdate.idProduct];*/
+     res.send ('va por put ' + products [0]); // Trabajar sobre esta linea y Trabjar sobre el JSON de products.json
+     /*res.render("/product", {product: productUpdate}); */
 
    },
     create: (req,res) => {
