@@ -178,5 +178,35 @@
         "price": "$21",
         "featured": "true",
         "image": ""
+    },
+    {
+        "idProduct": "21",
+        "name": "Flor",
+        "description": "flor",
+        "classification": "",
+        "variety": "",
+        "price": "",
+        "featured": "true",
+        "image": ""
+    },
+    {
+        "idProduct": 1,
+        "name": "Sauce - Hoisin",
+        "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+        "classification": "lectus suspendisse potenti in eleifend",
+        "variety": "Malbec",
+        "price": "$21203.00",
+        "featured": "true",
+        "image": ""
+    },
+    {
+        "idProduct": 1,
+        "name": "Sauce - Hoisin",
+        "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+        "classification": "lectus suspendisse potenti in eleifend",
+        "variety": "Malbec",
+        "price": "$0",
+        "featured": "true",
+        "image": ""
     }
 ]
