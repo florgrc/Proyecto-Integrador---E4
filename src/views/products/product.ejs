@@ -37,7 +37,6 @@
                <th> Variedad  </th>
                <th> Precio </th>
                <th> Featured </th>
-               <th> Foto </th>
             </thead>
             <tbody>
                <% products.forEach(product => { %>
@@ -49,7 +48,6 @@
                    <td class="detail-product"><%= product.variety%></td>
                    <td class="detail-product"><%= product.price%></td>
                    <td class="detail-product"><%= product.featured%></td>
-                   <td class="detail-product"><%= product.image%></td>
                   
                    <td class="detail-product">
                      <form method="GET" action="/products/edit/<%= product.idProduct %>">
