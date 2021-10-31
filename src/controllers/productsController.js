@@ -49,15 +49,15 @@ const productsController = {
    },
     update: (req,res) => {
 
+    let idProduct = req.params.idProduct;
     
-        let product = {
-            idProduct: nuevoId(),
-            ...req.body,
-            image: req.body.image
-    
-        }
-          products.push(product);
-    
+    let product = {
+        idProduct: idProduct,
+        ...req.body,
+        image: req.body.image}
+
+        products.push(product);
+
           let jsonDeProductos = JSON.stringify(products, null, 4);
           fs.writeFileSync(path.resolve(__dirname,"../db/products.json"),jsonDeProductos);
     
