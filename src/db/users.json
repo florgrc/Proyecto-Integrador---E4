@@ -1,0 +1,182 @@
+[
+    {
+      "id": 1,
+      "first_name": "Zandra",
+      "last_name": "Chezier",
+      "email": "zchezier0@gravatar.com",
+      "password": "pxv0nqP6",
+      "category": "user",
+      "image": "user_1.jpg"
+    },
+    {
+      "id": 2,
+      "first_name": "Chadwick",
+      "last_name": "Richold",
+      "email": "crichold1@bandcamp.com",
+      "password": "SZVg2Ro",
+      "category": "user",
+      "image": "user_2.jpg"
+    },
+    {
+      "id": 3,
+      "first_name": "Joseito",
+      "last_name": "Bradtke",
+      "email": "jbradtke2@japanpost.jp",
+      "password": "nzFBot25qXV",
+      "category": "user",
+      "image": "user_3.jpg"
+    },
+    {
+      "id": 4,
+      "first_name": "Bobbie",
+      "last_name": "Leivers",
+      "email": "bleivers3@nih.gov",
+      "password": "lmNyC2nFzbY",
+      "category": "user",
+      "image": "user_4.jpg"
+    },
+    {
+      "id": 5,
+      "first_name": "Obediah",
+      "last_name": "Redmayne",
+      "email": "oredmayne4@nifty.com",
+      "password": "En3KYNS5zkk",
+      "category": "user",
+      "image": "user_5.jpg"
+    },
+    {
+      "id": 6,
+      "first_name": "Vaclav",
+      "last_name": "Clifton",
+      "email": "vclifton5@hibu.com",
+      "password": "OLajD0W2jMN",
+      "category": "user",
+      "image": "user_6.jpg"
+    },
+    {
+      "id": 7,
+      "first_name": "Terrye",
+      "last_name": "Ludlom",
+      "email": "tludlom6@flavors.me",
+      "password": "s4lqrxNF",
+      "category": "user",
+      "image": "user_7.jpg"
+    },
+    {
+      "id": 8,
+      "first_name": "Dorita",
+      "last_name": "Langlands",
+      "email": "dlanglands7@sun.com",
+      "password": "hmLqn0sPzhQG",
+      "category": "user",
+      "image": "user_8.jpg"
+    },
+    {
+      "id": 9,
+      "first_name": "Amery",
+      "last_name": "Inman",
+      "email": "ainman8@answers.com",
+      "password": "7WL1DNvDdm",
+      "category": "user",
+      "image": "user_9.jpg"
+    },
+    {
+      "id": 10,
+      "first_name": "May",
+      "last_name": "O'Doogan",
+      "email": "modoogan9@yelp.com",
+      "password": "Bu0zMh12C9o0",
+      "category": "user",
+      "image": "user_10.jpg"
+    },
+    {
+      "id": 11,
+      "first_name": "Todd",
+      "last_name": "Latchford",
+      "email": "tlatchforda@discuz.net",
+      "password": "xEbErXxfnM2",
+      "category": "user",
+      "image": "user_11.jpg"
+    },
+    {
+      "id": 12,
+      "first_name": "El",
+      "last_name": "Hayhow",
+      "email": "ehayhowb@harvard.edu",
+      "password": "aAL4moyE",
+      "category": "user",
+      "image": "user_12.jpg"
+    },
+    {
+      "id": 13,
+      "first_name": "Sandra",
+      "last_name": "Judron",
+      "email": "sjudronc@bizjournals.com",
+      "password": "tHYlbSi",
+      "category": "user",
+      "image": "user_13.jpg"
+    },
+    {
+      "id": 14,
+      "first_name": "Gretel",
+      "last_name": "Pfaffel",
+      "email": "gpfaffeld@google.nl",
+      "password": "3toyaZE3eC53",
+      "category": "user",
+      "image": "user_14.jpg"
+    },
+    {
+      "id": 15,
+      "first_name": "Merrili",
+      "last_name": "Fattori",
+      "email": "mfattorie@weibo.com",
+      "password": "HWtqmxz6A9x",
+      "category": "user",
+      "image": "user_15.jpg"
+    },
+    {
+      "id": 16,
+      "first_name": "Brina",
+      "last_name": "Slite",
+      "email": "bslitef@bravesites.com",
+      "password": "EgfGZY0Fota",
+      "category": "user",
+      "image": "user_16.jpg"
+    },
+    {
+      "id": 17,
+      "first_name": "Grete",
+      "last_name": "Dugood",
+      "email": "gdugoodg@nps.gov",
+      "password": "1Y4i5Oy3xF",
+      "category": "user",
+      "image": "user_17.jpg"
+    },
+    {
+      "id": 18,
+      "first_name": "Suzanna",
+      "last_name": "Forman",
+      "email": "sformanh@rakuten.co.jp",
+      "password": "NFrIJhET",
+      "category": "user",
+      "image": "user_18.jpg"
+    },
+    {
+      "id": 19,
+      "first_name": "Ossie",
+      "last_name": "Speddin",
+      "email": "ospeddini@seattletimes.com",
+      "password": "pQ9E0dxy1qI2",
+      "category": "user",
+      "image": "user_19.jpg"
+    },
+    {
+      "id": 20,
+      "first_name": "Velma",
+      "last_name": "Mongin",
+      "email": "vmonginj@zdnet.com",
+      "password": "aZyY1eyxHqDa",
+      "category": "user",
+      "image": "user_20.jpg"
+    }
+  ]

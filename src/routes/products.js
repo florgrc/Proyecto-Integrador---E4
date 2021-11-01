@@ -23,6 +23,7 @@ router.get("/cart", productsController.cart);
 router.get("/edit/:idProduct", productsController.edit);
 router.put("/edit/:idProduct", productsController.update); 
 router.get("/create", productsController.create);
+router.delete("/edit/delete/:idProduct", productsController.delete);
 
 /*Procesamiento de datos*/
 

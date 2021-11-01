@@ -55,8 +55,8 @@
                      </form>
                   </td>
                   <td class="detail-product">
-                     <form method="GET" action="/products">
-                     <input type="submit" value="Ocultar" class="button-style-hide">
+                     <form method="POST" action="/products/edit/delete/<%= product.idProduct%>?_method=DELETE">
+                     <input type="submit" value="Eliminar" class="button-style-hide">
                   </form>
                   </td>
             

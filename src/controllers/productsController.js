@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs");
+const { dir } = require("console");
 
 /*Traer Productos*/
 
@@ -63,6 +64,26 @@ const productsController = {
     
         res.redirect("/products"); 
           
+    },
+    delete: (req, res) => {
+
+        let productToDelete = req.params.idProduct;
+
+        /* Indexa la propiedad idProduct del objeto para hacer la eliminacion por ID de producto (no por posicion en el array)  */
+        var index = -1;
+        for(var i=0; i<products.length; i++)
+          if(products[i].idProduct == productToDelete) {
+            index = i;
+            break;
+          }
+
+        products.splice(index, 1);
+
+        let productsJson = JSON.stringify(products, null, 4);
+        fs.writeFileSync(path.resolve(__dirname,"../db/products.json"),productsJson);
+
+        res.redirect("/products");
+
     },
     create: (req,res) => {
 
