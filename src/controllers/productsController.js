@@ -54,7 +54,6 @@ const productsController = {
         let idProductToEdit = req.params.idProduct;
         var index = -1;
         for(var i=0; i<products.length; i++){
-            console.log(products[i].idProduct);
             if(products[i].idProduct == idProductToEdit) {
             index = i;
             break;

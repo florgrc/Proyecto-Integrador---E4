@@ -100,24 +100,14 @@
         "image": "/images/vinos/vino1.jpg"
     },
     {
-        "idProduct": 11,
-        "name": "Curry Paste - Madras",
-        "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+        "idProduct": "11",
+        "name": "ONCE Curry Paste - Madras",
+        "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
         "classification": "vestibulum vestibulum ante ipsum primis in faucibus orci luctus et",
         "variety": "suscipit a",
         "price": "$1150.00",
-        "featured": true,
-        "image": "/images/vinos/vino1.jpg"
-    },
-    {
-        "idProduct": 12,
-        "name": "Paste - Black Olive",
-        "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
-        "classification": "blandit",
-        "variety": "pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas",
-        "price": "$3200.00",
-        "featured": true,
-        "image": "/images/vinos/vino1.jpg"
+        "featured": "true",
+        "image": ""
     },
     {
         "idProduct": 13,
@@ -140,13 +130,13 @@
         "image": "/images/vinos/vino1.jpg"
     },
     {
-        "idProduct": 15,
-        "name": "Tea - Apple Green Tea",
-        "description": "In congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+        "idProduct": "15",
+        "name": "QUINCE Tea - Apple Green Tea",
+        "description": "In congue. Etiam justo. Etiam pretium iaculis justo.In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
         "classification": "posuere cubilia curae mauris viverra diam vitae",
         "variety": "ultrices phasellus id sapien in sapien iaculis congue vivamus metus",
         "price": "$2390.00",
-        "featured": true,
-        "image": "/images/vinos/vino1.jpg"
+        "featured": "true",
+        "image": ""
     }
 ]
