@@ -56,7 +56,7 @@
                   </td>
                   <td class="detail-product">
                      <form method="POST" action="/products/edit/delete/<%= product.idProduct%>?_method=DELETE">
-                     <input type="submit" value="Eliminar" class="button-style-hide">
+                     <input type="submit" onclick="confirm('¿Estas seguro que deseas eliminar el producto?')" value="Eliminar" class="button-style-hide">
                   </form>
                   </td>
             
