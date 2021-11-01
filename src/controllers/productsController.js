@@ -55,14 +55,14 @@ const productsController = {
         idProduct: idProduct,
         ...req.body,
         image: req.body.image}
+        
+        products[idProduct-1] = product;
 
-        products.push(product);
-
-          let jsonDeProductos = JSON.stringify(products, null, 4);
-          fs.writeFileSync(path.resolve(__dirname,"../db/products.json"),jsonDeProductos);
+        let jsonDeProductos = JSON.stringify(products, null, 4);
+        fs.writeFileSync(path.resolve(__dirname,"../db/products.json"),jsonDeProductos);
     
-          res.redirect("/products");
-          /* FALTA HACER QUE SE APLIQUE LA MODIFICACION*/
+        res.redirect("/products"); 
+          
     },
     create: (req,res) => {
 
