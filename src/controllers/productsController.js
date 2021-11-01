@@ -41,13 +41,30 @@ const productsController = {
          res.render("products/productCart")
     },
 
-    edit: (req,res) => {
+    /*edit: (req,res) => {
                 
         let idProduct = req.params.idProduct -1;
         let productToEdit = products[idProduct];
         res.render ("products/productEdit", {productToEdit: productToEdit}); 
+    },*/
 
-   },
+    edit: (req,res) => {
+        /* fix para funcion de edicion de producto buscando por idProduct en lugar de posicion en el array */
+        
+        let idProductToEdit = req.params.idProduct;
+        var index = -1;
+        for(var i=0; i<products.length; i++){
+            console.log(products[i].idProduct);
+            if(products[i].idProduct == idProductToEdit) {
+            index = i;
+            break;
+          }
+        }
+        let productToEdit = products[index];
+        
+        res.render ("products/productEdit", {productToEdit: productToEdit}); 
+    },
+
     update: (req,res) => {
 
     let idProduct = req.params.idProduct;
@@ -71,12 +88,12 @@ const productsController = {
 
         /* Indexa la propiedad idProduct del objeto para hacer la eliminacion por ID de producto (no por posicion en el array)  */
         var index = -1;
-        for(var i=0; i<products.length; i++)
+        for(var i=0; i<products.length; i++){
           if(products[i].idProduct == productToDelete) {
             index = i;
             break;
           }
-
+        }
         products.splice(index, 1);
 
         let productsJson = JSON.stringify(products, null, 4);

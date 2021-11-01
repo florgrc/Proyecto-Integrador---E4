@@ -1,6 +1,6 @@
 [
     {
-        "idProduct": "1",
+        "idProduct": 1,
         "name": "Chateau Lafite",
         "description": "Vino frencho",
         "classification": "Merlot",
@@ -20,7 +20,7 @@
         "image": "/images/vinos/vino1.jpg"
     },
     {
-        "idProduct": "3",
+        "idProduct": 3,
         "name": "pocholo",
         "description": "pavaroti",
         "classification": "busan",
@@ -40,7 +40,7 @@
         "image": ""
     },
     {
-        "idProduct": "5",
+        "idProduct": 5,
         "name": "papas fritas",
         "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
         "classification": "aenean auctor gravida",
@@ -70,7 +70,7 @@
         "image": "/images/vinos/vino1.jpg"
     },
     {
-        "idProduct": "8",
+        "idProduct": 8,
         "name": "Cerveza",
         "description": "Quilmes",
         "classification": "Lupulo",
