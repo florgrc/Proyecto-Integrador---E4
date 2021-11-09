@@ -1,3 +1,23 @@
+    DAILY 9.11.2021:
+
+FLOR
+    - Qué Hice: Poniendome al dia con el contenido.
+    - Qué voy a hacer: Seguir repasando contenidos para poder hacer las tareas asignadas del sprint.
+    - Qué problemas tuve: Falta de tiempo para dedicarle a la revision de temas del sprint.
+JUAN
+    - Qué Hice: Poniendo al dia el contenido del curso
+    - Qué voy a hacer: Seguir trabajando sobre el contenido del sprint.
+    - Qué problemas tuve: No tuve mucho tiempo, pero aproveche lo que pude.
+DIANA
+    - Qué Hice: Repaso de contenidos y adecuacion del formulario de registro.
+    - Qué voy a hacer: Intentar ponerme al dia con temas pendientes del sprint.
+    - Qué problemas tuve: Falta de tiempo.
+MATI
+    - Qué Hice: Ponerme al dia con los temas.
+    - Qué voy a hacer: Modificar codigo para guarde modificacion de producto e implementar login de usuario.
+    - Qué problemas tuve: Falta de tiempo para dedicarle al contenido.
+
+    
     DAILY 27.10.2021:
 
 FLOR
