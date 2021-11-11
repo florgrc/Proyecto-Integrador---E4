@@ -1,12 +1,10 @@
-const express = require('express');
-const router = express.Router();
-const { body } = require ('express-validator');
-const path = require("path");
-const usersController = require('../controllers/usersController');
+const fs = require ('fs');
+const { stringify } = require('querystring');
 
-let logUsersLoginMiddleware = require ('../middlewares/logUsersLoginMiddleware');
-
-// Validaciones
+function logUsersLoginMiddleware (req,res,next) {
+    fs.appendFileSync  ('logUsersLogin.txt', 'Se ingreso en la página: ' + req.url  + stringify (req.body));
+    next();
+};
 
 const validateRegisterForm = [
     body('nameRegister').notEmpty ().withMessage('Debes completar el campo de nombre'),
@@ -20,11 +18,5 @@ const validateLoginForm = [
     body('passwordLogin').notEmpty ().withMessage('Debes completar el campo de password')
 ];
 
-// Rutas
 
-router.get('/register', usersController.register);
-router.post('users/register', usersController.create);
-router.get('/login', usersController.login);
-router.post('/login', validateLoginForm,  usersController.loginValidation);
-
-module.exports = router;
+module.exports = logUsersLoginMiddleware;

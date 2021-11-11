@@ -1,5 +1,8 @@
+const { validationResult } = require ('express-validator');
+// const { body } = require ('express-validator');
 const path = require("path");
 const fs = require("fs");
+const { stringify } = require('querystring');
 
 
 let jsonUsers = fs.readFileSync(path.resolve(__dirname,"../db/users.json"),"utf-8");
@@ -23,7 +26,29 @@ const usersController = {
      },
 
      login: (req,res) => {
-         res.render("users/login")
+        res.render("users/usersLogin"); 
+
+    },
+    loginValidation: (req,res) => {
+        
+        // let users = usersModel.all();
+
+
+        let errors = validationResult (req);
+        
+        if (errors.isEmpty ()) {
+            let user = req.body();
+            userId = 001;
+            //userId = usersModel.create(user);
+            res.redirect('/users/'+ userId )         
+            // res.send('todo ok: ' + stringify(req.body));
+
+        } else {
+            res.send(errors);
+   
+        }
+
+
     }
 
 };
