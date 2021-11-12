@@ -3,6 +3,7 @@ const router = express.Router();
 const { body } = require ('express-validator');
 const path = require("path");
 const usersController = require('../controllers/usersController');
+const guestMiddleware = require('../middlewares/guestMiddleware');
 
 let logUsersLoginMiddleware = require ('../middlewares/logUsersLoginMiddleware');
 
@@ -22,7 +23,7 @@ const validateLoginForm = [
 
 // Rutas
 
-router.get('/register', usersController.register);
+router.get('/register', guestMiddleware, usersController.register);
 router.post('users/register', usersController.create);
 router.get('/login', usersController.login);
 router.post('/login', validateLoginForm,  usersController.loginValidation);

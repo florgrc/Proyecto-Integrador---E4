@@ -9,15 +9,16 @@ let products = JSON.parse(jsonProducts);
 
 
 const nuevoId = () => {
-    let ultimo = 0
+   let ultimo = 0
     products.forEach(product => {
-        if (product.id > ultimo) {
-            ultimo = product.id;    
+        if (product.idProduct > ultimo) {
+            ultimo = product.idProduct;    
         }
     })
 
     return ultimo +1;
 }
+
 
 const productsController = {
     detail: (req,res) => {
@@ -102,9 +103,10 @@ const productsController = {
 
     },
     create: (req,res) => {
-
-       res.render('products/productCreate')
+        let newID = nuevoId()
+       res.render('products/productCreate',{newID})
       },
+      
     product: (req, res) => {
     res.render("products/product", {products})
   },
@@ -120,12 +122,11 @@ const productsController = {
 
       let jsonDeProductos = JSON.stringify(products, null, 4);
       fs.writeFileSync(path.resolve(__dirname,"../db/products.json"),jsonDeProductos);
-
-      console.log(product);
+      
       res.redirect("/products");
       
   }
-
+    
 
 };
 

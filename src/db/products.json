@@ -80,63 +80,13 @@
         "image": ""
     },
     {
-        "idProduct": 9,
-        "name": "Cookies - Amaretto",
-        "description": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
-        "classification": "elementum pellentesque quisque porta volutpat erat quisque erat eros",
-        "variety": "diam id ornare",
-        "price": "$2670.00",
-        "featured": false,
-        "image": "/images/vinos/vino1.jpg"
-    },
-    {
         "idProduct": 10,
-        "name": "Glaze - Apricot",
-        "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
-        "classification": "congue etiam justo etiam pretium iaculis justo in hac",
-        "variety": "eu massa donec",
-        "price": "$1567.00",
-        "featured": true,
-        "image": "/images/vinos/vino1.jpg"
-    },
-    {
-        "idProduct": "11",
-        "name": "ONCE Curry Paste - Madras",
-        "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
-        "classification": "vestibulum vestibulum ante ipsum primis in faucibus orci luctus et",
-        "variety": "suscipit a",
-        "price": "$1150.00",
-        "featured": "true",
-        "image": ""
-    },
-    {
-        "idProduct": 13,
-        "name": "Crab - Meat",
-        "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
-        "classification": "proin at turpis a pede posuere",
-        "variety": "vel sem sed sagittis nam congue risus semper",
-        "price": "$920.00",
-        "featured": true,
-        "image": "/images/vinos/vino1.jpg"
-    },
-    {
-        "idProduct": 14,
-        "name": "Wine - Manischewitz Concord",
-        "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo.",
-        "classification": "quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt",
-        "variety": "volutpat erat quisque erat eros viverra",
-        "price": "$1100.00",
-        "featured": true,
-        "image": "/images/vinos/vino1.jpg"
-    },
-    {
-        "idProduct": "15",
-        "name": "QUINCE Tea - Apple Green Tea",
-        "description": "In congue. Etiam justo. Etiam pretium iaculis justo.In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
-        "classification": "posuere cubilia curae mauris viverra diam vitae",
-        "variety": "ultrices phasellus id sapien in sapien iaculis congue vivamus metus",
-        "price": "$2390.00",
-        "featured": "true",
-        "image": ""
+        "name": "",
+        "description": "",
+        "classification": "",
+        "variety": "",
+        "price": "",
+        "featured": ""
     }
+
 ]

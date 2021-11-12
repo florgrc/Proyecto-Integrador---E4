@@ -12,6 +12,7 @@ let users = JSON.parse(jsonUsers);
 
 const usersController = {
      register: (req,res) => {
+         res.cookie("testing", "Hola MUNDO", {maxAge : 100 *30})
          res.render("users/register")},
     
      create: (req,res) => {

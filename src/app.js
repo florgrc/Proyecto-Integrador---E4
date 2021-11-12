@@ -1,10 +1,14 @@
 const express = require('express');
 const path = require('path');
+const session = require ("express-session");
+const cookies = require ("cookie-parser")
 
 const app = express();
 
 const methodOverride = require ("method-override");
 app.use (methodOverride("_method"));
+
+app.use(cookies());
 
 app.use (express.urlencoded({ extended: false }))
 app.use(express.json());
