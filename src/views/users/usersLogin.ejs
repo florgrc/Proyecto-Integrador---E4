@@ -10,20 +10,16 @@
             <div class="login-form">
                <div class="sign-in-htm">
                   <div class="group">
-                     <label for="user" class="label">Nombre de Usuario</label>
-					      <input id="user" type="text" class="input" name="nameLogin">
-                  </div>
-                  <div class="group">
                      <label for="email" class="label">email</label>
-					      <input id="email" type="email" class="input" name="emailLogin">
+					      <input id="email" name="email" type="email" class="input" name="emailLogin">
                   </div>
                   <div class="group">
                      <label for="pass" class="label">Password</label>
-                     <input id="pass" type="password" class="input" data-type="password" name="passwordLogin">
+                     <input id="pass" name="password" type="password" class="input" data-type="password" name="passwordLogin">
                   </div>
                   <div class="group">
                      <input id="check" type="checkbox" class="check" checked>
-                     <label for="check"><input class="icon" type="checkbox" id="box1" value="password"> Recordarme </label>
+                     <label for="check"><input class="icon" type="checkbox" id="box1" name="remember_user" value="password"> Recordarme </label>
                   </div>
                   <div class="group">
                      <a href="/users/login"><button type="submit" class="button" value="Sign In">Ingresar</button></a>
@@ -34,6 +30,7 @@
                      <a href="/users/register">¿No tenes cuenta? Registrate!</a>
                   </div>
                </div>
+              
                <div class="sign-up-htm">
                   <div class="group">
                      <label for="user" class="label">Nombre de Usuario</label>

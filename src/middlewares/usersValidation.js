@@ -13,7 +13,6 @@ const validateRegisterForm = [
 ];
 
 const validateLoginForm = [
-    body('nameLogin').notEmpty ().withMessage('Debes completar el campo de nombre'),
     body('emailLogin').isEmail ().withMessage('Debes completar el campo de email'),
     body('passwordLogin').notEmpty ().withMessage('Debes completar el campo de password')
 ];

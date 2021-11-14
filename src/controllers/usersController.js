@@ -12,7 +12,7 @@ let users = JSON.parse(jsonUsers);
 
 const usersController = {
      register: (req,res) => {
-         res.cookie("testing", "Hola MUNDO", {maxAge : 100 *30})
+        
          res.render("users/register")},
     
      create: (req,res) => {
@@ -27,6 +27,7 @@ const usersController = {
      },
 
      login: (req,res) => {
+        res.cookie("testing", "Hola MUNDO", {maxAge : 1000 *30})
         res.render("users/usersLogin"); 
 
     },
@@ -41,6 +42,11 @@ const usersController = {
             let user = req.body();
             userId = 001;
             //userId = usersModel.create(user);
+            /* Aca comienza REMEMBER USER */
+            if(req.body.remember_user) {
+                res.cookie("userEmail", req.body.email, {maxAge : (1000 * 60) * 2})
+            }
+            /* Aca termina REMEMBER USER */
             res.redirect('/users/'+ userId )         
             // res.send('todo ok: ' + stringify(req.body));
 

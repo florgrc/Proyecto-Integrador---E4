@@ -16,14 +16,13 @@ const validateRegisterForm = [
 ];
 
 const validateLoginForm = [
-    body('nameLogin').notEmpty ().withMessage('Debes completar el campo de nombre'),
     body('emailLogin').isEmail ().withMessage('Debes completar el campo de email'),
     body('passwordLogin').notEmpty ().withMessage('Debes completar el campo de password')
 ];
 
 // Rutas
 
-router.get('/register', guestMiddleware, usersController.register);
+router.get('/register', usersController.register);
 router.post('users/register', usersController.create);
 router.get('/login', usersController.login);
 router.post('/login', validateLoginForm,  usersController.loginValidation);
