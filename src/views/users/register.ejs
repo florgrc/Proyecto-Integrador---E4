@@ -4,27 +4,50 @@
    <%- include('../partials/header.ejs')  %>
    
   </header>
-      <form action="/register" method="POST" class="form-style">
+      <form action="/users/register" method="POST" enctype="multipart/form-data" class="form-style">
          <h3>Registrate</h3>
          <div class="formulario-registro">
             <label for="">Nombre</label>
             <input type="text" name="firstname">
+            <% if (locals.errors && errors.firstname ) { %>
+                   <%= errors.firstname.message %>
+               </div>
+           <% } %>
          </div>
          <div class="formulario-registro">
             <label for="">Apellido</label>
             <input type="text" name="lastname">
+            <% if (locals.errors && errors.lastname ) { %>
+                   <%= errors.lastname.message %>
+               </div>
+           <% } %>
          </div>
          <div class="formulario-registro">
             <label for="">Email</label>
             <input type="email" name="email">
+            <% if (locals.error && errors.email ) { %>
+                   <%= errors.email.message %>
+               </div>
+           <% } %>
          </div>
          <div class="formulario-registro">
             <label for="">Contraseña</label>
             <input type="password" name="password">
+            <% if (locals.errors && errors.password ) { %>
+               <%= errors.password.message %>
+           </div>
+       <% } %>
          </div>
          <div class="formulario-registro">
             <label for="">Repetir Contraseña</label>
             <input type="password" name="repassword">
+            <% if (locals.errors && errors.repassword ) { %>
+               <%= errors.repassword.message %>
+           </div>
+       <% } %>
+         </div>
+            <div class="formulario-registro" >
+            <input type="file" name="userAvatar" placeholder="Avatar"> 
          </div>
          <button type="submit" class="enviar">Registrarme</button><br>
          <button type="reset" class="borrar">Borrar</button><br>

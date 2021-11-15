@@ -2,29 +2,54 @@ const { validationResult } = require ('express-validator');
 // const { body } = require ('express-validator');
 const path = require("path");
 const fs = require("fs");
+const bcrypt = require('bcryptjs');
+
 const { stringify } = require('querystring');
 
 
-let jsonUsers = fs.readFileSync(path.resolve(__dirname,"../db/users.json"),"utf-8");
-let users = JSON.parse(jsonUsers);
+const jsonUsers = fs.readFileSync(path.resolve(__dirname,"../db/users.json"),"utf-8");
+const users = JSON.parse(jsonUsers);
 
 
-
+const newUserId = () => {
+    let ultimo = 0;
+    users.forEach(user => {
+        if(user.id > ultimo) {
+            ultimo = user.id;
+        }
+    });
+    return ultimo +1;
+};
 const usersController = {
-     register: (req,res) => {
+    home: (req, res) => {
+        res.render("users");
+    },
+    register: (req,res) => {
         
          res.render("users/register")},
     
      create: (req,res) => {
-         let usuario =  {
-             nombre: req.body.nombre,
-             apellido: req.body.apellido,
-             date: req.body.date,
-             password: req.body.password,
-             repasword: req.body.repassword
+         let userAvatar = req.file.filename || "default-image1.png"
+         let newUserId =  {
+             id: newUserId (),
+             ...req.body,
+             password: bcrypt.hashSync(req.body.password),
+             image: userAvatar
          }
-         res.redirect("users/list")
+         console.log(req.file);
+         if(req.file){
+             users.push(newUserId);
+             letjsonUsers = JSON.stringify(users, null, 4);
+             fs.writeFileSync(path.resolve(__dirname, '../db/users.json', jsonUsers)),
+             res.redirect('/');
+         }
+         else {
+             res.render("users/register")
+         }
+         
      },
+
+     
 
      login: (req,res) => {
         res.cookie("testing", "Hola MUNDO", {maxAge : 1000 *30})

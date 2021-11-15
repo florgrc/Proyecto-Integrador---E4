@@ -7,6 +7,7 @@ const app = express();
 
 const methodOverride = require ("method-override");
 app.use (methodOverride("_method"));
+ 
 
 app.use(cookies());
 
@@ -22,9 +23,8 @@ app.set("views",path.resolve(__dirname, "views"));
 app.use(express.static(path.resolve(__dirname,'../public')));
 
 app.listen(3000, () => {
-    console.log('Servidor corriendo en puerto 3000')
-  }); 
-
+  console.log('Servidor corriendo en puerto 3000')
+}); 
 
 /*Rutas*/
 
