@@ -7,10 +7,16 @@ function logUsersLoginMiddleware (req,res,next) {
     /* Empieza REMEMBER USER*/
     let emailInCookie = req.cookies.userEmail;
     let userFromCookie = User.findByField("email", emailInCookie);
+    
+    const validateLoginForm = [
+        body('emailLogin').isEmail ().withMessage('Debes completar el campo de email'),
+        body('passwordLogin').notEmpty ().withMessage('Debes completar el campo de password')
+    ];
 
     if(userFromCookie) {
         req.session.userLogged = userFromCookie;
     }
+    
     /* Termina REMEMBER USER*/
 };
 

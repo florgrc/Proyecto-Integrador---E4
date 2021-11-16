@@ -1,4 +1,4 @@
-const { validationResult } = require ('express-validator');
+const { validationResult, body } = require ('express-validator');
 // const { body } = require ('express-validator');
 const path = require("path");
 const fs = require("fs");
@@ -7,8 +7,8 @@ const bcrypt = require('bcryptjs');
 const { stringify } = require('querystring');
 
 
-const jsonUsers = fs.readFileSync(path.resolve(__dirname,"../db/users.json"),"utf-8");
-const users = JSON.parse(jsonUsers);
+const jsonUsers = fs.readFileSync(path.resolve(__dirname,'../db/users.json'), "utf-8");
+
 
 
 const newUserId = () => {
@@ -21,30 +21,28 @@ const newUserId = () => {
     return ultimo +1;
 };
 const usersController = {
-    home: (req, res) => {
-        res.render("users");
-    },
+
     register: (req,res) => {
-        
-         res.render("users/register")},
+          res.render('users/register')},
     
      create: (req,res) => {
-         let userAvatar = req.file.filename || "default-image1.png"
+         let imageUser = req.file.userAvatar || "default-image1.png"
          let newUserId =  {
              id: newUserId (),
              ...req.body,
-             password: bcrypt.hashSync(req.body.password),
-             image: userAvatar
+             password: bcrypt.hashSync(req.body.password, 20),
+             image : imageUser
+            
          }
          console.log(req.file);
          if(req.file){
              users.push(newUserId);
              letjsonUsers = JSON.stringify(users, null, 4);
              fs.writeFileSync(path.resolve(__dirname, '../db/users.json', jsonUsers)),
-             res.redirect('/');
+             res.redirect('/users/login');
          }
          else {
-             res.render("users/register")
+             res.render('users/register')
          }
          
      },
@@ -82,7 +80,6 @@ const usersController = {
 
 
     }
-
 };
 
 module.exports = usersController;

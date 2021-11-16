@@ -4,13 +4,15 @@
    <%- include('../partials/header.ejs')  %>
    
   </header>
+  
+    <div class="sign-up-htm">     
       <form action="/users/register" method="POST" enctype="multipart/form-data" class="form-style">
          <h3>Registrate</h3>
          <div class="formulario-registro">
             <label for="">Nombre</label>
             <input type="text" name="firstname">
             <% if (locals.errors && errors.firstname ) { %>
-                   <%= errors.firstname.message %>
+                   <%= errors.firstname.msg %>
                </div>
            <% } %>
          </div>
@@ -18,15 +20,15 @@
             <label for="">Apellido</label>
             <input type="text" name="lastname">
             <% if (locals.errors && errors.lastname ) { %>
-                   <%= errors.lastname.message %>
+                   <%= errors.lastname.msge %>
                </div>
            <% } %>
          </div>
          <div class="formulario-registro">
             <label for="">Email</label>
             <input type="email" name="email">
-            <% if (locals.error && errors.email ) { %>
-                   <%= errors.email.message %>
+            <% if (locals.errors && errors.email ) { %>
+                   <%= errors.email.msg %>
                </div>
            <% } %>
          </div>
@@ -34,7 +36,7 @@
             <label for="">Contraseña</label>
             <input type="password" name="password">
             <% if (locals.errors && errors.password ) { %>
-               <%= errors.password.message %>
+               <%= errors.password.msg %>
            </div>
        <% } %>
          </div>
@@ -42,7 +44,7 @@
             <label for="">Repetir Contraseña</label>
             <input type="password" name="repassword">
             <% if (locals.errors && errors.repassword ) { %>
-               <%= errors.repassword.message %>
+               <%= errors.repassword.msg %>
            </div>
        <% } %>
          </div>
