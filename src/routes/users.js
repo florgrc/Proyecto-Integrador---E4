@@ -2,16 +2,16 @@ const express = require('express');
 const router = express.Router();
 const { body } = require ('express-validator');
 const path = require("path");
-const usersController = require('../controllers/usersController');
-const guestMiddleware = require('../middlewares/guestMiddleware');
 const multer = require("multer");
-//const upload = multer({storage});
+const usersController = require('../controllers/usersController');
 
-let logUsersLoginMiddleware = require ('../middlewares/logUsersLoginMiddleware');
+
 
 /*middleware*/
 const multerMiddleware = require('../middlewares/multerMiddleware');
 const validation = require ('../middlewares/usersRegisterValidation');
+const guestmiddleware = require ('../middlewares/guestMiddleware');
+const logUsersLoginMiddleware = require ('../middlewares/logUsersLoginMiddleware');
 
 
 const validateLoginForm = [
@@ -19,14 +19,49 @@ const validateLoginForm = [
     body('passwordLogin').notEmpty ().withMessage('Debes completar el campo de password')
 ];
 
+const storage = multer.diskStorage({
+    destination:function(req,file,cb){
+        cb(null, path.resolve(__dirname, '../../public/images/users'))
+    },
+    filename: function(req,file,cb){
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+});
+
+const upload = multer({storage: storage})
+
 // Rutas usuarios
 
 
-// Ruta registro
+// Registro
 router.get('/register', usersController.register);
-router.post('/register', multerMiddleware, validation, usersController.create);
+router.post('/register', upload.single('userAvatar'), usersController.store);
+
+
+
 
 router.get('/login', usersController.login);
 router.post('/login', validateLoginForm,  usersController.loginValidation);
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Registro 
+
+router.get('/register', usersController.register);
+router.post('/register', upload.single('userAvatar'), usersController.store);
+
+
+

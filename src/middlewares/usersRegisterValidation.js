@@ -1,4 +1,4 @@
-const path = require ('path');
+const path = require("path");
 const {body} = require('express-validator');
 const fs = require ('fs');
 
@@ -10,22 +10,19 @@ function logUsersLoginMiddleware (req,res,next) {
 };
 
 const validateRegisterForm =[
-    body('name').notEmpty ().withMessage('Debes completar tu nombre'),
+    body('firstname').notEmpty ().withMessage('Debes completar tu nombre'),
     body('lastname').notEmpty ().withMessage('Debes completar tu apellido'),
     body('email').notEmpty ().withMessage('Debes ingresar tu mail').bail ()
-    .isEmail ().withMessage ('Debes ingresar una direccion de emial valida'),
-    body('password').notEmpty ().withMessage('Debes ingresar una contraseña'),
-    body('avatar').custom((value, {req})=>{
-        let file = req.file;
-        let extensions = ['png', 'jpeg', 'jpg'];
-        if(!file) {
-            throw new Error ('Debes insertar una imagen)')
-        }else{
-            let fileExtension=path.extname(file.originalname)
-    }
+    .isEmail ().withMessage ('Debes ingresar una direccion de email valida').bail,
+    body('password').notEmpty().withMessage('Debes ingresar una contraseña').bail()
+    .isLength({min:8}).withMessage('la contraseña debe tener 8 caracteres'),
+    body('repassword').custom((value,{req})=>{
+        if(value != req.body.password){
+            throw new Error('Las contraseñas deben coincidir');
+        }
+        return true;
     })
-];
+]
+ module.exports = validateRegisterForm;
+    
 
-
-
-module.exports = logUsersLoginMiddleware;
