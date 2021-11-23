@@ -12,12 +12,33 @@
                
                  <div class="sign-up-htm">
                     <div class="group">
-                       <label for="user" class="label">Nombre de Usuario</label>
+                       <label for="user" class="label">Nombre</label>
                        <input id="user" type="text" name="firstname" class="input">
                        <% if (locals.errors && errors.firstname ) { %>
                                <%= errors.firstname.msg %>
                        <% } %>
                     </div>
+                    <div class="group">
+                     <label for="user" class="label">Apellido</label>
+                     <input id="user" type="text" name="lastname" class="input">
+                     <% if (locals.errors && errors.lastname ) { %>
+                             <%= errors.lastname.msg %>
+                     <% } %>
+                  </div>
+                  <div class="group">
+                     <label for="email" class="label">Email</label>
+                     <input id="email" type="email" name="email" placeholder="usuario@tudominio.com" class="input">
+                     <% if (locals.errors && errors.email ) { %>
+                            <%= errors.email.msg %>
+                    <% } %>
+                  </div>
+                  <div class="group">
+                     <label for="image" class="label">Imagen de perfil</label>
+                     <input type="file" name="avatar" accept=".png, .jpg, .jpeg">
+                     <% if (locals.errors && errors.avatar ) { %>
+                            <%= errors.avatar.msg %>
+                    <% } %>
+                  </div>
                     <div class="group">
                         <label for="user" class="label">Contraseña</label>
                         <input id="pass" type="password" name="password" placeholder="Mínimo 8 caracteres" class="input">
@@ -26,16 +47,9 @@
                         <% } %>
                     </div>
                     <div class="group">
-                       <label for="pass" class="label">Repetir Contraseña</label>
-                       <input id="pass" type="password" class="input" data-type="password">
-                    </div>
-                    <div class="group">
-                       <label for="email" class="label">Email</label>
-                       <input id="email" type="email" name="email" placeholder="usuario@tudominio.com" class="input">
-                       <% if (locals.errors && errors.email ) { %>
-                              <%= errors.email.msg %>
-                      <% } %>
-                    </div>
+                     <label for="pass" class="label">Repetir Contraseña</label>
+                     <input id="pass" type="password" class="input" data-type="password">
+                  </div>
                     <div class="group">
                        <a href="#"><button type="submit" class="button" value="Registrarse">Registrarse</button></a>
                     </div>
