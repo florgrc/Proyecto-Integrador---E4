@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const res = require('express/lib/response');
 const bcrypt = require('bcryptjs');
+const User = require("../models/users")
 
 const { validationResult } = require ('express-validator');
 const { body } = require ('express-validator');
@@ -30,7 +31,7 @@ const usersController = {
     register: (req, res) => {
         res.render('users/register');  
     },
-
+ 
     store: (req, res) =>{
        
         let userAvatar = req.file.filename || "default-image1.png"
@@ -57,35 +58,38 @@ const usersController = {
 
 
     login : (req,res) => {
-    res.cookie("testing", "Hola MUNDO", {maxAge : 1000 *30})
-    res.render("users/usersLogin"); 
-
+        res.render("users/usersLogin"); 
     },
 
     loginValidation : (req,res) => {
-    
-    // let users = usersModel.all();
-
-
-    let errors = validationResult (req);
-    
-    if (errors.isEmpty ()) {
-        let user = req.body();
-        userId = 001;
-        //userId = usersModel.create(user);
-        /* Aca comienza REMEMBER USER */
-        if(req.body.remember_user) {
-            res.cookie("userEmail", req.body.email, {maxAge : (1000 * 60) * 2})
+        
+        let userToLogin = User.findByField("email", req.body.email);
+        
+        if (userToLogin){
+            let passwordOk = bcrypt.compareSync(req.body.password, userToLogin.password)
+            if (passwordOk){ 
+                return res.redirect("/")
+            } 
+            return res.render("users/usersLogin", {
+                errors: {
+                    email: {
+                        msg: "La contraseña es incorrecta"
+                    }
+                }
+            }) 
+            
         }
-        /* Aca termina REMEMBER USER */
-        res.redirect('/users/'+ userId )         
-        // res.send('todo ok: ' + stringify(req.body));
-
-    } else {
-        res.send(errors);
-
-    }
+        return res.render("users/usersLogin", {
+            errors: {
+                email: {
+                    msg: "Las credenciales son invalidas"
+                }
+            }
+        }) 
+        
     }
 }
+    
 
-module.exports = usersController
+
+    module.exports = usersController

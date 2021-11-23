@@ -15,8 +15,8 @@ const logUsersLoginMiddleware = require ('../middlewares/logUsersLoginMiddleware
 
 
 const validateLoginForm = [
-    body('emailLogin').isEmail ().withMessage('Debes completar el campo de email'),
-    body('passwordLogin').notEmpty ().withMessage('Debes completar el campo de password')
+    body('email').isEmail ().withMessage('Debes completar el campo de email'),
+    body('password').notEmpty ().withMessage('Debes completar el campo de password')
 ];
 
 const storage = multer.diskStorage({
@@ -38,30 +38,8 @@ router.get('/register', usersController.register);
 router.post('/register', upload.single('userAvatar'), usersController.store);
 
 
-
-
 router.get('/login', usersController.login);
 router.post('/login', validateLoginForm,  usersController.loginValidation);
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Registro 
-
-router.get('/register', usersController.register);
-router.post('/register', upload.single('userAvatar'), usersController.store);
-
-
 

@@ -4,55 +4,52 @@
    <%- include('../partials/header.ejs')  %>
    
   </header>
-  
-      <div class="formulario-registro">
-      <h3>Registrate</h3>   
-      </div>
-      <form action="/register" method="POST" enctype="multipart/form-data" class="form-style">
-         <div class="formulario-registro">
-            <label for="">Nombre</label>
-            <input type="text" name="firstname">
-                        <% if (locals.errors && errors.firstname ) { %>
-                                <%= errors.firstname.msg %>
-                            </div>
-                        <% } %>
+      <form action="/register" method="POST" class="form-style">
+        <div class="login-wrap">
+           <div class="register-html">
+              <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrarse</label></a>
+              <div class="login-form">
+               
+                 <div class="sign-up-htm">
+                    <div class="group">
+                       <label for="user" class="label">Nombre de Usuario</label>
+                       <input id="user" type="text" name="firstname" class="input">
+                       <% if (locals.errors && errors.firstname ) { %>
+                               <%= errors.firstname.msg %>
+                       <% } %>
                     </div>
-         
-         <div class="formulario-registro">
-            <label for="">Apellido </label>
-            <input type="text" name="lastname">
-            <% if (locals.errors && errors.lastname ) { %>
-                   <%= errors.lastname.msg %>
-               </div>
-           <% } %>
-       </div>
-
-         <div class="formulario-registro">
-            <label for="">Email</label>
-            <input type="email" name="email" placeholder="usuario@tudominio.com">
-            <% if (locals.errors && errors.email ) { %>
-                   <%= errors.email.msg %>
-               </div>
-           <% } %>
-       </div>
-         <div class="formulario-registro">
-            <label for="">Contraseña</label>
-            <input type="password" name="password" placeholder="minimo 8 caracteres">
+                    <div class="group">
+                        <label for="user" class="label">Contraseña</label>
+                        <input id="pass" type="password" name="password" placeholder="Mínimo 8 caracteres" class="input">
                         <% if (locals.errors && errors.password ) { %>
                                 <%= errors.password.msg %>
-                            </div>
                         <% } %>
-                    </div>  
-         <div class="formulario-registro">
-            <label for="">Repetir Contraseña</label>
-            <input type="password" name="repassword" placeholder="Confirma tu contraseña">
-         </div>
-            <div class="formulario-registro" >
-                  <input type="file" name="userAvatar">
-              </div>   
-         <button type="submit"  class="enviar">Registrarme</button><br>
-         <button type="reset" class="borrar">Borrar</button><br>
-      </form>
+                    </div>
+                    <div class="group">
+                       <label for="pass" class="label">Repetir Contraseña</label>
+                       <input id="pass" type="password" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                       <label for="email" class="label">Email</label>
+                       <input id="email" type="email" name="email" placeholder="usuario@tudominio.com" class="input">
+                       <% if (locals.errors && errors.email ) { %>
+                              <%= errors.email.msg %>
+                      <% } %>
+                    </div>
+                    <div class="group">
+                       <a href="#"><button type="submit" class="button" value="Registrarse">Registrarse</button></a>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                       <label for="tab-1"><a href="/users/login"> Ya tengo una cuenta</label></a>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+    
+        </form>
+  
       <%- include('../partials/footer.ejs')  %> 
 
    </body>
