@@ -24,7 +24,7 @@ const storage = multer.diskStorage({
         cb(null, path.resolve(__dirname, '../../public/images/users'))
     },
     filename: function(req,file,cb){
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+        cb(null, "image-" + Date.now() + path.extname(file.originalname))
     }
 });
 
@@ -35,7 +35,7 @@ const upload = multer({storage: storage})
 
 // Registro
 router.get('/register', usersController.register);
-router.post('/register', upload.single('userAvatar'), usersController.store);
+router.post('/', upload.single('userAvatar'), usersController.store);
 
 
 router.get('/login', usersController.login);

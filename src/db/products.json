@@ -76,17 +76,26 @@
         "classification": "Lupulo",
         "variety": "Birra",
         "price": "70000",
-        "featured": "false",
+        "featured": true,
         "image": ""
     },
     {
         "idProduct": 10,
-        "name": "",
-        "description": "",
-        "classification": "",
-        "variety": "",
-        "price": "",
-        "featured": ""
+        "name": "fff",
+        "description": "fff",
+        "classification": "fff",
+        "variety": "ff",
+        "price": 8450,
+        "featured": true,
+        "image": ""
+    },
+    {
+        "idProduct": "11",
+        "name": "flor",
+        "description": "flor",
+        "classification": "lfor",
+        "variety": "lfor",
+        "price": "7317432",
+        "featured": "true"
     }
-
 ]

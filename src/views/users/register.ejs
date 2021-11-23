@@ -2,9 +2,9 @@
 <body>
    
    <%- include('../partials/header.ejs')  %>
-   
+    
   </header>
-      <form action="/register" method="POST" class="form-style">
+      <form action="/users" method="POST" class="form-style" enctype="multipart/form-data">
         <div class="login-wrap">
            <div class="register-html">
               <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrarse</label></a>
@@ -34,7 +34,7 @@
                   </div>
                   <div class="group">
                      <label for="image" class="label">Imagen de perfil</label>
-                     <input type="file" name="avatar" accept=".png, .jpg, .jpeg">
+                     <input type="file" name="userAvatar" accept=".png, .jpg, .jpeg">
                      <% if (locals.errors && errors.avatar ) { %>
                             <%= errors.avatar.msg %>
                     <% } %>
