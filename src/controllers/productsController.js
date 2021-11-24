@@ -9,6 +9,7 @@ const {
 let jsonProducts = fs.readFileSync(path.resolve(__dirname, "../db/products.json"), "utf-8");
 let products = JSON.parse(jsonProducts);
 
+        /* Indexa la propiedad idProduct del objeto para hacer la eliminacion por ID de producto (no por posicion en el array) y devuelve ese valor */
 function findProductID(idSearch) {
     var index = -1;
     for (var i = 0; i < products.length; i++) {
@@ -81,8 +82,6 @@ const productsController = {
     delete: (req, res) => {
 
         let productToDelete = findProductID(req.params.idProduct);
-
-        /* Indexa la propiedad idProduct del objeto para hacer la eliminacion por ID de producto (no por posicion en el array)  */
 
         products.splice(productToDelete, 1);
 
