@@ -21,6 +21,7 @@
     font-weight: bold;
     transition: all 0.5s;
 }
+
 .regularButton:hover {
     background-color: rgb(49, 80, 100);
 }
@@ -35,9 +36,11 @@
     align-self: center;
     transition: all 0.5s;
 }
+
 .confirmButton:hover {
-    background-color: #4CAF50;
+    background-color: #5e4caf;
 }
+
 .cancelButton {
     border: none;
     padding: 10px;
@@ -47,39 +50,10 @@
     font-weight: bold;
     transition: all 0.5s;
 }
+
 .cancelButton:hover {
     background-color: rgb(150, 35, 35);
 }
-
-.button-style-show {
-    background-color: rgb(76, 134, 49);
-    color: white;
-    border-radius: 5px;
-    padding: 5px;
-    height: 50%;
-    margin: 2px;
-}
-
-.button-style-save {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-}
-
-.button-new {
-    background-color: rgb(53, 25, 25);
-    color: white;
-    border-radius: 5px;
-    padding: 5px;
-    height: 50%;
-    align-self: center;
-    margin: 10px;
-}
-
 
 /* Body y .content para el posicionamiento correcto del footer al pie de la pagina sin importar scroll*/
 body {
@@ -201,6 +175,9 @@ body {
     cursor: pointer;
     background-color: #ffffff;
     transition: all 0.75s;
+}
+.search i {
+    color: #351919;
 }
 
 .search button:hover {
@@ -406,6 +383,7 @@ a {
     align-items: center;
     color: rgb(34, 31, 31);
 }
+
 .productImageDiv {
     text-align: center;
 }
@@ -424,10 +402,12 @@ a {
     flex-direction: column;
     margin-top: 15px;
 }
+
 .product .productImage {
     width: 80%;
     justify-content: center;
 }
+
 .product:hover {
     width: 33%;
 }
@@ -708,6 +688,16 @@ th {
     margin: 10px;
 }
 
+.createProductButton {
+    text-align: right;
+}
+
+#createProductButton:hover {
+    background-color: green;
+}
+
+/* CARRITO */
+
 .cart-product {
     display: flex;
     flex-direction: row;
@@ -881,7 +871,7 @@ th {
 }
 
 
-.createProductContainer, .editProductContainer, input,
+:is(.createProductContainer, .editProductContainer) input,
 select,
 textarea {
     width: 100%;
@@ -891,31 +881,43 @@ textarea {
     resize: vertical;
 }
 
-.createProductContainer, .editProductContainer, label {
+#createProductButton {
+    background-color: rgb(0, 73, 0);
+}
+
+#idProduct {
+    background-color: #f2f2f2;
+}
+
+:is(.createProductContainer, .editProductContainer) label {
     padding: 12px 12px 12px 0;
     display: inline-block;
 }
 
-.createProductContainer, .editProductContainer, input[type=submit] {
+:is(.createProductContainer, .editProductContainer) input[type=submit] {
     font-size: 20px;
 }
 
-/*.createProductContainer, .editProductContainer, input[type=submit]:hover {
+:is(.createProductContainer, .editProductContainer) input[type=submit]:hover {
     background-color: #45a049;
-}*/
+}
 
-.createProductContainer .editProductContainer, input[type=file] {
+:is(.editProductContainer) input[type=submit]:hover {
+    background-color: #4569a0;
+}
+
+:is(.createProductContainer, .editProductContainer) input[type=file] {
     display: none;
 }
 
-.createProductContainer, .editProductContainer, .custom-file-upload {
+:is(.createProductContainer, .editProductContainer) .custom-file-upload {
     background-color: #ccc;
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
 }
 
-.createProductContainer, .editProductContainer {
+:is(.createProductContainer, .editProductContainer) {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;

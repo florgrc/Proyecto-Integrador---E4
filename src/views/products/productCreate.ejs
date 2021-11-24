@@ -11,7 +11,7 @@
                   <label for="idProduct">ID del producto</label>
                </div>
                <div class="col-75">
-                  <input type="number" id="idProduct" name="idProduct">
+                  <input type="number" id="idProduct" name="idProduct" value=<%= newID%> readonly>
                   <br>
                </div>
             </div>
@@ -76,8 +76,8 @@
             </div>
             <br>
             <div class="row">
-               <input type="submit" id='modifyProduct' value="Modificar"
-                  onclick="return confirm('¿Estas seguro que deseas guardar los cambios?')" class="confirmButton">
+               <input type="submit" id='createProduct' value="Crear producto"
+                  onclick="return confirm('¿Estas seguro que desea crear este producto?')" class="confirmButton">
             </div>
       </form>
    </main>

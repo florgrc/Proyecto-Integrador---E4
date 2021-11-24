@@ -4,7 +4,9 @@
    <%- include('../partials/header.ejs')  %>
    <main>
       <h2 class="titulo">Listado de Productos</h2><br>
-      <a href="/products/create"><button class="regularButton"> Nuevo producto</button></a>
+      <div class="createProductButton">
+         <a href="/products/create"><button class="regularButton" id=createProductButton>Nuevo producto</button></a>
+      </div>
       <table>
          <thead>
             <th> Id </th>

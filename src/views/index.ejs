@@ -1,9 +1,8 @@
-<%- include('partials/head.ejs')  %>
+<%- include('partials/head')  %>
 
 <body>
 
-  <%- include('partials/header.ejs')  %>
-  <div class="content">
+  <%- include('partials/header')  %>
     <div class="slide">
       <div class="slide-inner">
         <input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true" hidden="" checked="checked">
@@ -58,13 +57,13 @@
     </section>
     <div class="pic-collage">
       <div class="pic-collage1">
-        <a href="#" class="ahref"><img width="100px" src="/images/cata.jpg" alt="carroussel" class="pic"></a>
+        <a href="#" class="ahref"><img src="/images/cata.jpg" alt="carroussel" class="pic"></a>
         <h2 class="text-pic1">Las mejores degustaciones de vinos</h2>
-        <a href="#"><img width="100px" src="/images/HomeCarroussel1.jpg" alt="carroussel" class="pic"></a>
+        <a href="#"><img src="/images/HomeCarroussel1.jpg" alt="carroussel" class="pic"></a>
         <h2 class="text-pic2">Adherite a nuestro club de puntos y recibi los mejores beneficios</h2>
       </div>
       <div class="pic-collage2">
-        <a href="#"><img width="100px" src="/images/bodega.jpg" alt="carroussel" class="pic2"></a>
+        <a href="#"><img src="/images/bodega.jpg" alt="carroussel" class="pic2"></a>
         <h2 class="text-pic3">Esta es nuestra seleccion de bodegas mas recomendadas</h2>
       </div>
     </div>
@@ -89,8 +88,7 @@
         <p>¡Descubrí las mejores experiencias de la mano de expertos!</p>
       </div>
     </section>
-  </div>
-  <%- include('partials/footer.ejs')  %>
+  <%- include('partials/footer')  %>
 </body>
 
 </html>
