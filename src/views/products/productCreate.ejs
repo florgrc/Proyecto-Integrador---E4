@@ -1,69 +1,87 @@
 <%- include('../partials/head.ejs')  %>
+
 <body>
-  <header>
-  <%- include('../partials/header.ejs')  %>
-  </header>
+   <%- include('../partials/header.ejs')  %>
    <main>
       <form action="/products" method="POST" class="form-editpproduct-style" enctype="multipart/form-data">
          <h3 class="title-h3">Crear Producto</h3>
-      <table>
-         <thead>
-            <th> Id </th>
-            <th> Nombre </th>
-            <th> Descripción </th>
-            <th> Clasificación </th>
-            <th> Variedad  </th>
-            <th> Precio </th>
-            <th> Featured </th>
-            <th> Foto </th>
-         </thead>
-         <tbody>
-            <tr>
-                <td> 
-                  <input style="width : 130px;" type= "number" name="idProduct" class="input-style" value= <%= newID %> readonly>  
-               </td>
-               <td> 
-                  <input style="width : 130px;" type="text" name="name" class="input-style">      
-               </td>
-               <td> 
-                  <input style="width : 130px;" type="text" name="description" class="input-style">      
-               </td>
-               <td> 
-                  <input style="width : 130px;" type="text" name="classification" class="input-style">      
-               </td>
-               <td> 
-                  <input style="width : 130px;" type="text" name="variety" class="input-style">      
-               </td>
-               <td> 
-                  <input style="width : 70px;" type="number" name="price" class="input-style">      
-               </td>
-               <td> 
-                  <input style="width : 130px;" type="boolean"  name="featured" class="input-style">      
-               </td>
-               <td>
-                  <input style="width : 130px;" type="file" name="image" class="input-style">
-               </td>
-               <td class="detail-product">
-                  <button type="submit" onclick="alert('Producto Guardado')" class="button-style-save">Guardar</button><br>
-            </td>
-            </tr>
-            
-          
-         </tbody>
-      </table>
-   </form>
-      </main>
+         <div class="createProductContainer">
+            <div class="row">
+               <div class="col-25">
+                  <label for="idProduct">ID del producto</label>
+               </div>
+               <div class="col-75">
+                  <input type="number" id="idProduct" name="idProduct">
+                  <br>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-25">
+                  <label for="name">Nombre</label>
+               </div>
+               <div class="col-75">
+                  <input type="text" id="name" name="name" placeholder="Nombre del producto...">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-25">
+                  <label for="classification">Clasificación</label>
+               </div>
+               <div class="col-75">
+                  <input type="text" id="classification" name="classification" placeholder="Clasificación...">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-25">
+                  <label for="variety">Variedad</label>
+               </div>
+               <div class="col-75">
+                  <input type="text" id="variety" name="variety" placeholder="Variedad...">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-25">
+                  <label for="price">Precio</label>
+               </div>
+               <div class="col-75">
+                  <input type="text" id="price" name="price" placeholder="Precio">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-25">
+                  <label for="featured">Destacado</label>
+               </div>
+               <div class="col-75">
+                  <input type="checkbox" id="featured" name="featured">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-25">
+                  <label for="image">Imagen del producto</label>
+               </div>
+               <div class="col-75">
+                  <label for="file-upload" class="custom-file-upload">
+                     <i class="fas fa-cloud-upload-alt"></i> Subir imagen
+                  </label>
+                  <input id="file-upload" type="file" required />
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-25">
+                  <label for="description">Descripción</label>
+               </div>
+               <div class="col-75">
+                  <textarea id="subject" name="description" placeholder="Descripción del producto..."></textarea>
+               </div>
+            </div>
+            <br>
+            <div class="row">
+               <input type="submit" id='modifyProduct' value="Modificar"
+                  onclick="return confirm('¿Estas seguro que deseas guardar los cambios?')" class="confirmButton">
+            </div>
+      </form>
+   </main>
+   <%- include('../partials/footer.ejs')  %>
+</body>
 
-      <%- include('../partials/footer.ejs')  %>
-
-   </body>
 </html>
-<!--Falta incluir
-
-/products (GET)
-Listado de productos
-
-/products (POST)
-Acción de creación (a donde se envía el formulario)
-
--->

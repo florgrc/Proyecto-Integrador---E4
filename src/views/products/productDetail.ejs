@@ -1,73 +1,71 @@
 <%- include('../partials/head.ejs')  %>
+
 <body>
-      
-      <%- include('../partials/header.ejs')  %>
-
-      <form action="/product-detail" method="POST" class="createProduct-form">
-         <h3>Detalle del producto</h3>
-         <div class="productDetail">
-         
-               <% productSelected.forEach(product => { %>
-                  <img src=<%= product.image %> alt="Vino">
-                  <div class="product">
-                     <p class="name"><%= product.name %></p>
-                     <p class="type"><%= product.variety %></p>
-                     <p class="price"><%= product.price %></p>
-                     <p class="discount">5% OFF</p>
-                     <p class="info"><%= product.description %></p>
-               <select name="cantidad" id="cantidad">
-                  <option value="0" selected disabled>Seleccione una cantidad</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-               </select>
-               <button type="submit" class="addToCart">Agregar al Carrito</button><br>
-            </div>
-                <% }) %>;
-
+   <%- include('../partials/header.ejs')  %>
+   <form action="/product-detail" method="POST" class="productDetail-form">
+      <h3>Detalle del producto</h3>
+      <div class="productDetail">
+         <% productSelected.forEach(product => { %>
+         <img src=<%= product.image %> alt="Vino">
+         <div class="productDetailed">
+            <p class="name"><%= product.name %></p>
+            <p class="type"><%= product.variety %></p>
+            <p class="price"><%= product.price %></p>
+            <p class="discount">5% OFF</p>
+            <p class="info"><%= product.description %></p>
+            <select name="cantidad" id="cantidad">
+               <option value="0" selected disabled>Seleccione una cantidad</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+            </select>
+            <button type="submit" class="regularButton">Agregar al Carrito</button><br>
          </div>
-      </form>
-      <div class="related">
-         <h2>Productos relacionados</h2>
-         <ol>
-            <li>
-               <img src="/images/vinos/vino2.webp">
-               <div class="line"></div>
-               <div class="product-details">
-                  <p class="name">Vino 2</p>
-                  <p class="price">$1.100</p>
-                  <p class="discount">5% off</p>
-               </div>
-            </li>
-            <li>
-               <img src="/images/vinos/vino3.jpg">
-               <div class=line></div>
-               <div class="product-details">
-                  <p class="name">Vino 3</p>
-                  <p class="price">$800</p>
-                  <p class="discount">20% off</p>
-               </div>
-            <li>
-               <img src="/images/vinos/vino4.jpg">
-               <div class=line></div>
-               <div class="product-details">
-                  <p class="name">Vino 4</p>
-                  <p class="price">$1.200</p>
-                  <p class="discount">10% off</p>
-               </div>
-            </li>
-            <li>
-               <img src="/images/vinos/vino5.jpg">
-               <div class=line></div>
-               <div class="product-details">
-                  <p class="name">Vino 5</p>
-                  <p class="price">$500</p>
-                  <p class="discount">5% off</p>
-               </div>
-            </li>
-         </ol>
+         <% }) %>
       </div>
-      <%- include('../partials/footer.ejs')  %>
-   </body>
+   </form>
+   <div class="related">
+      <h2>Productos relacionados</h2>
+      <ol>
+         <li>
+            <img src="/images/vinos/vino2.webp">
+            <div class="line"></div>
+            <div class="product-details">
+               <p class="name">Vino 2</p>
+               <p class="price">$1.100</p>
+               <p class="discount">5% off</p>
+            </div>
+         </li>
+         <li>
+            <img src="/images/vinos/vino3.jpg">
+            <div class=line></div>
+            <div class="product-details">
+               <p class="name">Vino 3</p>
+               <p class="price">$800</p>
+               <p class="discount">20% off</p>
+            </div>
+         <li>
+            <img src="/images/vinos/vino4.jpg">
+            <div class=line></div>
+            <div class="product-details">
+               <p class="name">Vino 4</p>
+               <p class="price">$1.200</p>
+               <p class="discount">10% off</p>
+            </div>
+         </li>
+         <li>
+            <img src="/images/vinos/vino5.jpg">
+            <div class=line></div>
+            <div class="product-details">
+               <p class="name">Vino 5</p>
+               <p class="price">$500</p>
+               <p class="discount">5% off</p>
+            </div>
+         </li>
+      </ol>
+   </div>
+   <%- include('../partials/footer.ejs')  %>
+</body>
+
 </html>

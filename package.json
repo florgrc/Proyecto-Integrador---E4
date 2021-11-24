@@ -4,7 +4,8 @@
   "description": "estructura de archivos",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "nodemon"
   },
   "author": "Grupo 4",
   "license": "ISC",

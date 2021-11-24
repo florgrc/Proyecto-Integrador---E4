@@ -1,13 +1,11 @@
-[
-    {
-        "idProduct": 1,
+[{
+        "idProduct": "1",
         "name": "Chateau Lafite",
-        "description": "Vino frencho",
         "classification": "Merlot",
         "variety": "Merlot",
         "price": "$21203.00",
-        "featured": "true",
-        "image": ""
+        "featured": true,
+        "description": "Vino frencho"
     },
     {
         "idProduct": 2,
@@ -16,7 +14,7 @@
         "classification": "vulputate elementum nullam",
         "variety": "Malbec",
         "price": "$9570.00",
-        "featured": false,
+        "featured": true,
         "image": "/images/vinos/vino1.jpg"
     },
     {
@@ -26,7 +24,7 @@
         "classification": "busan",
         "variety": "Totin",
         "price": "14200",
-        "featured": "true",
+        "featured": true,
         "image": ""
     },
     {
@@ -36,7 +34,7 @@
         "classification": "sodales scelerisque mauris",
         "variety": "Cavernet Franc",
         "price": "$748.00",
-        "featured": "false",
+        "featured": false,
         "image": ""
     },
     {
@@ -46,7 +44,7 @@
         "classification": "aenean auctor gravida",
         "variety": "Malbec",
         "price": "$1570.00",
-        "featured": "false",
+        "featured": false,
         "image": ""
     },
     {
@@ -70,32 +68,11 @@
         "image": "/images/vinos/vino1.jpg"
     },
     {
-        "idProduct": 8,
+        "idProduct": "8",
         "name": "Cerveza",
-        "description": "Quilmes",
         "classification": "Lupulo",
         "variety": "Birra",
         "price": "70000",
-        "featured": true,
-        "image": ""
-    },
-    {
-        "idProduct": 10,
-        "name": "fff",
-        "description": "fff",
-        "classification": "fff",
-        "variety": "ff",
-        "price": 8450,
-        "featured": true,
-        "image": ""
-    },
-    {
-        "idProduct": "11",
-        "name": "flor",
-        "description": "flor",
-        "classification": "lfor",
-        "variety": "lfor",
-        "price": "7317432",
-        "featured": "true"
+        "description": "qeryeyr"
     }
 ]

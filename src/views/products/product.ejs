@@ -1,60 +1,52 @@
 <%- include('../partials/head.ejs')  %>
+
 <body>
-  <header>
-  <%- include('../partials/header.ejs')  %>
-  </header>
+   <%- include('../partials/header.ejs')  %>
    <main>
       <h2 class="titulo">Listado de Productos</h2><br>
-      <a href="/products/create"><button class="button button-new"> Nuevo producto</button></a>
+      <a href="/products/create"><button class="regularButton"> Nuevo producto</button></a>
       <table>
-            <thead>
-               <th> Id </th>
-               <th> Nombre </th>
-               <th> Descripción </th>
-               <th> Clasificación </th>
-               <th> Variedad  </th>
-               <th> Precio </th>
-               <th> Featured </th>
-            </thead>
-            <tbody>
-               <% products.forEach(product => { %>
-               <tr>
-                   <td class="detail-product"><%= product.idProduct%> </td>
-                   <td class="detail-product"><%= product.name%></td>
-                   <td class="detail-product"><%= product.description%></td>
-                   <td class="detail-product"><%= product.classification%></td>
-                   <td class="detail-product"><%= product.variety%></td>
-                   <td class="detail-product"><%= product.price%></td>
-                   <td class="detail-product"><%= product.featured%></td>
-                  
-                   <td class="detail-product">
-                     <form method="GET" action="/products/edit/<%= product.idProduct %>">
-                     <input type="submit" value="Modificar" class="button-style-modify">
-                     </form>
-                  </td>
-                  <td class="detail-product">
-                     <form method="POST" action="/products/edit/delete/<%= product.idProduct%>?_method=DELETE">
-                     <input type="submit" onclick="confirm('¿Estas seguro que deseas eliminar el producto?')" value="Eliminar" class="button-style-hide">
+         <thead>
+            <th> Id </th>
+            <th> Nombre </th>
+            <th> Descripción </th>
+            <th> Clasificación </th>
+            <th> Variedad </th>
+            <th> Precio </th>
+            <th> Featured </th>
+         </thead>
+         <tbody>
+            <% products.forEach(product => { %>
+            <tr>
+               <td class="detail-product"><%= product.idProduct%> </td>
+               <td class="detail-product"><%= product.name%></td>
+               <td class="detail-product"><%= product.description%></td>
+               <td class="detail-product"><%= product.classification%></td>
+               <td class="detail-product"><%= product.variety%></td>
+               <td class="detail-product"><%= product.price%></td>
+               <td class="detail-product"><%= product.featured%></td>
+
+               <td class="detail-product">
+                  <form method="GET" action="/products/edit/<%= product.idProduct %>">
+                     <input type="submit" value="Modificar" class="regularButton">
                   </form>
-                  </td>
-            
-               </tr>
-               <%  }) %>
-            </tbody>
-         </table>
+               </td>
+               <td class="detail-product">
+                  <form method="POST" action="/products/edit/delete/<%= product.idProduct%>?_method=DELETE">
+                     <input type="submit" onclick="return confirm('¿Estas seguro que deseas eliminar el producto?')"
+                        value="Eliminar" class="cancelButton">
+                  </form>
+               </td>
 
-      </main>
+            </tr>
+            <%  }) %>
+         </tbody>
+      </table>
 
-      <%- include('../partials/footer.ejs')  %>
+   </main>
 
-   </body>
+   <%- include('../partials/footer.ejs')  %>
+
+</body>
+
 </html>
-<!--Falta incluir
-
-/products (GET)
-Listado de productos
-
-/products (POST)
-Acción de creación (a donde se envía el formulario)
-
--->

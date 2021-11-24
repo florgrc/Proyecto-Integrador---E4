@@ -1,23 +1,25 @@
 <!--Pendiente armar-->
 
 <%- include('../partials/head.ejs')  %>
+
 <body>
 
    <%- include('../partials/header.ejs')  %>
-      <form action="/login" method="POST" class="form-style">
+   <form action="/login" method="POST" class="form-style">
       <div class="login-wrap">
          <div class="login-html">
-            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Ingresar</label>
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
+               class="tab">Ingresar</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrarse</label>
             <div class="login-form">
                <div class="sign-in-htm">
                   <div class="group">
                      <label for="user" class="label">Nombre de Usuario</label>
-					      <input id="user" type="text" class="input" name="nameLogin">
+                     <input id="user" type="text" class="input" name="nameLogin">
                   </div>
                   <div class="group">
                      <label for="email" class="label">email</label>
-					      <input id="email" type="email" class="input" name="emailLogin">
+                     <input id="email" type="email" class="input" name="emailLogin">
                   </div>
                   <div class="group">
                      <label for="pass" class="label">Password</label>
@@ -25,7 +27,8 @@
                   </div>
                   <div class="group">
                      <input id="check" type="checkbox" class="check" checked>
-                     <label for="check"><input class="icon" type="checkbox" id="box1" value="password"> Recordarme </label>
+                     <label for="check"><input class="icon" type="checkbox" id="box1" value="password"> Recordarme
+                     </label>
                   </div>
                   <div class="group">
                      <a href="#"><button type="submit" class="button" value="Sign In">Ingresar</button></a>
@@ -39,7 +42,7 @@
                <div class="sign-up-htm">
                   <div class="group">
                      <label for="user" class="label">Nombre de Usuario</label>
-					      <input id="user" type="text" class="input" name="nameRegister">
+                     <input id="user" type="text" class="input" name="nameRegister">
                   </div>
                   <div class="group">
                      <label for="pass" class="label">Password</label>
@@ -51,7 +54,7 @@
                   </div>
                   <div class="group">
                      <label for="email" class="label">email</label>
-					      <input id="email" type="email" class="input" name="emailRegister">
+                     <input id="email" type="email" class="input" name="emailRegister">
                   </div>
                   <div class="group">
                      <a href="#"><button type="submit" class="button" value="Registrarse">Registrarse</button></a>
@@ -64,13 +67,14 @@
             </div>
          </div>
       </div>
-  
-      </form>
+
+   </form>
 
 
 
 
 
-      <%- include('../partials/footer.ejs')  %>
-   </body>
+   <%- include('../partials/footer.ejs')  %>
+</body>
+
 </html>

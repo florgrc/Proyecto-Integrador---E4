@@ -1,73 +1,94 @@
 <%- include('../partials/head.ejs')  %>
+
 <body>
-  
-  <%- include('../partials/header.ejs')  %>
-<section>
+   <%- include('../partials/header.ejs')  %>
+   <section>
+      <div>
+         <h3 class="title-h3">Modificar Producto</h3>
+         <form action="/products/edit/<%= productToEdit.idProduct%>?_method=PUT" method="POST"
+            class="form-editpproduct-style">
+            <div class="editProductContainer">
+               <div class="row">
+                  <div class="col-25">
+                     <label for="idProduct">ID del producto</label>
+                  </div>
+                  <div class="col-75">
+                     <input type="number" id="idProduct" name="idProduct" value=<%= productToEdit.idProduct%>
+                        readonly><br>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-25">
+                     <label for="name">Nombre</label>
+                  </div>
+                  <div class="col-75">
+                     <input type="text" id="name" name="name" value="<%= productToEdit.name %>"
+                        placeholder="Nombre del producto..." required>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-25">
+                     <label for="classification">Clasificación</label>
+                  </div>
+                  <div class="col-75">
+                     <input type="text" id="classification" name="classification"
+                        value="<%= productToEdit.classification %>" placeholder="Clasificación..." required>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-25">
+                     <label for="variety">Variedad</label>
+                  </div>
+                  <div class="col-75">
+                     <input type="text" id="variety" name="variety" value="<%- productToEdit.variety %>"
+                        placeholder="Variedad..." required>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-25">
+                     <label for="price">Precio</label>
+                  </div>
+                  <div class="col-75">
+                     <input type="text" id="price" name="price" value="<%- productToEdit.price%>" placeholder="Precio"
+                        required>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-25">
+                     <label for="featured">Destacado</label>
+                  </div>
+                  <div class="col-75">
+                     <input type="checkbox" id="featured" name="featured" value="<%- productToEdit.featured%>">
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-25">
+                     <label for="image">Imagen del producto</label>
+                  </div>
+                  <div class="col-75">
+                     <label for="file-upload" class="custom-file-upload">
+                        <i class="fas fa-cloud-upload-alt"></i> Subir imagen
+                     </label>
+                     <input id="file-upload" type="file" />
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-25">
+                     <label for="description">Descripción</label>
+                  </div>
+                  <div class="col-75">
+                     <textarea id="subject" name="description"
+                        placeholder="Descripción del producto..."><%= productToEdit.description %></textarea>
+                  </div>
+               </div>
+               <br>
+               <div class="row">
+                  <input type="submit" id='modifyProduct' value="Modificar"
+                     onclick="return confirm('¿Estas seguro que deseas guardar los cambios?')"
+                     class="confirmButton">
+               </div>
+            </div>
+         </form>
+   </section><%- include('../partials/footer.ejs')  %> </body>
 
-   <div>
-      <h3 class="title-h3">Modificar Producto</h3>
-      <form action="/products/edit/<%= productToEdit.idProduct%>?_method=PUT" method="POST" class="form-editpproduct-style">
-   </div>   
-      <table>
-         <thead>
-            <th> Id </th>
-            <th> Nombre </th>
-            <th> Descripción </th>
-            <th> Clasificación </th>
-            <th> Variedad  </th>
-            <th> Precio </th>
-            <th> Featured </th>
-            <th> Foto </th>
-         
-         </thead>
-         <tbody>
-            <tr>
-                <td style="width : 50px"> 
-                  <label for=""></label><%= productToEdit.idProduct%> 
-               </td>
-               <td> 
-                  <input style="width : 150px;" type="text" name="name" value="<%= productToEdit.name %>" class="input-style">            
-               </td>
-               <td> 
-                  <input style="width : 150px" type="text" name="description" value="<%= productToEdit.description %>" class="input-style">
-               </td>
-               <td> 
-                <input style="width : 150px;" type="text" name="classification" value="<%= productToEdit.classification %>" class="input-style">
-               </td>
-               <td> 
-                <input style="width : 150px;" type="text" name="variety" value="<%- productToEdit.variety %>" class="input-style">
-               </td>
-               <td> 
-               <input style="width : 70px;" type="text" name="price" value="<%- productToEdit.price%>" class="input-style">
-               </td>
-               <td> 
-               <input style="width : 130px;" type="text" name="featured" value="<%- productToEdit.featured%>" class="input-style">
-               </td>
-               <td>
-               <input style="width : 130px;" type="file" name="image" class="input-style">
-               </td>
-               <td>
-                  <button type="submit" onclick="alert('¿Estas seguro que deseas guardar los cambios?')" class="button-style-save">Modificar</button><br>
-               </td>
-               </tr>
-            
-          
-         </tbody>
-      </table>
-   </form>
-
-
-</section>
-      <%- include('../partials/footer.ejs')  %>
-
-   </body>
 </html>
-<!--Falta incluir
-
-/products (GET)
-Listado de productos
-
-/products (POST)
-Acción de creación (a donde se envía el formulario)
-
--->

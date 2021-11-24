@@ -44,6 +44,8 @@ const usersController = {
 
         }
 
+        console.log(req.file);
+
         if(req.file){
             users.push(newUser);
             let jsonUsers = JSON.stringify(users, null, 4);
