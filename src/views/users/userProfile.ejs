@@ -2,15 +2,16 @@
 
 <body>
     <%- include('../partials/header.ejs')  %>
-    <h3>Perfil del usuario <%= loggedUser.first_name %> <%= loggedUser.last_name %></h3>
-    <div class="productDetail">
-        <img src=<%= loggedUser.image %> alt="Foto de perfil">
-        <div class="productDetailed">
+    
+    <h3 class="userName"><%= loggedUser.first_name %> <%= loggedUser.last_name %></h3>
+    <div class="userProfile">
+        <img class="imgUser" src="/images/users/<%= loggedUser.image %>" width="300" alt="Foto de perfil">
+        <div class="userDetail">
             <p class="name"><%= loggedUser.first_name %></p>
             <p class="name"><%= loggedUser.last_name %></p>
-            <p class="price"><%= loggedUser.email %></p>
+            <p class="email"><%= loggedUser.email %></p>    
             <p class="discount"><%= loggedUser.category %></p>
-        </div>
+        </div> 
     </div>
     <%- include('../partials/footer.ejs')  %>
 </body>

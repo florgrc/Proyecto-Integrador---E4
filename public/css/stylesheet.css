@@ -590,6 +590,7 @@ a {
     margin: 0 15px 10px 0;
     display: inline-block;
     border-bottom: 2px solid transparent;
+    margin-top: 5%;
 }
 
 .login-html .sign-in:checked+.tab,
@@ -653,7 +654,7 @@ a {
 
 .hr {
     height: 2px;
-    margin: 60px 0 50px 0;
+    margin: 20px 0 20px 0;
     background: rgba(255, 255, 255, .2);
 }
 
@@ -733,6 +734,7 @@ th {
 
 .name {
     font-weight: bold;
+    margin-top: 5px
 }
 
 .fa-trash-alt {
@@ -1128,4 +1130,44 @@ textarea {
 
 .logo-footer {
     width: 150px;
+}
+
+/*Estilo al Profile*/
+
+.userName {
+    margin: 20px;
+    font-size: 30px;
+    color: rgb(35, 38, 87);
+    font-weight: bold;
+
+}
+
+.userDetail {
+    border: solid 1px rgb(196, 195, 195);
+    width: 22%;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.email {
+    font-size: 15px;
+    color: rgb(35, 38, 87);
+    font-weight: bold;
+    margin-top: 5px
+
+}
+
+.userProfile {
+    display: flex;
+    position: relative;
+    margin: 30px;
+    justify-content: space-around;
+}
+
+.imgUser {
+    
 }

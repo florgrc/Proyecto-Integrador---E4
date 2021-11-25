@@ -13,7 +13,7 @@ const validation = require ('../middlewares/usersRegisterValidation');
 const guestMiddleware = require ('../middlewares/guestMiddleware');
 const authMiddleware = require ('../middlewares/authMiddleware');
 const logUsersLoginMiddleware = require ('../middlewares/logUsersLoginMiddleware');//no esta en uso!
-
+const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware")
 
 const validateLoginForm = [
     check('email').isEmail ().withMessage('Debes completar el campo de email'),
@@ -41,7 +41,7 @@ router.post('/', upload.single('userAvatar'), usersController.store);
 
 router.get('/profile', authMiddleware, usersController.profile);
 
-router.get('/login', usersController.login);
+router.get('/login',guestMiddleware, usersController.login);
 router.post('/login', validateLoginForm,  usersController.loginValidation);
 
 module.exports = router;

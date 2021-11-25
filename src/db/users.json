@@ -1,4 +1,5 @@
-[{
+[
+    {
         "id": 1,
         "first_name": "Zandra",
         "last_name": "Chezier",
@@ -14,7 +15,7 @@
         "email": "crichold1@bandcamp.com",
         "password": "$2a$12$sr2efp5imUkJ5DmN33VK/uNTE.WDQ/ufcz0fiaI.O7xkNhWWlSxHe",
         "category": "user",
-        "image": "user_2.jpg"
+        "image": "default-image1.png"
     },
     {
         "id": 3,
@@ -195,5 +196,22 @@
         "password": "$2a$12$JUJCHUcdzuqCTS0FURA/NulNI1URaZCIMC9d0qcpIeUWqVomOkwyy",
         "category": "user",
         "image": "image-1637726471376.png"
+    },
+    {
+        "id": 23,
+        "tab": "",
+        "firstname": "Florencia",
+        "lastname": "Garcia",
+        "email": "florencia@hotmail.com",
+        "password": "$2a$08$OEE8srMjDSTzL651IaJRQOgPA.tfscJYatbz/tllNYTwkFzD3VBbO",
+        "image": "image-1637879895046.jpg"
+    },
+    {
+        "id": 24,
+        "firstname": "Florencia",
+        "lastname": "Garcia",
+        "email": "flor@gmail.com",
+        "password": "$2a$08$1UkPsZNyhVYYBBvlWh51IOipy9eo1WUIYYjl/D8w6bsinM2odalvm",
+        "image": "image-1637880216925.jpg"
     }
 ]

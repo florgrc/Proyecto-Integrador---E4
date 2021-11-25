@@ -59,8 +59,14 @@ const usersController = {
         if (loggedUser) {
             let passwordOk = bcrypt.compareSync(req.body.password, loggedUser.password)
             if (passwordOk) {
+                delete loggedUser.password;
                 req.session.loggedUser = loggedUser;
-                return res.redirect("/")
+
+                if(req.body.remember_user) {
+                    res.cookie("email", req.body.email, {maxAge : (1000 * 60) * 2})
+                }
+
+                return res.redirect("/users/profile")
             }
             return res.render("users/usersLogin", {
                 errors: {
@@ -79,11 +85,43 @@ const usersController = {
             }
         })
     },
+
+    
+    /*res.cookie("testing", "Hola MUNDO", {maxAge : 1000 *30})*/
+
+
+    /*let errors = validationResult (req);
+    
+    /*if (errors.isEmpty ()) {
+        let user = req.body();
+        userId = 001;
+        //userId = usersModel.create(user);
+*/
+        
+        /* Aca comienza REMEMBER USER */
+    
+        /* Aca termina REMEMBER USER */
+       /* res.redirect('/users/'+ userId )         
+        // res.send('todo ok: ' + stringify(req.body));
+
+    /* } else {
+        res.send(errors);
+
+    }
+    }
+}
+*/
     profile: (req, res) => {
+
         let loggedUser = req.session.loggedUser;
         res.render('users/userProfile', {
             loggedUser
         });
+    },
+
+    logout: (req,res) => {
+        req.session.destroy();
+        return res.redirect("/");
     }
 }
 module.exports = usersController

@@ -7,11 +7,17 @@
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
     <div class="icons">
-      <a href="/users/profile"><i class="fas fa-user-circle"></i></a>
+      <% if (locals.isLogged) { %>
+       <a class="nav-link dropdown-toggle" href="#" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="flase">
+         <img src="/images/users/deefault-image1.png" width="40" style="border-radius: 100%"> Hi User
+       </a>
+       <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
+        <% } else { %>
+      <a href="/users/login"><i class="fas fa-user-circle"></i></a>
       <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
     </div>
+        <% } %>
   </article>
-
   <article class="sections">
     <a href="/products">Nuestros Productos</a>
     <a href="#">Combos</a>
