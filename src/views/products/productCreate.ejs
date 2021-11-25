@@ -11,7 +11,7 @@
                   <label for="idProduct">ID del producto</label>
                </div>
                <div class="col-75">
-                  <input type="number" id="idProduct" name="idProduct" value=<%= newID%> readonly>
+                  <input type="number" id="idProduct" name="idProduct" value=<%= newProductID%> readonly>
                   <br>
                </div>
             </div>
@@ -63,7 +63,7 @@
                   <label for="file-upload" class="custom-file-upload">
                      <i class="fas fa-cloud-upload-alt"></i> Subir imagen
                   </label>
-                  <input id="file-upload" type="file" required />
+                  <input id="file-upload" type="file" name="productImage" required>
                </div>
             </div>
             <div class="row">

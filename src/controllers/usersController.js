@@ -7,10 +7,6 @@ const User = require("../models/users")
 const { validationResult } = require ('express-validator');
 const { body } = require ('express-validator');
 
-
-const { stringify } = require('querystring');
-
-
 const jsonUsers = fs.readFileSync(path.resolve(__dirname,'../db/users.json'), "utf-8");
 const users = JSON.parse(jsonUsers); 
 
@@ -43,8 +39,6 @@ const usersController = {
             image: userAvatar,
 
         }
-
-        console.log(req.file);
 
         if(req.file){
             users.push(newUser);

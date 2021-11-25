@@ -1,8 +1,9 @@
 const path = require("path");
 const fs = require("fs");
-const {
-    dir
-} = require("console");
+const res = require('express/lib/response');
+
+const { validationResult } = require ('express-validator');
+const { body } = require ('express-validator');
 
 /*Traer Productos*/
 
@@ -20,6 +21,19 @@ function findProductID(idSearch) {
     }
     return index;
 }
+
+function nuevoID() {
+    let last = 0
+    products.forEach(product => {
+        if (product.idProduct > last) {
+            last = product.idProduct;
+        }
+    })
+
+    return last + 1;
+}
+
+
 
 const productsController = {
     detail: (req, res) => {
@@ -68,7 +82,7 @@ const productsController = {
                 products[productToUpdate].variety = req.body.variety;
                 products[productToUpdate].price = req.body.price;
                 products[productToUpdate].featured = req.body.featured;
-                //product.image = req.file.filename;
+                products[productToUpdate].image = req.file.filename;
             }
         })
         // req.file.filename
@@ -92,20 +106,10 @@ const productsController = {
 
     },
     create: (req, res) => {
-        let nuevoId = () => {
-            let ultimo = 0
-            products.forEach(product => {
-                if (product.idProduct > ultimo) {
-                    ultimo = product.idProduct;
-                }
-            })
-
-            return ultimo + 1;
-        }
-
-        let newID = nuevoId()
+       
+        let newProductID = nuevoID()
         res.render('products/productCreate', {
-            newID
+            newProductID
         })
     },
 
@@ -115,11 +119,15 @@ const productsController = {
         })
     },
     store: (req, res) => {
+        console.log("REQFILE" + req.file)
+        let productImage = req.file.filename || "default-image1.png"
+
+        
 
         let product = {
-            idProduct: nuevoId(),
+            idProduct: nuevoID(),
             ...req.body,
-            image: req.body.image
+            image: productImage
 
         }
         products.push(product);
