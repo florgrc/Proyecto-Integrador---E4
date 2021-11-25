@@ -4,34 +4,31 @@ const res = require('express/lib/response');
 const bcrypt = require('bcryptjs');
 const User = require("../models/users")
 
-const { validationResult } = require ('express-validator');
-const { body } = require ('express-validator');
-
-const jsonUsers = fs.readFileSync(path.resolve(__dirname,'../db/users.json'), "utf-8");
-const users = JSON.parse(jsonUsers); 
+const jsonUsers = fs.readFileSync(path.resolve(__dirname, '../db/users.json'), "utf-8");
+const users = JSON.parse(jsonUsers);
 
 
 const newId = () => {
     let ultimo = 0;
     users.forEach(user => {
-        if(user.id > ultimo) {
+        if (user.id > ultimo) {
             ultimo = user.id;
         }
     });
     return ultimo + 1;
 }
 
-const usersController = { 
-  
-    
+const usersController = {
+
+
     register: (req, res) => {
-        res.render('users/register');  
+        res.render('users/register');
     },
- 
-    store: (req, res) =>{
-       
+
+    store: (req, res) => {
+
         let userAvatar = req.file.filename || "default-image1.png"
-       
+
         let newUser = {
             id: newId(),
             ...req.body,
@@ -40,38 +37,39 @@ const usersController = {
 
         }
 
-        if(req.file){
+        if (req.file) {
             users.push(newUser);
             let jsonUsers = JSON.stringify(users, null, 4);
             fs.writeFileSync(path.resolve(__dirname, '../db/users.json'), jsonUsers);
             res.redirect('/');
-        }else{
+        } else {
             res.render("users/register")
-        }    
+        }
     },
 
 
-    login : (req,res) => {
-        res.render("users/usersLogin"); 
+    login: (req, res) => {
+        res.render("users/usersLogin");
     },
 
-    loginValidation : (req,res) => {
-        
-        let userToLogin = User.findByField("email", req.body.email);
-        
-        if (userToLogin){
-            let passwordOk = bcrypt.compareSync(req.body.password, userToLogin.password)
-            if (passwordOk){ 
+    loginValidation: (req, res) => {
+
+        let loggedUser = User.findByField("email", req.body.email);
+
+        if (loggedUser) {
+            let passwordOk = bcrypt.compareSync(req.body.password, loggedUser.password)
+            if (passwordOk) {
+                req.session.loggedUser = loggedUser;
                 return res.redirect("/")
-            } 
+            }
             return res.render("users/usersLogin", {
                 errors: {
                     email: {
                         msg: "La contraseña es incorrecta"
                     }
                 }
-            }) 
-            
+            })
+
         }
         return res.render("users/usersLogin", {
             errors: {
@@ -79,11 +77,13 @@ const usersController = {
                     msg: "Las credenciales son invalidas"
                 }
             }
-        }) 
-        
+        })
+    },
+    profile: (req, res) => {
+        let loggedUser = req.session.loggedUser;
+        res.render('users/userProfile', {
+            loggedUser
+        });
     }
 }
-    
-
-
-    module.exports = usersController
+module.exports = usersController

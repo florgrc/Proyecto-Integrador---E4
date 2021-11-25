@@ -7,7 +7,7 @@ let jsonProducts = fs.readFileSync(path.resolve(__dirname,"../db/products.json")
 let products = JSON.parse(jsonProducts);
 
 
-const mainController = {
+const indexController = {
     home: (req,res) => {
         let others = [];
         let featured = [];
@@ -23,4 +23,4 @@ const mainController = {
     },
 };
 
-module.exports = mainController;
+module.exports = indexController;

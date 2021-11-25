@@ -1,0 +1,18 @@
+<%- include('../partials/head.ejs')  %>
+
+<body>
+    <%- include('../partials/header.ejs')  %>
+    <h3>Perfil del usuario <%= loggedUser.first_name %> <%= loggedUser.last_name %></h3>
+    <div class="productDetail">
+        <img src=<%= loggedUser.image %> alt="Foto de perfil">
+        <div class="productDetailed">
+            <p class="name"><%= loggedUser.first_name %></p>
+            <p class="name"><%= loggedUser.last_name %></p>
+            <p class="price"><%= loggedUser.email %></p>
+            <p class="discount"><%= loggedUser.category %></p>
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs')  %>
+</body>
+
+</html>

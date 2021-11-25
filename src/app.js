@@ -6,8 +6,6 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser')
 
-
-/* Implementamos utilizar varias carpetas de vistas */
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"));
 
@@ -23,6 +21,11 @@ app.use(express.urlencoded({
 }))
 app.use(express.json());
 
+app.use(session({
+  secret: 'cookie_secret',
+  resave: true,
+  saveUninitialized: true
+}));
 
 /*Configuracion carpeta public disponible*/
 app.use(express.static(path.resolve(__dirname, '../public')));
@@ -36,11 +39,11 @@ app.listen(port, () => {
 
 /*Rutas*/
 
-let routesMain = require('./routes/main.js');
+let routesIndex = require('./routes/index.js');
 let productsRouter = require('./routes/products.js');
 let routesUsers = require('./routes/users');
 
 
-app.use('/', routesMain);
+app.use('/', routesIndex);
 app.use('/products', productsRouter);
 app.use('/users', routesUsers);

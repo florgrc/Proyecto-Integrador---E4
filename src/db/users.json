@@ -186,5 +186,14 @@
         "email": "132@123",
         "password": "$2a$08$GsVDELZVbLeN/BX/X6szYu/aK7VfZIUtdp8MpLygrqcpqLjudzfkW",
         "image": "image-1637726471376.png"
+    },
+    {
+        "id": 22,
+        "first_name": "TEST",
+        "last_name": "TESTLN",
+        "email": "1@1",
+        "password": "$2a$12$JUJCHUcdzuqCTS0FURA/NulNI1URaZCIMC9d0qcpIeUWqVomOkwyy",
+        "category": "user",
+        "image": "image-1637726471376.png"
     }
 ]
