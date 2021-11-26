@@ -2,17 +2,16 @@
 
 <body>
     <%- include('../partials/header.ejs')  %>
-    
-    <h3 class="userName"><%= loggedUser.first_name %> <%= loggedUser.last_name %></h3>
-    <div class="userProfile">
-        <img class="imgUser" src="/images/users/<%= loggedUser.image %>" width="300" alt="Foto de perfil">
-        <div class="userDetail">
-            <p class="name"><%= loggedUser.first_name %></p>
-            <p class="name"><%= loggedUser.last_name %></p>
-            <p class="email"><%= loggedUser.email %></p>    
-            <p class="discount"><%= loggedUser.category %></p>
-        </div> 
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center"></div>
+<div class="card p-4"></div>
+    <div class=" image d-flex flex-column justify-content-center align-items-center"> <button class="btn btn-secondary"> <img src="/images/users/<%= loggedUser.image %>" height="100" width="100" /></button> <span class="name mt-3"><%= loggedUser.firstname %> <%= loggedUser.lastname %></span> <span class="idd"><%= loggedUser.email %></span>
+        <div class=" d-flex mt-2"> <button class="btn1 btn-dark">Edit Profile</button> </div>
+        <div class="text mt-3"> <span>Eleanor Pena is a creator of minimalistic x bold graphics and digital artwork.<br><br> Artist/ Creative Director by Day #NFT minting@ with FND night. </span> </div>
+        <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> <span><i class="fa fa-twitter"></i></span> <span><i class="fa fa-facebook-f"></i></span> <span><i class="fa fa-instagram"></i></span> <span><i class="fa fa-linkedin"></i></span> </div>
+            <div class=" px-2 rounded mt-4 date "> <span class="join">Joined May,2021</span> </div>
     </div>
+</div>
+</div>
     <%- include('../partials/footer.ejs')  %>
 </body>
 

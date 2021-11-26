@@ -34,7 +34,6 @@ function nuevoID() {
 }
 
 
-
 const productsController = {
     detail: (req, res) => {
 

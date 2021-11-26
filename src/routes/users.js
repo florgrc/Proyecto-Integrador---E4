@@ -42,7 +42,7 @@ router.post('/', upload.single('userAvatar'), usersController.store);
 router.get('/profile', authMiddleware, usersController.profile);
 
 router.get('/login',guestMiddleware, usersController.login);
-router.post('/login', validateLoginForm,  usersController.loginValidation);
+router.post('/login', validateLoginForm,  usersController.loginProccess);
 
 module.exports = router;
 

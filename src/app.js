@@ -17,6 +17,7 @@ app.use(session({
 app.use(cookies());
 app.use(userLoggedMiddleware);
 
+
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"));
 
