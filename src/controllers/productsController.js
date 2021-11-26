@@ -118,7 +118,6 @@ const productsController = {
         })
     },
     store: (req, res) => {
-        console.log("REQFILE" + req.file)
         let productImage = req.file.filename || "default-image1.png"
 
         

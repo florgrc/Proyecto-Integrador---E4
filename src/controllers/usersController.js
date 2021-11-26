@@ -113,11 +113,7 @@ const usersController = {
 }
 */
     profile: (req, res) => {
-
-        let loggedUser = req.session.loggedUser;
-        res.render('users/userProfile', {
-            loggedUser
-        });
+        res.render('users/userProfile')
     },
 
     logout: (req,res) => {
