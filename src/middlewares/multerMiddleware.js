@@ -12,4 +12,13 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage})
 
-module.exports = upload*/
+module.exports = upload
+<div class="row">
+               <div class="col-25">
+                  <label for="idProduct">ID del producto</label>
+               </div>
+               <div class="col-75">
+                  <input type="number" id="idProduct" name="idProduct" value=<%= newProductID%> readonly>
+                  <br>
+               </div>
+            </div>*/
