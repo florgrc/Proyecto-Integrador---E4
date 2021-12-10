@@ -237,5 +237,13 @@
         "email": "flor@gmail",
         "password": "$2a$08$EVBJTyYmA/YMg0419ELbbOsaimYIbC/UKpMnXTncE8D2wDXuIwOwC",
         "image": "image-1637883105896.jpg"
+    },
+    {
+        "id": 28,
+        "firstname": "Matias",
+        "lastname": "prueba1",
+        "email": "mati@gmail.com",
+        "password": "$2a$08$pALnB6gkzxPoDFBsuiRk3uqJ5UVjkpYn3J7tGpd.Y9AQy2HlIXMH2",
+        "image": "image-1639048765940.png"
     }
 ]

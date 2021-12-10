@@ -126,6 +126,33 @@ body {
     color: #ffffff;
 }
 
+/* Dropdown menu de Header.ejs */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown i {
+    color: white;
+    font-size: 17px;
+
+  }
+  
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(53, 25, 25);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
 /* Estilo del link del logo (Se mantiene el mismo valor de line-height de arriba con el font-size de esta seccion para que el header no cambie el tamaño cuando la fuente sea mas grande */
 
