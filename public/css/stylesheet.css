@@ -1240,3 +1240,12 @@ hr .new1 {
 .date {
     background-color: #ccc
 }
+
+
+/* User AVATAR */
+.avatar {
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }

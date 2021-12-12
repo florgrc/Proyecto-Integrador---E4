@@ -41,7 +41,12 @@ const usersController = {
             users.push(newUser);
             let jsonUsers = JSON.stringify(users, null, 4);
             fs.writeFileSync(path.resolve(__dirname, '../db/users.json'), jsonUsers);
-            res.redirect('/users/login');
+            
+            let loggedUser = req.body.email;
+            req.session.loggedUser = loggedUser;
+            console.log("logged user: " + req.session.loggedUser);
+            /* res.redirect('users/login');  */
+            res.redirect('/users/profile');
         } else {
             res.render("users/register")
         }
@@ -53,9 +58,7 @@ const usersController = {
     },
 
     loginProccess: (req, res) => {
-
         let loggedUser = User.findByField("email", req.body.email);
-
         if (loggedUser) {
             let passwordOk = bcrypt.compareSync(req.body.password, loggedUser.password)
             if (passwordOk) {

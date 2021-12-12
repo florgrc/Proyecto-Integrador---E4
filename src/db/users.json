@@ -240,10 +240,18 @@
     },
     {
         "id": 28,
-        "firstname": "Matias",
-        "lastname": "prueba1",
+        "firstname": "MATI",
+        "lastname": "LARROULET",
         "email": "mati@gmail.com",
-        "password": "$2a$08$pALnB6gkzxPoDFBsuiRk3uqJ5UVjkpYn3J7tGpd.Y9AQy2HlIXMH2",
-        "image": "image-1639048765940.png"
+        "password": "$2a$08$0BSgYWUZjSdhA8AH3/owxOBubXxV5OkOpwkammMpaGvwBYKAXD7Sm",
+        "image": "image-1639285425451.jpg"
+    },
+    {
+        "id": 29,
+        "firstname": "mati",
+        "lastname": "larroulet",
+        "email": "mati@gmail.com",
+        "password": "$2a$08$0SqhYKNKRWkci0OgFJ7c9epZY3i8fgYMvjAamLPmHs5k1bmVCY3mG",
+        "image": "image-1639286366694.png"
     }
 ]
