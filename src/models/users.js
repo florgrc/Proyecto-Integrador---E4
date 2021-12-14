@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require('path');
 
-const User = {
+const User = { // Este archivo se creó en automatico con sequelize y está linkeado a ../db/users.json. En el video figura como index.js 
     
     getData: function () {
         return JSON.parse(fs.readFileSync(path.resolve(__dirname,'../db/users.json'), "utf-8"));
