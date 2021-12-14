@@ -1,11 +1,11 @@
 [
     {
         "id": 1,
-        "firstname": "Zandra",
-        "lastname": "Chezier",
-        "email": "zchezier0@gravatar.com",
-        "password": "$2a$12$BYjzc8.NxUX5xNywACLGSO5lBo/aPYflUfwbkFtkHQzMI4IbLnuC.",
-        "category": "user",
+        "firstname": "Admin",
+        "lastname": "Admin",
+        "email": "admin@tws.com",
+        "password": "1234",
+        "category": "admin",
         "image": "user_1.jpg"
     },
     {
@@ -252,6 +252,16 @@
         "lastname": "larroulet",
         "email": "mati@gmail.com",
         "password": "$2a$08$0SqhYKNKRWkci0OgFJ7c9epZY3i8fgYMvjAamLPmHs5k1bmVCY3mG",
-        "image": "image-1639286366694.png"
+        "image": "image-1639286366694.png",
+        "admin": true
+    },
+    {
+        "id": 30,
+        "firstname": "admin",
+        "lastname": "admin",
+        "email": "admin@gmail.com",
+        "password": "$2a$08$0meVGOjKEKWbvz0CHlMD1.Of2cPl6RmDc1ywuwhK0rOYefog8m31O",
+        "image": "image-1639502243560.png",
+        "admin": true
     }
 ]

@@ -34,6 +34,7 @@ const usersController = {
             ...req.body,
             password: bcrypt.hashSync(req.body.password, 8),
             image: userAvatar,
+            admin: false,
 
         }
 
@@ -42,9 +43,9 @@ const usersController = {
             let jsonUsers = JSON.stringify(users, null, 4);
             fs.writeFileSync(path.resolve(__dirname, '../db/users.json'), jsonUsers);
             
-            let loggedUser = req.body.email;
-            req.session.loggedUser = loggedUser;
-            console.log("logged user: " + req.session.loggedUser);
+            // let loggedUser = req.body.email;
+            req.session.loggedUser = newUser;
+            console.log("logged user: " + req.session.loggedUser.email);
             /* res.redirect('users/login');  */
             res.redirect('/users/profile');
         } else {
@@ -59,10 +60,12 @@ const usersController = {
 
     loginProccess: (req, res) => {
         let loggedUser = User.findByField("email", req.body.email);
+        console.log("Antes del loginProccess: " + loggedUser.email);
+
         if (loggedUser) {
             let passwordOk = bcrypt.compareSync(req.body.password, loggedUser.password)
             if (passwordOk) {
-                console.log(loggedUser);
+                console.log("Entro en el loginProccess: " + loggedUser.email);
                 delete loggedUser.password;
                 req.session.loggedUser = loggedUser;
 
