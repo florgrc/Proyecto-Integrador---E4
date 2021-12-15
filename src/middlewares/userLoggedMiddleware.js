@@ -1,7 +1,6 @@
 const User = require("../models/users")
 
 function userLoggedMiddleware (req,res,next) {
-    // console.log('pasé por el MD de UserLogged')
     res.locals.isLogged = false;
 
     if (req.session && req.session.loggedUser) {

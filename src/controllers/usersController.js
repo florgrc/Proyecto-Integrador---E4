@@ -131,13 +131,11 @@ const usersController = {
     },
 
     edit: (req, res) => {
-        console.log ("entro a UsersController.edit ");
         res.render('users/userEdit')
     },
     update: (req, res) => {
         // let userToUpdate = req.session.id;
         let userToUpdate = findUserID(req.params.id);
-        console.log ("entro al userToUpdate:" + userToUpdate);
 /*
         users.forEach(product => {
             if (products[productToUpdate].idProduct == req.params.idProduct) {
