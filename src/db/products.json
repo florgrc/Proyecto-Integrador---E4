@@ -137,5 +137,15 @@
         "variety": "ultrices phasellus id sapien in sapien iaculis congue vivamus metus",
         "price": "$2390.00",
         "featured": true
+    },
+    {
+        "idProduct": 121,
+        "name": "prueba",
+        "classification": "prueba",
+        "variety": "prueba",
+        "price": "123",
+        "featured": "on",
+        "description": "prueba",
+        "image": "image-1639563117433.png"
     }
 ]

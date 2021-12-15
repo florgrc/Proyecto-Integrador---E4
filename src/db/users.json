@@ -4,7 +4,7 @@
         "firstname": "Admin",
         "lastname": "Admin",
         "email": "admin@tws.com",
-        "password": "1234",
+        "password": "$2a$12$sr2efp5imUkJ5DmN33VK/uNTE.WDQ/ufcz0fiaI.O7xkNhWWlSxHe",
         "category": "admin",
         "image": "user_1.jpg"
     },

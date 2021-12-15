@@ -8,6 +8,7 @@ const jsonUsers = fs.readFileSync(path.resolve(__dirname, '../db/users.json'), "
 const users = JSON.parse(jsonUsers);
 
 
+
 const newId = () => {
     let ultimo = 0;
     users.forEach(user => {
@@ -16,6 +17,19 @@ const newId = () => {
         }
     });
     return ultimo + 1;
+}
+
+
+/* Ver usersController.update*/
+function findUserID(idSearch) {
+    var index = -1;
+    for (var i = 0; i < users.length; i++) {
+        if (users[i].id == idSearch) {
+            index = i;
+            break;
+        }
+    }
+    return index;
 }
 
 const usersController = {
@@ -42,11 +56,7 @@ const usersController = {
             users.push(newUser);
             let jsonUsers = JSON.stringify(users, null, 4);
             fs.writeFileSync(path.resolve(__dirname, '../db/users.json'), jsonUsers);
-            
-            // let loggedUser = req.body.email;
             req.session.loggedUser = newUser;
-            console.log("logged user: " + req.session.loggedUser.email);
-            /* res.redirect('users/login');  */
             res.redirect('/users/profile');
         } else {
             res.render("users/register")
@@ -60,12 +70,10 @@ const usersController = {
 
     loginProccess: (req, res) => {
         let loggedUser = User.findByField("email", req.body.email);
-        console.log("Antes del loginProccess: " + loggedUser.email);
 
         if (loggedUser) {
             let passwordOk = bcrypt.compareSync(req.body.password, loggedUser.password)
             if (passwordOk) {
-                console.log("Entro en el loginProccess: " + loggedUser.email);
                 delete loggedUser.password;
                 req.session.loggedUser = loggedUser;
 
@@ -120,6 +128,53 @@ const usersController = {
 */
     profile: (req, res) => {
         res.render('users/userProfile')
+    },
+
+    edit: (req, res) => {
+        console.log ("entro a UsersController.edit ");
+        res.render('users/userEdit')
+    },
+    update: (req, res) => {
+        // let userToUpdate = req.session.id;
+        let userToUpdate = findUserID(req.params.id);
+        console.log ("entro al userToUpdate:" + userToUpdate);
+/*
+        users.forEach(product => {
+            if (products[productToUpdate].idProduct == req.params.idProduct) {
+                products[productToUpdate].name = req.body.name;
+                products[productToUpdate].description = req.body.description;
+                products[productToUpdate].classification = req.body.classification;
+                products[productToUpdate].variety = req.body.variety;
+                products[productToUpdate].price = req.body.price;
+                products[productToUpdate].featured = req.body.featured;
+                products[productToUpdate].image = req.file.filename;
+            }
+        })
+
+        let jsonDeProductos = JSON.stringify(products, null, 4);
+        fs.writeFileSync(path.resolve(__dirname, "../db/users.json"), jsonDeProductos);
+
+
+        let usetToUpdate = {
+            id: newId(),
+            ...req.body,
+            password: bcrypt.hashSync(req.body.password, 8),
+            image: req.file.filename,
+            admin: false,
+
+        }
+
+        if (req.file) {
+            users.push(newUser);
+            let jsonUsers = JSON.stringify(users, null, 4);
+            fs.writeFileSync(path.resolve(__dirname, '../db/users.json'), jsonUsers);
+            req.session.loggedUser = newUser;
+            res.redirect('/users/profile');
+        } else {
+            res.render("users/userEdit")
+        }
+*/
+
     },
 
     logout: (req,res) => {

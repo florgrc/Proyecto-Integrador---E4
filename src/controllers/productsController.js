@@ -117,6 +117,11 @@ const productsController = {
             products
         })
     },
+    catalogue: (req, res) => {
+        res.render("products/productCatalogue", {
+            products
+        })
+    },
     store: (req, res) => {
         let productImage = req.file.filename || "default-image1.png"
 

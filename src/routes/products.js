@@ -30,6 +30,8 @@ router.put("/edit/:idProduct", productsController.update);
 router.get("/create", productsController.create);
 router.delete("/edit/delete/:idProduct", productsController.delete);
 
+router.get("/catalogue", productsController.catalogue);
+
 /*Procesamiento de datos*/
 
 

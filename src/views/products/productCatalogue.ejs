@@ -4,9 +4,7 @@
    <%- include('../partials/header.ejs')  %>
    <main>
       <h2 class="titulo">Listado de Productos</h2><br>
-      <div class="createProductButton">
-         <a href="/products/create"><button class="regularButton" id=createProductButton>Nuevo producto</button></a>
-      </div>
+
       <table>
          <thead>
 
@@ -15,7 +13,7 @@
             <th> Clasificación </th>
             <th> Variedad </th>
             <th> Precio </th>
-            <th> Featured </th>
+            <th> Foto </th>
          </thead>
          <tbody>
             <% products.forEach(product => { %>
@@ -26,17 +24,20 @@
                <td class="detail-product"><%= product.classification%></td>
                <td class="detail-product"><%= product.variety%></td>
                <td class="detail-product"><%= product.price%></td>
-               <td class="detail-product"><%= product.featured%></td>
+               <td class="detail-product">
+               <article class="product">
+                  <a href="/products/detail/<%= product.idProduct %>">
+                     <div class="productImageDiv">
+                     <img src="/images/botella-producto.jpg" alt="producto1" class="productImage">
+                     </div>
+                  </a>
+               </article>
+               </td>
 
                <td class="detail-product">
-                  <form method="GET" action="/products/edit/<%= product.idProduct %>">
-                     <input type="submit" value="Modificar" class="regularButton">
-                  </form>
-               </td>
-               <td class="detail-product">
-                  <form method="POST" action="/products/edit/delete/<%= product.idProduct%>?_method=DELETE">
-                     <input type="submit" onclick="return confirm('¿Estas seguro que deseas eliminar el producto?')"
-                        value="Eliminar" class="cancelButton">
+
+                  <form method="GET" action="/products/detail/<%= product.idProduct %>">
+                     <input type="submit" value="Ver detalle" class="regularButton">
                   </form>
                </td>
 
