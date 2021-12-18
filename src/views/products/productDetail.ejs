@@ -4,9 +4,9 @@
    <%- include('../partials/header.ejs')  %>
    <form action="/product-detail" method="POST" class="productDetail-form">
       <h3>Detalle del producto</h3>
-      <div class="productDetail">
+      <div class="product-details">
          <% productSelected.forEach(product => { %>
-         <img src=<%= product.image %> alt="Vino">
+         <img src="/images/products/<%= product.image %>" alt="150" width="150">
          <div class="productDetailed">
             <p class="name"><%= product.name %></p>
             <p class="type"><%= product.variety %></p>
@@ -29,7 +29,7 @@
       <h2>Productos relacionados</h2>
       <ol>
          <li>
-            <img src="/images/vinos/vino2.webp">
+            <img src="/images/products/vino1.jpg">
             <div class="line"></div>
             <div class="product-details">
                <p class="name">Vino 2</p>
@@ -38,7 +38,7 @@
             </div>
          </li>
          <li>
-            <img src="/images/vinos/vino3.jpg">
+            <img src="/images/products/vino3.jpg">
             <div class=line></div>
             <div class="product-details">
                <p class="name">Vino 3</p>
@@ -46,7 +46,7 @@
                <p class="discount">20% off</p>
             </div>
          <li>
-            <img src="/images/vinos/vino4.jpg">
+            <img src="/images/products/vino4.jpg">
             <div class=line></div>
             <div class="product-details">
                <p class="name">Vino 4</p>
@@ -55,7 +55,7 @@
             </div>
          </li>
          <li>
-            <img src="/images/vinos/vino5.jpg">
+            <img src="/images/products/vino5.jpg">
             <div class=line></div>
             <div class="product-details">
                <p class="name">Vino 5</p>

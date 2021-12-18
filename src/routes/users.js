@@ -47,7 +47,7 @@ router.post('/login', validateLoginForm,  usersController.loginProccess);
 
 // Modificar usuario
 router.get('/edit', authMiddleware, usersController.edit);
-router.put('/edit/:idProduct', usersController.update);
+router.put('/edit/:id', upload.single('userAvatar'), usersController.update);
 
 //Logout
 router.get('/logout', usersController.logout);

@@ -84,7 +84,6 @@ const productsController = {
                 products[productToUpdate].image = req.file.filename;
             }
         })
-        // req.file.filename
 
         let jsonDeProductos = JSON.stringify(products, null, 4);
         fs.writeFileSync(path.resolve(__dirname, "../db/products.json"), jsonDeProductos);

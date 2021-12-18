@@ -23,9 +23,11 @@ const newId = () => {
 /* Ver usersController.update*/
 function findUserID(idSearch) {
     var index = -1;
+    console.log ("idSearch está Buscando id del user: " + idSearch);
     for (var i = 0; i < users.length; i++) {
         if (users[i].id == idSearch) {
             index = i;
+            console.log ("Buscando id del user: " + users[i]);
             break;
         }
     }
@@ -134,24 +136,25 @@ const usersController = {
         res.render('users/userEdit')
     },
     update: (req, res) => {
-        // let userToUpdate = req.session.id;
+        console.log("check 1");
         let userToUpdate = findUserID(req.params.id);
-/*
-        users.forEach(product => {
-            if (products[productToUpdate].idProduct == req.params.idProduct) {
-                products[productToUpdate].name = req.body.name;
-                products[productToUpdate].description = req.body.description;
-                products[productToUpdate].classification = req.body.classification;
-                products[productToUpdate].variety = req.body.variety;
-                products[productToUpdate].price = req.body.price;
-                products[productToUpdate].featured = req.body.featured;
-                products[productToUpdate].image = req.file.filename;
+        console.log("check 2: ----" + users[userToUpdate].id); // user[userToUpdate].id es la linea a solucionar
+        users.forEach(user => {
+            if (users[userToUpdate].id == req.params.id) {
+                console.log("check 3: ----" + userToUpdate); // solucionar diferencia entre check 2 y check3
+                users[userToUpdate].name = req.body.name;/*
+                user[userToUpdate].description = req.body.description;
+                user[userToUpdate].classification = req.body.classification;
+                user[userToUpdate].variety = req.body.variety;
+                user[userToUpdate].price = req.body.price;
+                user[userToUpdate].featured = req.body.featured; */
+                users[userToUpdate].image = req.file.filename;
             }
         })
-
-        let jsonDeProductos = JSON.stringify(products, null, 4);
+        console.log("Se actualizó el user" + user[userToUpdate].id);
+        let jsonUsers = JSON.stringify(users, null, 4);
         fs.writeFileSync(path.resolve(__dirname, "../db/users.json"), jsonDeProductos);
-
+/*
 
         let usetToUpdate = {
             id: newId(),
