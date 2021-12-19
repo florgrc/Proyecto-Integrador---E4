@@ -1,10 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
-    const Classifications = sequelize.define (alias, cols, config);
-    
-    return Classifications;
-}
-module.exports = (sequelize, DataTypes) => {
-    const Classifications = sequelize.define (alias, cols, config);
+module.exports = (sequelize, dataTypes) => {
     let alias = "Classifications";
     let cols = {
         id: {
@@ -13,17 +7,23 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
         },
         name: {
-            type: dataTypes.VARCHAR,
+            type: dataTypes.STRING,
 
         },
     };
     let config = {
-        tableName: "Classifications",
+        tableName: "classifications",
         timestamps: false
     };
 
     const Classifications = sequelize.define (alias, cols, config);
 
+    Classifications.assoaciate = function (models) {
+        Classifications.hasmany(models.Products, {
+            as: "productosClasificacion",
+            foreignKey: "classification_id"
+        })
+    }
 
     return Classifications;
 }

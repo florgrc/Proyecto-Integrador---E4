@@ -1,10 +1,4 @@
 module.exports = (sequelize, DataTypes) => {
-    const Varieties = sequelize.define (alias, cols, config);
-    
-    return Varieties;
-}
-module.exports = (sequelize, DataTypes) => {
-    const Varieties = sequelize.define (alias, cols, config);
     let alias = "Varieties";
     let cols = {
         id: {
@@ -18,12 +12,17 @@ module.exports = (sequelize, DataTypes) => {
         },
     };
     let config = {
-        tableName: "Varieties",
+        tableName: "varieties",
         timestamps: false
     };
 
     const Varieties = sequelize.define (alias, cols, config);
 
-
+    Varieties.assoaciate = function (models) {
+        Varieties.hasmany(models.Products, {
+            as: "productosVariedad",
+            foreignKey: "variety_id"
+        })
+    }
     return Varieties;
 }

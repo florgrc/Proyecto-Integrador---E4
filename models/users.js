@@ -4,7 +4,7 @@ const path = require('path');
 const User = { // Este archivo se creó en automatico con sequelize y está linkeado a ../db/users.json. En el video figura como index.js 
     
     getData: function () {
-        return JSON.parse(fs.readFileSync(path.resolve(__dirname,'../db/users.json'), "utf-8"));
+        return JSON.parse(fs.readFileSync(path.resolve(__dirname,'../src/db/users.json'), "utf-8"));
     },
 
     findAll: function () {
@@ -23,4 +23,4 @@ const User = { // Este archivo se creó en automatico con sequelize y está link
     }
 }
 
-module.exports = User
+module.exports = User 

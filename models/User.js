@@ -1,10 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
-    const Users = sequelize.define (alias, cols, config);
-    
-    return Users;
-}
-module.exports = (sequelize, DataTypes) => {
-    const Users = sequelize.define (alias, cols, config);
+module.exports = (sequelize, dataTypes) => {
     let alias = "Users";
     let cols = {
         id: {
@@ -13,19 +7,19 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
         },
         firstname: {
-            type: dataTypes.VARCHAR,
+            type: dataTypes.STRING,
 
         },
         lastname: {
-            type: dataTypes.VARCHAR,
+            type: dataTypes.STRING,
 
         },
         email: {
-            type: dataTypes.VARCHAR,
+            type: dataTypes.STRING,
 
         },
         password: {
-            type: dataTypes.VARCHAR,
+            type: dataTypes.STRING,
 
         },
         description: {
@@ -33,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
 
         },
         image: {
-            type: dataTypes.VARCHAR,
+            type: dataTypes.STRING,
 
         },
         type_id: {
@@ -41,11 +35,11 @@ module.exports = (sequelize, DataTypes) => {
 
         },
         created_at: {
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
 
         },
         updated_at: {
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
 
         },
     };

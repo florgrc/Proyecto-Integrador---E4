@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const res = require('express/lib/response');
 const bcrypt = require('bcryptjs');
-const User = require("../models/users")
+const User = require("../../models/users")
 
 const jsonUsers = fs.readFileSync(path.resolve(__dirname, '../db/users.json'), "utf-8");
 const users = JSON.parse(jsonUsers);

@@ -1,10 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
-    const Types = sequelize.define (alias, cols, config);
-    
-    return Types;
-}
-module.exports = (sequelize, DataTypes) => {
-    const Types = sequelize.define (alias, cols, config);
+module.exports = (sequelize, dataTypes) => {
     let alias = "Types";
     let cols = {
         id: {
@@ -13,17 +7,23 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
         },
         name: {
-            type: dataTypes.VARCHAR,
+            type: dataTypes.STRING,
 
         },
     };
     let config = {
-        tableName: "Types",
+        tableName: "types",
         timestamps: false
     };
 
     const Types = sequelize.define (alias, cols, config);
 
+    Types.assoaciate = function (models) {
+        Types.hasmany(models.Users, {
+            as: "usuarios",
+            foreignKey: "type_id"
+        })
+    }
 
     return Types;
 }

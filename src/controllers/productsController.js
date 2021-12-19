@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const res = require('express/lib/response');
+let db = require("../../models")
 
 const { validationResult } = require ('express-validator');
 const { body } = require ('express-validator');
@@ -117,9 +118,13 @@ const productsController = {
         })
     },
     catalogue: (req, res) => {
-        res.render("products/productCatalogue", {
-            products
-        })
+
+        db.products.findAll()
+            .then(function(products){
+                res.render("products/productCatalogue", {
+                    products
+                })
+            })
     },
     store: (req, res) => {
         let productImage = req.file.filename || "default-image1.png"

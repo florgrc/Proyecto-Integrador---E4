@@ -1,5 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
-    const Products = sequelize.define (alias, cols, config);
+module.exports = (sequelize, dataTypes) => {
     let alias = "Products";
     let cols = {
         id: {
@@ -8,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
         },
         name: {
-            type: dataTypes.VARCHAR,
+            type: dataTypes.STRING,
 
         },
         description: {
@@ -16,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
 
         },
         image: {
-            type: dataTypes.VARCHAR,
+            type: dataTypes.STRING,
 
         },
         classification_id: {
@@ -36,11 +35,11 @@ module.exports = (sequelize, DataTypes) => {
 
         },
         created_at: {
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
 
         },
         updated_at: {
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
 
         },
     };
@@ -49,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false // si no existen las columnas created@ y updated@
     };
 
-    const Product = sequelize.define (alias, cols, config);
+    const Products = sequelize.define (alias, cols, config);
 
 
     return Products;
