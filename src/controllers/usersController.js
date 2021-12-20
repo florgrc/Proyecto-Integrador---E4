@@ -2,12 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const res = require('express/lib/response');
 const bcrypt = require('bcryptjs');
-const User = require("../../models/users")
-
-const jsonUsers = fs.readFileSync(path.resolve(__dirname, '../db/users.json'), "utf-8");
-const users = JSON.parse(jsonUsers);
-
-
+const User = require("../db/models/users")
 
 const newId = () => {
     let ultimo = 0;
@@ -55,9 +50,7 @@ const usersController = {
         }
 
         if (req.file) {
-            users.push(newUser);
-            let jsonUsers = JSON.stringify(users, null, 4);
-            fs.writeFileSync(path.resolve(__dirname, '../db/users.json'), jsonUsers);
+            //users.push(newUser);
             req.session.loggedUser = newUser;
             res.redirect('/users/profile');
         } else {
@@ -103,31 +96,6 @@ const usersController = {
         })
     },
 
-    
-    /*res.cookie("testing", "Hola MUNDO", {maxAge : 1000 *30})*/
-
-
-    /*let errors = validationResult (req);
-    
-    /*if (errors.isEmpty ()) {
-        let user = req.body();
-        userId = 001;
-        //userId = usersModel.create(user);
-*/
-        
-        /* Aca comienza REMEMBER USER */
-    
-        /* Aca termina REMEMBER USER */
-       /* res.redirect('/users/'+ userId )         
-        // res.send('todo ok: ' + stringify(req.body));
-
-    /* } else {
-        res.send(errors);
-
-    }
-    }
-}
-*/
     profile: (req, res) => {
         res.render('users/userProfile')
     },
@@ -152,29 +120,6 @@ const usersController = {
             }
         })
         console.log("Se actualizó el user" + user[userToUpdate].id);
-        let jsonUsers = JSON.stringify(users, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, "../db/users.json"), jsonDeProductos);
-/*
-
-        let usetToUpdate = {
-            id: newId(),
-            ...req.body,
-            password: bcrypt.hashSync(req.body.password, 8),
-            image: req.file.filename,
-            admin: false,
-
-        }
-
-        if (req.file) {
-            users.push(newUser);
-            let jsonUsers = JSON.stringify(users, null, 4);
-            fs.writeFileSync(path.resolve(__dirname, '../db/users.json'), jsonUsers);
-            req.session.loggedUser = newUser;
-            res.redirect('/users/profile');
-        } else {
-            res.render("users/userEdit")
-        }
-*/
 
     },
 

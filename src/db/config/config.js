@@ -1,10 +1,11 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "wines_db",
+    "username": process.env.USER_DB,
+    "password": process.env.PASS_DB,
+    "database": process.env.NAME_DB,
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port": process.env.PORT_DB
   },
   "test": {
     "username": "root",

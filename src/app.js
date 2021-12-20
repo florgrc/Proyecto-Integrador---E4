@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser') 
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware")
+require('dotenv').config();
 
 
 app.use(session({
@@ -39,9 +40,8 @@ app.use(express.json());
 /*Configuracion carpeta public disponible*/
 app.use(express.static(path.resolve(__dirname, '../public')));
 
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Servidor listo en http://localhost:${port}`)
+app.listen(process.env.APP_PORT, () => {
+  console.log(`Servidor listo en http://localhost:${process.env.APP_PORT}`)
 });
 
 

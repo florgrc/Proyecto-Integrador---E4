@@ -1,4 +1,4 @@
-const User = require("../../models/users")
+const User = require("../db/models/Users")
 
 function userLoggedMiddleware (req,res,next) {
     res.locals.isLogged = false;
@@ -8,7 +8,7 @@ function userLoggedMiddleware (req,res,next) {
         res.locals.loggedUser = req.session.loggedUser;
     }
     let emailInCookie = req.cookies.email
-    let userFromCookie = User.findByField("email", emailInCookie);
+    //let userFromCookie = User.findByField("email", emailInCookie);
 
     next()
 }

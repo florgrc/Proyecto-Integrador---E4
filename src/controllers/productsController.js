@@ -1,15 +1,12 @@
 const path = require("path");
 const fs = require("fs");
 const res = require('express/lib/response');
-let db = require("../../models")
+let db = require("../db/models/Products")
 
 const { validationResult } = require ('express-validator');
 const { body } = require ('express-validator');
 
 /*Traer Productos*/
-
-let jsonProducts = fs.readFileSync(path.resolve(__dirname, "../db/products.json"), "utf-8");
-let products = JSON.parse(jsonProducts);
 
         /* Indexa la propiedad idProduct del objeto para hacer la eliminacion por ID de producto (no por posicion en el array) y devuelve ese valor */
 function findProductID(idSearch) {
@@ -85,22 +82,18 @@ const productsController = {
                 products[productToUpdate].image = req.file.filename;
             }
         })
-
-        let jsonDeProductos = JSON.stringify(products, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, "../db/products.json"), jsonDeProductos);
-
         res.redirect("/products");
     },
 
     delete: (req, res) => {
-
         let productToDelete = findProductID(req.params.idProduct);
 
-        products.splice(productToDelete, 1);
-
-        let productsJson = JSON.stringify(products, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, "../db/products.json"), productsJson);
-
+        db.Products.destroy({
+            where: {
+                id: req.params.idProduct
+            }
+        })
+        
         res.redirect("/products");
 
     },
@@ -138,9 +131,6 @@ const productsController = {
 
         }
         products.push(product);
-
-        let jsonDeProductos = JSON.stringify(products, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, "../db/products.json"), jsonDeProductos);
 
         res.redirect("/products");
 
