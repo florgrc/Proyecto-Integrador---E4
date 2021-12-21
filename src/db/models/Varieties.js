@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, dataTypes) => {
     let alias = "Varieties";
     let cols = {
         id: {
@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
         },
         name: {
-            type: dataTypes.VARCHAR,
+            type: dataTypes.STRING,
 
         },
     };

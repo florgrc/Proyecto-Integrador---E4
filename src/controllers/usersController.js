@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const res = require('express/lib/response');
 const bcrypt = require('bcryptjs');
-const User = require("../db/models/users")
+const db = require("../db/models")
 
 const newId = () => {
     let ultimo = 0;
@@ -41,21 +41,18 @@ const usersController = {
         let userAvatar = req.file.filename || "default-image1.png"
 
         let newUser = {
-            id: newId(),
             ...req.body,
             password: bcrypt.hashSync(req.body.password, 8),
             image: userAvatar,
             admin: false,
 
         }
-
-        if (req.file) {
-            //users.push(newUser);
-            req.session.loggedUser = newUser;
-            res.redirect('/users/profile');
-        } else {
-            res.render("users/register")
-        }
+        db.Users.create(newUser)
+        .then(usuario =>{
+            
+        })
+        
+       
     },
 
 
@@ -64,36 +61,45 @@ const usersController = {
     },
 
     loginProccess: (req, res) => {
-        let loggedUser = User.findByField("email", req.body.email);
-
-        if (loggedUser) {
-            let passwordOk = bcrypt.compareSync(req.body.password, loggedUser.password)
-            if (passwordOk) {
-                delete loggedUser.password;
-                req.session.loggedUser = loggedUser;
-
-                if(req.body.remember_user) {
-                    res.cookie("email", req.body.email, {maxAge : (1000 * 60) * 2})
-                }
-
-                return res.redirect("/users/profile")
-            }
-            return res.render("users/usersLogin", {
-                errors: {
-                    email: {
-                        msg: "La contraseña es incorrecta"
+      db.Users.findOne({
+            where : {
+                email: req.body.email}
+            }).then((usuario) => {
+                if (usuario) {
+                    let passwordOk = bcrypt.compareSync(req.body.password, usuario.password)
+                    if (passwordOk) {
+                        delete usuario.password;
+                        req.session.usuario = usuario;
+        
+                        if(req.body.remember_user) {
+                            res.cookie("email", req.body.email, {maxAge : (1000 * 60) * 2})
+                        }
+        
+                        return res.redirect("/users/profile")
                     }
+                    return res.render("users/usersLogin", {
+                        errors: {
+                            email: {
+                                msg: "La contraseña es incorrecta"
+                            }
+                        }
+                    })
+        
                 }
+                return res.render("users/usersLogin", {
+                    errors: {
+                        email: {
+                            msg: "Las credenciales son invalidas"
+                        }
+                    }
+                })
+            }).catch(e => {
+                res.send(e)
             })
 
-        }
-        return res.render("users/usersLogin", {
-            errors: {
-                email: {
-                    msg: "Las credenciales son invalidas"
-                }
-            }
-        })
+            
+
+        
     },
 
     profile: (req, res) => {

@@ -1,19 +1,21 @@
 const path = require("path");
 const fs = require("fs");
+let db = require("../db/models");
 
 /*Traer Productos*/
 
 const indexController = {
     home: (req,res) => {
         let others = [];
-        let featured = [];
 
-        products.forEach(product => {
-            if (product.featured == true) {
-            } else {
+     db.Products.findAll( {
+            where: {
+                featured : 0
             }
-        });
-         res.render("index" , {featured,others});
+        }).then(featured =>{
+            res.render("index" , {featured,others});
+        })
+        
     },
 };
 

@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const res = require('express/lib/response');
-let db = require("../db/models/Products")
+let db = require("../db/models")
 
 const { validationResult } = require ('express-validator');
 const { body } = require ('express-validator');
@@ -111,8 +111,7 @@ const productsController = {
         })
     },
     catalogue: (req, res) => {
-
-        db.products.findAll()
+        db.Products.findAll()
             .then(function(products){
                 res.render("products/productCatalogue", {
                     products
