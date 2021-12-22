@@ -1,7 +1,8 @@
 function authProductMiddleware(req,res,next) {
-    let loggedUser = req.session.loggedUser;
-    if(loggedUser.admin == true) {
-        next();
+    if(req.session.loggedUser != undefined) {
+        if(req.session.loggedUser.type_id === 2) {
+            next();
+        }
     }else{
         return res.redirect("/users/profile");
     }

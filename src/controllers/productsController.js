@@ -3,12 +3,16 @@ const fs = require("fs");
 const res = require('express/lib/response');
 let db = require("../db/models")
 
-const { validationResult } = require ('express-validator');
-const { body } = require ('express-validator');
+const {
+    validationResult
+} = require('express-validator');
+const {
+    body
+} = require('express-validator');
 
 /*Traer Productos*/
 
-        /* Indexa la propiedad idProduct del objeto para hacer la eliminacion por ID de producto (no por posicion en el array) y devuelve ese valor */
+/* Indexa la propiedad idProduct del objeto para hacer la eliminacion por ID de producto (no por posicion en el array) y devuelve ese valor 
 function findProductID(idSearch) {
     var index = -1;
     for (var i = 0; i < products.length; i++) {
@@ -19,7 +23,7 @@ function findProductID(idSearch) {
     }
     return index;
 }
-
+*/
 function nuevoID() {
     let last = 0
     products.forEach(product => {
@@ -33,17 +37,34 @@ function nuevoID() {
 
 
 const productsController = {
+    product: (req, res) => {
+        db.Products.findAll()
+            .then(function (products) {
+                res.render("products/product", {
+                    products
+                })
+            })
+    },
+    catalogue: (req, res) => {
+        db.Products.findAll()
+            .then(function (products) {
+                res.render("products/productCatalogue", {
+                    products
+                })
+            })
+    },
     detail: (req, res) => {
 
         db.Products.findOne({
-            where : {
-                id: req.params.idProduct}
-            }).then((producto) => {
-        res.render("products/productDetail", {
-            producto
+            where: {
+                id: req.params.idProduct
+            }
+        }).then((producto) => {
+            res.render("products/productDetail", {
+                producto
             });
-        })}
-            ,
+        })
+    },
     cart: (req, res) => {
         res.render("products/productCart")
     },
@@ -76,43 +97,45 @@ const productsController = {
         res.redirect("/products");
     },
 
-    delete: (req, res) => {
-        let productToDelete = findProductID(req.params.idProduct);
-
+    /*delete: (req, res) => {
+        //let productToDelete = findProductID(req.params.idProduct);
+        console.log(req.params.idProduct);
         db.Products.destroy({
             where: {
                 id: req.params.idProduct
             }
         })
-        
+
         res.redirect("/products");
 
     },
+    */
+    delete(req, res) {
+        console.log("req.params.idproduct= ??" + req.params.idProduct + "?? ");
+        db.Product.destroy({
+                where: {
+                    id: req.params.idProduct
+                }
+            })
+            .then(x => {
+                res.redirect('/products');
+            }).catch(error => {
+                return res.send(error)
+            })
+    },
     create: (req, res) => {
-       
+
         let newProductID = nuevoID()
         res.render('products/productCreate', {
             newProductID
         })
     },
 
-    product: (req, res) => {
-        res.render("products/product", {
-            products
-        })
-    },
-    catalogue: (req, res) => {
-        db.Products.findAll()
-            .then(function(products){
-                res.render("products/productCatalogue", {
-                    products
-                })
-            })
-    },
+
     store: (req, res) => {
         let productImage = req.file.filename || "default-image1.png"
 
-        
+
 
         let product = {
             idProduct: nuevoID(),
