@@ -5,14 +5,13 @@
    <form action="/product-detail" method="POST" class="productDetail-form">
       <h3>Detalle del producto</h3>
       <div class="product-details">
-         <% productSelected.forEach(product => { %>
-         <img src="/images/products/<%= product.image %>" alt="150" width="150">
+         <img src="/images/products/<%= producto.image %>" alt="150" width="150">
          <div class="productDetailed">
-            <p class="name"><%= product.name %></p>
-            <p class="type"><%= product.variety %></p>
-            <p class="price"><%= product.price %></p>
+            <p class="name"><%= producto.name %></p>
+            <p class="type"><%= producto.variety %></p>
+            <p class="price"><%= producto.price %></p>
             <p class="discount">5% OFF</p>
-            <p class="info"><%= product.description %></p>
+            <p class="info"><%= producto.description %></p>
             <select name="cantidad" id="cantidad">
                <option value="0" selected disabled>Seleccione una cantidad</option>
                <option value="1">1</option>
@@ -22,7 +21,6 @@
             </select>
             <button type="submit" class="regularButton">Agregar al Carrito</button><br>
          </div>
-         <% }) %>
       </div>
    </form>
    <div class="related">

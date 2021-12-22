@@ -12,6 +12,7 @@ router.get('/', indexController.home);
     res.send('session tiene el numero ' + req.session.numeroVisitas);
 });
 */
+
 module.exports = router;
 
 

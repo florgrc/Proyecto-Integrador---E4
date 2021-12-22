@@ -1,22 +1,77 @@
-insert into users (id, firstname, lastname, email, password, image, type_id, created_at, updated_at) values (1, 'Rayna', 'Sambidge', 'rsambidge0@gmpg.org', 'JtXVx0vH4En', 'https://robohash.org/ipsamdeseruntdoloremque.png?size=50x50&set=set1', 1, '11/25/2021', '8/16/2021');
-insert into users (id, firstname, lastname, email, password, image, type_id, created_at, updated_at) values (2, 'Law', 'Trodler', 'ltrodler1@huffingtonpost.com', 'fjjah2CgMp', 'https://robohash.org/repellendusexplicabout.png?size=50x50&set=set1', 2, '4/1/2021', '2/7/2021');
-insert into users (id, firstname, lastname, email, password, image, type_id, created_at, updated_at) values (3, 'Amy', 'Baildon', 'abaildon2@issuu.com', 'kmn5vsCvE33Z', 'https://robohash.org/estsaepefugiat.png?size=50x50&set=set1', 2, '9/20/2021', '12/3/2021');
-insert into users (id, firstname, lastname, email, password, image, type_id, created_at, updated_at) values (4, 'Matthus', 'Dewick', 'mdewick3@elpais.com', 'TE27XEUM', 'https://robohash.org/verononet.png?size=50x50&set=set1', 2, '1/5/2021', '9/3/2021');
-insert into users (id, firstname, lastname, email, password, image, type_id, created_at, updated_at) values (5, 'Flora', 'Faichnie', 'ffaichnie4@ibm.com', 'aKDjyb', 'https://robohash.org/quifugiattemporibus.png?size=50x50&set=set1', 2, '11/23/2021', '12/31/2020');
-insert into users (id, firstname, lastname, email, password, image, type_id, created_at, updated_at) values (6, 'Hoyt', 'Merryfield', 'hmerryfield5@sciencedirect.com', 'PHw73PC7Ye', 'https://robohash.org/possimusvoluptascorporis.png?size=50x50&set=set1', 6, '7/21/2021', '9/1/2021');
-insert into users (id, firstname, lastname, email, password, image, type_id, created_at, updated_at) values (7, 'Hadleigh', 'Kamien', 'hkamien6@pcworld.com', 'EV5Jru', 'https://robohash.org/laboreodioenim.png?size=50x50&set=set1', 2, '4/6/2021', '9/3/2021');
-insert into users (id, firstname, lastname, email, password, image, type_id, created_at, updated_at) values (8, 'Bearnard', 'Chamberlain', 'bchamberlain7@narod.ru', '02qByZ', 'https://robohash.org/quidemetaperiam.png?size=50x50&set=set1', 2, '6/21/2021', '1/28/2021');
-insert into users (id, firstname, lastname, email, password, image, type_id, created_at, updated_at) values (9, 'Dan', 'Corrie', 'dcorrie8@ning.com', 'uXbvzC0RwLGl', 'https://robohash.org/repudiandaeetmagni.png?size=50x50&set=set1', 2, '2/23/2021', '5/7/2021');
-insert into users (id, firstname, lastname, email, password, image, type_id, created_at, updated_at) values (10, 'Lorie', 'Gabel', 'lgabel9@unicef.org', 'QVT1AGTZh', 'https://robohash.org/voluptateadexcepturi.png?size=50x50&set=set1', 2, '7/29/2021', '2/10/2021');
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: wines_db
+-- ------------------------------------------------------
+-- Server version	5.5.5-10.4.21-MariaDB
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-insert into products (id, name, description, image, classification_id, variety_id, price, featured, created_at, updated_at) values (1, 'praesent blandit lacinia erat vestibulum', 'pellentesque viverra pede ac diam', 'https://robohash.org/voluptatesvoluptatibusid.png?size=50x50&set=set1', 1, 1, 9377.63, false, '12/28/2020', '3/12/2021');
-insert into products (id, name, description, image, classification_id, variety_id, price, featured, created_at, updated_at) values (2, 'dapibus augue vel accumsan', 'magna bibendum imperdiet nullam orci', 'https://robohash.org/uttemporibusrerum.png?size=50x50&set=set1', 2, 2, 6747.0, true, '9/30/2021', '3/22/2021');
-insert into products (id, name, description, image, classification_id, variety_id, price, featured, created_at, updated_at) values (3, 'sapien quis libero nullam', 'dui luctus rutrum nulla tellus', 'https://robohash.org/estoptiominima.png?size=50x50&set=set1', 3, 3, 3796.08, false, '2/1/2021', '12/21/2020');
-insert into products (id, name, description, image, classification_id, variety_id, price, featured, created_at, updated_at) values (4, 'erat eros viverra eget', 'non velit donec diam neque', 'https://robohash.org/asperioresquaeratquod.png?size=50x50&set=set1', 1, 4, 2616.7, true, '2/22/2021', '6/30/2021');
-insert into products (id, name, description, image, classification_id, variety_id, price, featured, created_at, updated_at) values (5, 'orci pede venenatis non', 'vulputate vitae nisl aenean lectus', 'https://robohash.org/veritatisrepellendusasperiores.png?size=50x50&set=set1', 2, 1, 3572.06, false, '8/9/2021', '9/11/2021');
-insert into products (id, name, description, image, classification_id, variety_id, price, featured, created_at, updated_at) values (6, 'interdum eu tincidunt in leo', 'ultrices phasellus id sapien in', 'https://robohash.org/temporibusporroaut.png?size=50x50&set=set1', 3, 2, 5798.49, true, '11/30/2021', '4/6/2021');
-insert into products (id, name, description, image, classification_id, variety_id, price, featured, created_at, updated_at) values (7, 'semper sapien a libero nam', 'vestibulum ante ipsum primis in', 'https://robohash.org/molestiaeessequo.png?size=50x50&set=set1', 1, 3, 4524.8, true, '12/29/2020', '6/11/2021');
-insert into products (id, name, description, image, classification_id, variety_id, price, featured, created_at, updated_at) values (8, 'id nulla ultrices aliquet', 'consequat dui nec nisi volutpat', 'https://robohash.org/etcommodivitae.png?size=50x50&set=set1', 2, 4, 8358.84, false, '4/27/2021', '10/6/2021');
-insert into products (id, name, description, image, classification_id, variety_id, price, featured, created_at, updated_at) values (9, 'duis faucibus accumsan odio', 'at dolor quis odio consequat', 'https://robohash.org/occaecatiestquisquam.png?size=50x50&set=set1', 3, 1, 6593.22, true, '9/14/2021', '10/21/2021');
-insert into products (id, name, description, image, classification_id, variety_id, price, featured, created_at, updated_at) values (10, 'neque aenean auctor gravida', 'varius ut blandit non interdum', 'https://robohash.org/sapientenihilvelit.png?size=50x50&set=set1', 1, 2, 5875.57, false, '7/5/2021', '12/26/2020');
+--
+-- Dumping data for table `classifications`
+--
+
+LOCK TABLES `classifications` WRITE;
+/*!40000 ALTER TABLE `classifications` DISABLE KEYS */;
+INSERT INTO `classifications` VALUES (1,'Tinto'),(2,'Blanco'),(3,'Rosado');
+/*!40000 ALTER TABLE `classifications` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `products`
+--
+
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'praesent blandit lacinia erat vestibulum','pellentesque viverra pede ac diam','https://robohash.org/voluptatesvoluptatibusid',1,1,9378,0,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,'dapibus augue vel accumsan','magna bibendum imperdiet nullam orci','https://robohash.org/uttemporibusrerum.png?si',2,2,6747,1,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(3,'sapien quis libero nullam','dui luctus rutrum nulla tellus','https://robohash.org/estoptiominima.png?size=',3,3,3796,0,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(4,'erat eros viverra eget','non velit donec diam neque','https://robohash.org/asperioresquaeratquod.pn',1,4,2617,1,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(5,'orci pede venenatis non','vulputate vitae nisl aenean lectus','https://robohash.org/veritatisrepellendusaspe',2,1,3572,0,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(6,'interdum eu tincidunt in leo','ultrices phasellus id sapien in','https://robohash.org/temporibusporroaut.png?s',3,2,5798,1,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(7,'semper sapien a libero nam','vestibulum ante ipsum primis in','https://robohash.org/molestiaeessequo.png?siz',1,3,4525,1,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(8,'id nulla ultrices aliquet','consequat dui nec nisi volutpat','https://robohash.org/etcommodivitae.png?size=',2,4,8359,0,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(9,'duis faucibus accumsan odio','at dolor quis odio consequat','https://robohash.org/occaecatiestquisquam.png',3,1,6593,1,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(10,'neque aenean auctor gravida','varius ut blandit non interdum','https://robohash.org/sapientenihilvelit.png?s',1,2,5876,0,'0000-00-00 00:00:00','0000-00-00 00:00:00');
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `types`
+--
+
+LOCK TABLES `types` WRITE;
+/*!40000 ALTER TABLE `types` DISABLE KEYS */;
+INSERT INTO `types` VALUES (1,'Administrador'),(2,'Usuario');
+/*!40000 ALTER TABLE `types` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Rayna','Sambidge','rsambidge0@gmpg.org','$2a$12$O13HZm3x9I/pVnkLFvz.quFSxPUUpaB36qfo1Q','https://robohash.org/ipsamdeseruntdoloremque.',1),(2,'Law','Trodler','ltrodler1@huffingtonpost.com','fjjah2CgMp','https://robohash.org/repellendusexplicabout.p',2),(3,'Amy','Baildon','abaildon2@issuu.com','kmn5vsCvE33Z','https://robohash.org/estsaepefugiat.png?size=',2),(4,'Matthus','Dewick','mdewick3@elpais.com','TE27XEUM','https://robohash.org/verononet.png?size=50x50',2),(5,'Flora','Faichnie','ffaichnie4@ibm.com','aKDjyb','https://robohash.org/quifugiattemporibus.png?',2),(6,'Hoyt','Merryfield','hmerryfield5@sciencedirect.com','PHw73PC7Ye','https://robohash.org/possimusvoluptascorporis',2),(7,'Hadleigh','Kamien','hkamien6@pcworld.com','EV5Jru','https://robohash.org/laboreodioenim.png?size=',2),(8,'Bearnard','Chamberlain','bchamberlain7@narod.ru','02qByZ','https://robohash.org/quidemetaperiam.png?size',2),(9,'Dan','Corrie','dcorrie8@ning.com','uXbvzC0RwLGl','https://robohash.org/repudiandaeetmagni.png?s',2),(10,'Lorie','Gabel','lgabel9@unicef.org','QVT1AGTZh','https://robohash.org/voluptateadexcepturi.png',2),(13,'flor','flor','flor@gmail.com','$2a$08$1HZEIULsGKcOKryVJ6yl5OdwMnz6u5kJ6kehxL','image-1640127964632.jpg',1),(14,'flor','flor','florencia@gmail.com','$2a$08$kIiLAgoe.0MV90GyxUoeduGU60NOjmf/hIotd5','image-1640128521259.jpg',2);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `varieties`
+--
+
+LOCK TABLES `varieties` WRITE;
+/*!40000 ALTER TABLE `varieties` DISABLE KEYS */;
+INSERT INTO `varieties` VALUES (1,'Malbec'),(2,'Cavernet'),(3,'Merlot'),(4,'Syrah');
+/*!40000 ALTER TABLE `varieties` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-12-21 20:34:18

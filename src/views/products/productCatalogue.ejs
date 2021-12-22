@@ -26,7 +26,7 @@
                <td class="detail-product"><%= product.price%></td>
                <td class="detail-product">
                <article class="product">
-                  <a href="/products/detail/<%= product.idProduct %>">
+                  <a href="/products/detail/<%= product.id %>">
                      <div class="productImageDiv">
                      <img src="/images/products/<%= product.image %>" alt="producto1" class="productImage">
                      </div>
@@ -36,7 +36,7 @@
 
                <td class="detail-product">
 
-                  <form method="GET" action="/products/detail/<%= product.idProduct %>">
+                  <form method="GET" action="/products/detail/<%= product.id %>">
                      <input type="submit" value="Ver detalle" class="regularButton">
                   </form>
                </td>

@@ -29,13 +29,6 @@ module.exports = (sequelize, dataTypes) => {
         type_id: {
             type: dataTypes.INTEGER,
 
-        },
-        created_at: {
-            type: dataTypes.DATE,
-
-        },
-        updated_at: {
-            type: dataTypes.DATE,
 
         },
     };

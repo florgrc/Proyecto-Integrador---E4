@@ -35,24 +35,15 @@ function nuevoID() {
 const productsController = {
     detail: (req, res) => {
 
-        let productSelected = [];
-        let others = [];
-        let id = req.params.idProduct
-
-        products.forEach(product => {
-            if (id == product.idProduct) {
-                productSelected.push(product);
-            } else {
-                others.push(product)
-            }
-        });
-
+        db.Products.findOne({
+            where : {
+                id: req.params.idProduct}
+            }).then((producto) => {
         res.render("products/productDetail", {
-            productSelected,
-            others
-        });
-
-    },
+            producto
+            });
+        })}
+            ,
     cart: (req, res) => {
         res.render("products/productCart")
     },
