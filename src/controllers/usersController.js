@@ -44,7 +44,7 @@ const usersController = {
             ...req.body,
             password: bcrypt.hashSync(req.body.password, 8),
             image: userAvatar,
-            admin: false
+            /*admin: false*/
 
         }
         db.Users.create(newUser)

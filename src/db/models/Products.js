@@ -33,15 +33,7 @@ module.exports = (sequelize, dataTypes) => {
         featured: {
             type: dataTypes.BOOLEAN,
 
-        },
-        created_at: {
-            type: dataTypes.DATE,
-
-        },
-        updated_at: {
-            type: dataTypes.DATE,
-
-        },
+        }
     };
     let config = {
         tableName: "products",

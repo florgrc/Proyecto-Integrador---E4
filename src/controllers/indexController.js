@@ -10,7 +10,7 @@ const indexController = {
 
      db.Products.findAll( {
             where: {
-                featured : 0
+                featured : 1
             }
         }).then(featured =>{
             res.render("index" , {featured,others});

@@ -29,12 +29,12 @@
                <td class="detail-product"><%= product.featured%></td>
 
                <td class="detail-product">
-                  <form method="GET" action="/products/edit/<%= product.idProduct %>">
+                  <form method="GET" action="/products/edit/<%= product.id %>">
                      <input type="submit" value="Modificar" class="regularButton">
                   </form>
                </td>
                <td class="detail-product">
-                  <form method="POST" action="/products/edit/delete/<%= product.idProduct%>?_method=DELETE">
+                  <form method="POST" action="/products/edit/delete/<%= product.id%>?_method=DELETE">
                      <input type="submit" onclick="return confirm('¿Estas seguro que deseas eliminar el producto?')"
                         value="Eliminar" class="cancelButton">
                   </form>

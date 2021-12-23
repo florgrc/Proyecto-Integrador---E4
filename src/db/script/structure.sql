@@ -45,8 +45,6 @@ CREATE TABLE `products` (
   `variety_id` int(11) NOT NULL,
   `price` decimal(10,0) NOT NULL,
   `featured` tinyint(4) NOT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `classification_idx` (`classification_id`),
   KEY `variety_idx` (`variety_id`),
@@ -81,14 +79,14 @@ CREATE TABLE `users` (
   `firstname` varchar(45) NOT NULL,
   `lastname` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
+  `password` varchar(150) DEFAULT NULL,
   `image` varchar(45) DEFAULT NULL,
   `type_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `type_idx` (`type_id`),
   CONSTRAINT `type` FOREIGN KEY (`type_id`) REFERENCES `types` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -114,4 +112,4 @@ CREATE TABLE `varieties` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-21 20:36:43
+-- Dump completed on 2021-12-23 14:05:09

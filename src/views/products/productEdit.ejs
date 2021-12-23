@@ -5,7 +5,7 @@
    <section>
       <div>
          <h3 class="title-h3">Modificar Producto</h3>
-         <form action="/products/edit/<%= productToEdit.idProduct%>?_method=PUT" method="POST"
+         <form action="/products/edit/<%= producto.id%>?_method=PUT" method="POST"
             class="form-editpproduct-style" enctype="multipart/form-data">
             <div class="editProductContainer">
                <div class="row">
@@ -13,7 +13,7 @@
                      <label for="idProduct">ID del producto</label>
                   </div>
                   <div class="col-75">
-                     <input type="number" id="idProduct" name="idProduct" value=<%= productToEdit.idProduct%>
+                     <input type="number" id="idProduct" name="idProduct" value=<%= producto.id%>
                         readonly><br>
                   </div>
                </div>
@@ -22,7 +22,7 @@
                      <label for="name">Nombre</label>
                   </div>
                   <div class="col-75">
-                     <input type="text" id="name" name="name" value="<%= productToEdit.name %>"
+                     <input type="text" id="name" name="name" value="<%= producto.name %>"
                         placeholder="Nombre del producto..." required>
                   </div>
                </div>
@@ -31,8 +31,11 @@
                      <label for="classification">Clasificación</label>
                   </div>
                   <div class="col-75">
-                     <input type="text" id="classification" name="classification"
-                        value="<%= productToEdit.classification %>" placeholder="Clasificación..." required>
+                     <select name="classification_id" id="classification">
+                           <option value="1">Tinto</option>
+                           <option value="2">Blanco</option>
+                           <option value="3">Rosado</option>
+                        </select>
                   </div>
                </div>
                <div class="row">
@@ -40,8 +43,12 @@
                      <label for="variety">Variedad</label>
                   </div>
                   <div class="col-75">
-                     <input type="text" id="variety" name="variety" value="<%- productToEdit.variety %>"
-                        placeholder="Variedad..." required>
+                     <select name="variety_id" id="variety">
+                        <option value="1">Malbec</option>
+                        <option value="2">Cavernet</option>
+                        <option value="3">Merlot</option>
+                        <option value="4">Syrah</option>
+                     </select>
                   </div>
                </div>
                <div class="row">
@@ -49,7 +56,7 @@
                      <label for="price">Precio</label>
                   </div>
                   <div class="col-75">
-                     <input type="text" id="price" name="price" value="<%- productToEdit.price%>" placeholder="Precio"
+                     <input type="text" id="price" name="price" value="<%- producto.price%>" placeholder="Precio"
                         required>
                   </div>
                </div>
@@ -58,7 +65,7 @@
                      <label for="featured">Destacado</label>
                   </div>
                   <div class="col-75">
-                     <input type="checkbox" id="featured" name="featured" value="<%- productToEdit.featured%>">
+                     <input type="checkbox" id="featured" name="featured" value="<%- producto.featured%>">
                   </div>
                </div>
                <div class="row"> 
@@ -81,7 +88,7 @@
                   </div>
                   <div class="col-75">
                      <textarea id="subject" name="description"
-                        placeholder="Descripción del producto..."><%= productToEdit.description %></textarea>
+                        placeholder="Descripción del producto..."><%= producto.description %></textarea>
                   </div>
                </div>
                <br>
