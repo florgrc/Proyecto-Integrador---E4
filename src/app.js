@@ -41,7 +41,7 @@ app.use(express.json());
 app.use(express.static(path.resolve(__dirname, '../public')));
 
 app.listen(process.env.APP_PORT, () => {
-  console.log(`Servidor listo en http://localhost:${process.env.APP_PORT}`)
+  console.log(`Servidor listo en http://localhost:${process.env.APP_PORT}/`)
 });
 
 

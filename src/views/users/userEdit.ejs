@@ -48,17 +48,17 @@
                      <div class="group">
                         <label for="user" class="label">Contraseña</label>
                         <input id="pass" type="password" name="password" placeholder="Mínimo 8 caracteres"
-                           class="input" value=<%= loggedUser.password %>>
+                           class="input" placeholder="Ingrese su nueva contraseña">
                         <% if (locals.errors && errors.password ) { %>
                         <%= errors.password.msg %>
                         <% } %>
                      </div>
                      <div class="group">
                         <label for="pass" class="label">Repetir Contraseña</label>
-                        <input id="pass" type="password" class="input" data-type="password" value=<%= loggedUser.password %>>
+                        <input id="pass" type="password" class="input" data-type="password" placeholder="Repetir contraseña">
                      </div>
                      <div class="group">
-                        <a href="/users/profile"><button type="submit" class="button" value="Registrarse">Modificar Información</button></a>
+                        <a href="/users/profile"><button type="submit" onclick="return confirm('¿Estas seguro que deseas actualizar tu perfil? Deberás volver a loguearte en el sitio')" class="button" value="Registrarse">Modificar Información</button></a>
                      </div>    
                   </div>
                </div>
