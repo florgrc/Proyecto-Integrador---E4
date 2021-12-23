@@ -98,8 +98,7 @@ const usersController = {
                 id: req.params.id
             }
         }).then(() => {
-            req.session.destroy();
-            res.redirect("/users/login");
+            res.redirect("/users/profile");
         })
     },
     logout: (req, res) => {
