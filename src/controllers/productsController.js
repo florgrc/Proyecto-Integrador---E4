@@ -136,9 +136,12 @@ delete: (req, res) => {
     },
        
     product: (req, res) => {
-        res.render("products/product", {
-            products
-        })
+        db.Products.findAll()
+            .then(function (products) {
+                res.render("products/product", {
+                    products
+                })
+            })
     },
     catalogue: (req, res) => {
         res.render("products/productCatalogue", {
