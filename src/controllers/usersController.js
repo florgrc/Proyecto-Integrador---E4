@@ -98,6 +98,7 @@ const usersController = {
                 id: req.params.id
             }
         }).then(() => {
+            req.session.destroy();
             res.redirect("/users/profile");
         })
     },
