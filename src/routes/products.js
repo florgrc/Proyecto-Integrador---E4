@@ -21,16 +21,16 @@ const storage = multer.diskStorage({
 /*middleware*/
  const authProductMiddleware = require ('../middlewares/authProductMiddleware');
 
-router.get("/", authProductMiddleware, productsController.product);
-router.post("/", upload.single("productImage"), productsController.store);
-router.get("/detail/:idProduct", productsController.detail);
-router.get("/cart", productsController.cart);
-router.get("/edit/:idProduct", productsController.edit);
-router.put("/edit/:idProduct", upload.single("productImage"), productsController.update); 
-router.get("/create", productsController.create);
-router.delete("/edit/:idProduct", productsController.delete);
-
-router.get("/catalogue", productsController.catalogue);
+ router.get("/", authProductMiddleware, productsController.product);
+ router.post("/", upload.single("productImage"), productsController.store);
+ router.get("/detail/:idProduct", productsController.detail);
+ router.get("/cart", productsController.cart);
+ router.get("/edit/:idProduct", productsController.edit);
+ router.put("/edit/:idProduct", upload.single("productImage"), productsController.update); 
+ router.get("/create", productsController.create); 
+ router.delete("/edit/:idProduct", productsController.delete); 
+ 
+ router.get("/catalogue", productsController.catalogue);
 
 /*Procesamiento de datos*/
 

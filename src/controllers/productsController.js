@@ -1,69 +1,30 @@
 const path = require("path");
 const fs = require("fs");
 const res = require('express/lib/response');
-let db = require("../db/models")
-
-const {
-    validationResult
-} = require('express-validator');
-const {
-    body
-} = require('express-validator');
-
-/*Traer Productos*/
-
-/* Indexa la propiedad idProduct del objeto para hacer la eliminacion por ID de producto (no por posicion en el array) y devuelve ese valor 
-function findProductID(idSearch) {
-    var index = -1;
-    for (var i = 0; i < products.length; i++) {
-        if (products[i].idProduct == idSearch) {
-            index = i;
-            break;
-        }
-    }
-    return index;
-}
-*/
-function nuevoID() {
-    let last = 0
-    products.forEach(product => {
-        if (product.idProduct > last) {
-            last = product.idProduct;
-        }
-    })
-
-    return last + 1;
-}
-
+const db = require("../db/models");
+const { validationResult } = require ('express-validator');
+const { body } = require ('express-validator');
 
 const productsController = {
-    product: (req, res) => {
-        db.Products.findAll()
-            .then(function (products) {
-                res.render("products/product", {
-                    products
-                })
-            })
-    },
-    catalogue: (req, res) => {
-        db.Products.findAll()
-            .then(function (products) {
-                res.render("products/productCatalogue", {
-                    products
-                })
-            })
-    },
     detail: (req, res) => {
 
-        db.Products.findOne({
-            where: {
-                id: req.params.idProduct
+        let productSelected = [];
+        let others = [];
+        let id = req.params.idProduct
+
+        products.forEach(product => {
+            if (id == product.idProduct) {
+                productSelected.push(product);
+            } else {
+                others.push(product)
             }
-        }).then((producto) => {
-            res.render("products/productDetail", {
-                producto
-            });
-        })
+        });
+
+        res.render("products/productDetail", {
+            productSelected,
+            others
+        });
+
     },
     cart: (req, res) => {
         res.render("products/productCart")
@@ -72,71 +33,121 @@ const productsController = {
     edit: (req, res) => {
         /* fix para funcion de edicion de producto buscando por idProduct en lugar de posicion en el array */
 
-        let idProductToEdit = findProductID(req.params.idProduct);
-
-        let productToEdit = products[idProductToEdit];
-
-        res.render("products/productEdit", {
-            productToEdit: productToEdit
-        });
+        let idProductToEdit = db.ProductID.findByPk(req.params.id)
+        let descripcion =db.Description.findAll()
+        let image =db.ProductImage.findAll()
+        let clasificacion =db.Classification.findAll()
+        let variedad =db.Variety.findAll()
+        let precio =db.Price.findAll()
+        let destacado =db.Featured.findAll()
+        Promise.all([idProductToEdit,descripcion,image,clasificacion, variedad, precio, destacado])
+            .then(function([products,descripcion,image,clasificacion, variedad, precio, destacado]){
+               return res.render('products/productEdit',{descripcion,image,clasificacion,variedad,precio,destacado});
+               
+            }).catch(error => console.log(error));
     },
+
     update: (req, res) => {
-
-        let productToUpdate = findProductID(req.params.idProduct);
-        products.forEach(product => {
-            if (products[productToUpdate].idProduct == req.params.idProduct) {
-                products[productToUpdate].name = req.body.name;
-                products[productToUpdate].description = req.body.description;
-                products[productToUpdate].classification = req.body.classification;
-                products[productToUpdate].variety = req.body.variety;
-                products[productToUpdate].price = req.body.price;
-                products[productToUpdate].featured = req.body.featured;
-                products[productToUpdate].image = req.file.filename;
-            }
-        })
-        res.redirect("/products");
-    },
-
-    /*delete: (req, res) => {
-        //let productToDelete = findProductID(req.params.idProduct);
-        console.log(req.params.idProduct);
-        db.Products.destroy({
+        let idProduct = req.params.idProduct
+        db.Product.update({
+            name:req.body.name,
+            description:req.body.description,
+            classification: req.body.classification,
+            variety:req.body.variety,
+            price:req.body.price,
+            featured:req.body.featured,
+            img:req.file.filename,
+            }, 
+            {
+               where: {id: idProduct}
+            })
+            .then(function(productocreado){
+                db.ProductName.update({
+                    name_id:req.body.name,
+                  },
+                {
+                    where: {product_id: idProduct}
+            })
+                db.ProductDescription.update({
+                    description_id:req.body.description,
+                },
+            {
+                where: {product_id: idProduct}
+            })
+            db.ProductClassification.update({
+                classification_id:req.body.classification,
+        },
+        {
             where: {
-                id: req.params.idProduct
-            }
+                product_id: idProduct}
         })
+        db.ProductVariety.update({
+            variety_id:req.body.variety,
+        }, 
+        {
+        where: {
+            product_id: idProduct}
+      })
+       db.ProductPrice.update({
+        price_id:req.body.price,
+      }, 
+      {
+        where: {product_id: idProduct},
+      })
+       db.ProductFeatured.update({
+         featured_id:req.body.featured,
+       },
+      {
+        where: {
+       product_id: idProduct},
+      })
+   db.ProductImage.update({
+     image_id:req.file.filename,
+   })   
+   .catch(error => console.log(error));          
+})
+        
+    res.redirect('/products');
+},
 
-        res.redirect("/products");
+    
+delete: (req, res) => {
+    db.Product.destroy({
+        where: {id:req.params.id},
+    })
+    res.redirect("/products");
 
-    },
-    */
-    delete(req, res) {
-        console.log("req.params.idproduct= ??" + req.params.idProduct + "?? ");
-        db.Product.destroy({
-                where: {
-                    id: req.params.idProduct
-                }
-            })
-            .then(x => {
-                res.redirect('/products');
-            }).catch(error => {
-                return res.send(error)
-            })
-    },
+},
     create: (req, res) => {
-
-        let newProductID = nuevoID()
-        res.render('products/productCreate', {
-            newProductID
+        let nombre = db.Name.findAll()
+        let descripcion =db.Description.findAll()
+        let image =db.ProductImage.findAll()
+        let clasificacion =db.Classification.findAll()
+        let variedad =db.Variety.findAll()
+        let precio =db.Price.findAll()
+        let destacado =db.Featured.findAll()
+        Promise.all([nombre,descripcion,image,clasificacion, variedad, precio, destacado])
+            .then(function([nombre,descripcion,image,clasificacion, variedad, precio, destacado]){
+               return res.render('products/productCreate',{Nombre:nombre,Descripcion: descripcion,Image:image,Clasificacion: clasificacion, Variedad: variedad, Precio: precio,Destacado: destacado});
+               
+            })
+            .catch(error => console.log(error));          
+     res.redirect('/products');
+    },
+       
+    product: (req, res) => {
+        res.render("products/product", {
+            products
         })
     },
-
-
+    catalogue: (req, res) => {
+        res.render("products/productCatalogue", {
+            products
+        })
+    },
     store: (req, res) => {
         let productImage = req.file.filename || "default-image1.png"
-
-
-
+        
         let product = {
             idProduct: nuevoID(),
             ...req.body,
@@ -145,11 +156,12 @@ const productsController = {
         }
         products.push(product);
 
+        let jsonDeProductos = JSON.stringify(products, null, 4);
+        fs.writeFileSync(path.resolve(__dirname, "../db/products.json"), jsonDeProductos);
+
         res.redirect("/products");
 
     }
-
-
-};
+}
 
 module.exports = productsController;
