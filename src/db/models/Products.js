@@ -41,7 +41,7 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const Products = sequelize.define (alias, cols, config);
-
+    // Asociar classification y varieties con productos
 
     return Products;
 }
