@@ -9,11 +9,11 @@ const usersController = require('../controllers/usersController');
 
 /*middleware*/
 const multerMiddleware = require('../middlewares/multerMiddleware');
-const validation = require ('../middlewares/usersRegisterValidation');
 const guestMiddleware = require ('../middlewares/guestMiddleware');
 const authMiddleware = require ('../middlewares/authMiddleware');
 const logUsersLoginMiddleware = require ('../middlewares/logUsersLoginMiddleware');//no esta en uso!
 const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware")
+const usersRegisterValidation = require("../middlewares/usersRegisterValidation")
 
 const validateLoginForm = [
     check('email').isEmail ().withMessage('Debes completar el campo de email'),

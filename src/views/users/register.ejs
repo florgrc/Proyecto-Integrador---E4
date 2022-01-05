@@ -12,32 +12,50 @@
                      <div class="group">
                         <label for="user" class="label">Nombre</label>
                         <input id="user" type="text" name="firstname" class="input">
-                        <% if (locals.errors && errors.firstname ) { %>
-                        <%= errors.firstname.msg %>
-                        <% } %>
+
+                        <% if( locals.errors){ %>
+                           <% for(let i = 0; i < errors.length; i++){ %>
+                           <% if(errors[i].param == "firstname"){ %>
+                           <small class="text-danger"> <%= errors[i].msg%> </small>
+                           <% } %>
+                           <% } %>
+                           <% } %>
+                     
                      </div>
                      <div class="group">
                         <label for="user" class="label">Apellido</label>
                         <input id="user" type="text" name="lastname" class="input">
-                        <% if (locals.errors && errors.lastname ) { %>
-                        <%= errors.lastname.msg %>
-                        <% } %>
+                        <% if(locals.errors){ %>
+                           <% for(let i = 0; i < errors.length; i++){ %>
+                           <% if(errors[i].param == "lastname"){ %>
+                           <small class="text-danger"> <%= errors[i].msg%> </small>
+                           <% } %>
+                           <% } %>
+                           <% } %>
                      </div>
                      <div class="group">
                         <label for="email" class="label">Email</label>
                         <input id="email" type="email" name="email" placeholder="usuario@tudominio.com" class="input">
-                        <% if (locals.errors && errors.email ) { %>
-                        <%= errors.email.msg %>
-                        <% } %>
+                        <% if(locals.errors){ %>
+                           <% for(let i = 0; i < errors.length; i++){ %>
+                           <% if(errors[i].param == "email"){ %>
+                           <small class="text-danger"> <%= errors[i].msg%> </small>
+                           <% } %>
+                           <% } %>
+                           <% } %>
                      </div>
                      <div class="group">
                         <label for="file-upload" class="custom-file-upload">
                            <i class="fas fa-cloud-upload-alt"></i> Subir imagen
                         </label>
                         <input id="file-upload" type="file" name="userAvatar" accept=".png, .jpg, .jpeg" required>
-                        <% if (locals.errors && errors.avatar ) { %>
-                        <%= errors.avatar.msg %>
-                        <% } %>
+                        <% if(locals.errors){ %>
+                           <% for(let i = 0; i < errors.length; i++){ %>
+                           <% if(errors[i].param == "userAvatar"){ %>
+                           <small class="text-danger"> <%= errors[i].msg%> </small>
+                           <% } %>
+                           <% } %>
+                           <% } %>
                      </div>
                      <div>
                         <select name="type_id" id="type">
@@ -49,13 +67,24 @@
                         <label for="user" class="label">Contraseña</label>
                         <input id="pass" type="password" name="password" placeholder="Mínimo 8 caracteres"
                            class="input">
-                        <% if (locals.errors && errors.password ) { %>
-                        <%= errors.password.msg %>
-                        <% } %>
+                           <% if(locals.errors){ %>
+                              <% for(let i = 0; i < errors.length; i++){ %>
+                              <% if(errors[i].param == "password"){ %>
+                              <small class="text-danger"> <%= errors[i].msg%> </small>
+                              <% } %>
+                              <% } %>
+                              <% } %>
                      </div>
                      <div class="group">
                         <label for="pass" class="label">Repetir Contraseña</label>
-                        <input id="pass" type="password" class="input" data-type="password">
+                        <input id="pass" type="password" name="repassword" class="input" data-type="password">
+                        <% if(locals.errors){ %>
+                           <% for(let i = 0; i < errors.length; i++){ %>
+                           <% if(errors[i].param == "repassword"){ %>
+                           <small class="text-danger"> <%= errors[i].msg%> </small>
+                           <% } %>
+                           <% } %>
+                           <% } %>
                      </div>
                      <div class="group">
                         <a href="#"><button type="submit" class="button" value="Registrarse">Registrarse</button></a>

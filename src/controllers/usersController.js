@@ -2,7 +2,8 @@ const path = require('path');
 const fs = require('fs');
 const res = require('express/lib/response');
 const bcrypt = require('bcryptjs');
-const db = require("../db/models")
+const db = require("../db/models");
+const { validationResult } = require("express-validator");
 
 const newId = () => {
     let ultimo = 0;
@@ -21,6 +22,8 @@ const usersController = {
 
     store: (req, res) => {
 
+        let errors = validationResult(req)
+
         let userAvatar = req.file.filename || "default-image1.png"
 
         let newUser = {
@@ -30,11 +33,14 @@ const usersController = {
             /*admin: false*/
 
         }
+        if(errors.isEmpty()){
         db.Users.create(newUser)
             .then(usuario => {
                 return res.redirect("/users/login")
-            })
-
+            })} else {
+                res.render("users/register", {errors: errors.array()})
+            }
+            console.log(errors);
 
     },
     login: (req, res) => {
@@ -97,8 +103,7 @@ const usersController = {
             where: {
                 id: req.params.id
             }
-        }).then(() => {
-            req.session.destroy();
+        }).then((usuario) => {
             res.redirect("/users/profile");
         })
     },
