@@ -40,7 +40,6 @@ const usersController = {
             })} else {
                 res.render("users/register", {errors: errors.array()})
             }
-            console.log(errors);
 
     },
     login: (req, res) => {

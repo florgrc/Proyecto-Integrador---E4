@@ -11,7 +11,6 @@ const usersController = require('../controllers/usersController');
 const multerMiddleware = require('../middlewares/multerMiddleware');
 const guestMiddleware = require ('../middlewares/guestMiddleware');
 const authMiddleware = require ('../middlewares/authMiddleware');
-const logUsersLoginMiddleware = require ('../middlewares/logUsersLoginMiddleware');//no esta en uso!
 const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware")
 const usersRegisterValidation = require("../middlewares/usersRegisterValidation")
 
@@ -37,7 +36,7 @@ const upload = multer({storage: storage})
 
 // Registro
 router.get('/register', guestMiddleware, usersController.register);
-router.post('/', upload.single('userAvatar'), usersController.store);
+router.post('/', upload.single('userAvatar'), usersRegisterValidation, usersController.store);
 
 router.get('/profile', authMiddleware, usersController.profile);
 
