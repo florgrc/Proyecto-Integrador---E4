@@ -7,6 +7,7 @@ const session = require('express-session');
 const cookies = require('cookie-parser') 
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware")
 require('dotenv').config();
+var validator = require('validator');
 
 
 app.use(session({
