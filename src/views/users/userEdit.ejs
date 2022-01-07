@@ -16,14 +16,16 @@
                   <div class="sign-up-htm"> 
                      <div class="group">
                         <label for="user" class="label">Nombre</label>
-                        <input id="user" type="text" name="firstname" class="input" value=<%= loggedUser.firstname %>>
+                        <input id="firstname" type="text" name="firstname" class="input" value=<%= loggedUser.firstname %>>
+                        <small class="text-danger" id="firstNameError"></small>
                         <% if (locals.errors && errors.firstname ) { %>
                         <%= errors.firstname.msg %>
                         <% } %>
                      </div>
                      <div class="group">
                         <label for="user" class="label">Apellido</label>
-                        <input id="user" type="text" name="lastname" class="input" value=<%= loggedUser.lastname %>>
+                        <input id="lastname" type="text" name="lastname" class="input" value=<%= loggedUser.lastname %>>
+                        <small class="text-danger" id="lastNameError"></small>
                         <% if (locals.errors && errors.lastname ) { %>
                         <%= errors.lastname.msg %>
                         <% } %>
@@ -31,6 +33,7 @@
                      <div class="group">
                         <label for="email" class="label">Email</label>
                         <input id="email" type="email" name="email" class="input" value=<%= loggedUser.email %>>
+                        <small class="text-danger" id="emailError"></small>
                         <% if (locals.errors && errors.email ) { %>
                         <%= errors.email.msg %>
                         <% } %>
@@ -47,16 +50,18 @@
                      </div>
                      <div class="group">
                         <label for="user" class="label">Contraseña</label>
-                        <input id="pass" type="password" name="password" placeholder="Mínimo 8 caracteres"
+                        <input id="password" type="password" name="password" placeholder="Mínimo 8 caracteres"
                            class="input" placeholder="Ingrese su nueva contraseña">
+                           <small class="text-danger" id="passwordError"></small>
                         <% if (locals.errors && errors.password ) { %>
                         <%= errors.password.msg %>
                         <% } %>
                      </div>
                      <div class="group">
                         <label for="pass" class="label">Repetir Contraseña</label>
-                        <input id="pass" type="password" class="input" data-type="password" placeholder="Repetir contraseña">
+                        <input id="repassword" type="password" name="repassword" class="input" data-type="password">
                      </div>
+                     <small class="text-danger" id="repasswordError"></small>
                      <div class="group">
                         <a href=""><button type="submit" onclick="return confirm('¿Estas seguro que deseas actualizar tu perfil? Deberás volver a loguearte en el sitio')" class="button" value="Registrarse">Modificar Información</button></a>
                      </div>    
@@ -70,6 +75,7 @@
    </div>
 
    <%- include('../partials/footer.ejs')  %>
+   <script src="/js/register.js"></script>
 </body>
 
 </html>
