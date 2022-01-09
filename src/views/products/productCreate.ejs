@@ -3,7 +3,7 @@
 <body>
    <%- include('../partials/header.ejs')  %>
    <main>
-      <form action="/products" method="POST" class="form-editpproduct-style" enctype="multipart/form-data">
+      <form action="/products" method="POST" enctype="multipart/form-data" class="form-editpproduct-style createForm">
          <h3 class="title-h3">Crear Producto</h3>
          <div class="createProductContainer">      
             <div class="row">
@@ -63,7 +63,7 @@
                   <label for="file-upload" class="custom-file-upload">
                      <i class="fas fa-cloud-upload-alt"></i> Subir imagen
                   </label>
-                  <input id="file-upload" type="file" name="productImage" required>
+                  <input id="file-upload" type="file" name="productImage" accept=".png, .jpg, .jpeg" required>
                </div>
             </div>
             <div class="row">
@@ -76,12 +76,13 @@
             </div>
             <br>
             <div class="row">
-               <input type="submit" id='createProduct' value="Crear producto"
-                  onclick="return confirm('¿Estas seguro que desea crear este producto?')" class="confirmButton">
+               <input type="submit" id='createProduct' value="Crear producto" class="confirmButton">
+                  
             </div>
       </form>
    </main>
    <%- include('../partials/footer.ejs')  %>
+   <script src="/js/validationForms.js"></script>
 </body>
 
 </html>
