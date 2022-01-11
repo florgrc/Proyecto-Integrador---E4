@@ -88,7 +88,7 @@ const productsController = {
             })
     },
     store: (req, res) => {
-        let errors = validationResult(req)
+        let errors = validationResult(req);
         if (errors.isEmpty()) {
             let productImage = req.file.filename || "default-image1.png"
             db.Products.create({
@@ -103,11 +103,8 @@ const productsController = {
                 res.redirect("/products");
             })
         } else {
-            res.render("users/register", {
-                errors: errors.array()
-            })
+            res.redirect('/products/create');
         }
-        console.log(errors);
     }
 }
 
