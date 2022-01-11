@@ -88,18 +88,26 @@ const productsController = {
             })
     },
     store: (req, res) => {
-        let productImage = req.file.filename || "default-image1.png"
-        db.Products.create({
-            name: req.body.name,
-            description: req.body.description,
-            image: productImage,
-            classification_id: req.body.classification_id,
-            variety_id: req.body.variety_id,
-            price: req.body.price,
-            featured: req.body.featured,
-        }, ).then((producto) => {
-            res.redirect("/products");
-        })
+        let errors = validationResult(req)
+        if (errors.isEmpty()) {
+            let productImage = req.file.filename || "default-image1.png"
+            db.Products.create({
+                name: req.body.name,
+                description: req.body.description,
+                image: productImage,
+                classification_id: req.body.classification_id,
+                variety_id: req.body.variety_id,
+                price: req.body.price,
+                featured: req.body.featured,
+            }, ).then((producto) => {
+                res.redirect("/products");
+            })
+        } else {
+            res.render("users/register", {
+                errors: errors.array()
+            })
+        }
+        console.log(errors);
     }
 }
 
