@@ -6,7 +6,7 @@
       <div>
          <h3 class="title-h3">Modificar Producto</h3>
          <form action="/products/edit/<%= producto.id%>?_method=PUT" method="POST"
-            class="form-editpproduct-style editForm" enctype="multipart/form-data">
+            enctype="multipart/form-data" class="form-editpproduct-style editForm" >
             <div class="editProductContainer">
                <div class="row">
                </div>
@@ -92,7 +92,7 @@
             </div>
          </form>
    </section><%- include('../partials/footer.ejs')  %> 
-   <script src="/js/validationForms.js"></script>
+   <script src="/js/validationFormsEdit.js"></script>
 </body>
 
 </html>
