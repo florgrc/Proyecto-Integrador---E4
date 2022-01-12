@@ -5,7 +5,7 @@
    <main>
       <form action="/products" method="POST" enctype="multipart/form-data" class="form-editpproduct-style createForm">
          <h3 class="title-h3">Crear Producto</h3>
-         <div class="createProductContainer">      
+         <div class="createProductContainer">
             <div class="row">
                <div class="col-25">
                   <label for="name">Nombre</label>
@@ -13,6 +13,14 @@
                <div class="col-75">
                   <input type="text" id="name" name="name" placeholder="Nombre del producto...">
                </div>
+               <small class="text-danger" id="firstNameError"></small>
+               <% if( locals.errors){ %>
+               <% for(let i = 0; i < errors.length; i++){ %>
+               <% if(errors[i].param == "name"){ %>
+               <small class="text-danger"> <%= errors[i].msg%> </small>
+               <% } %>
+               <% } %>
+               <% } %>
             </div>
             <div class="row">
                <div class="col-25">
@@ -20,10 +28,17 @@
                </div>
                <div class="col-75">
                   <select name="classification_id" id="classification">
-                        <option value="1">Tinto</option>
-                        <option value="2">Blanco</option>
-                        <option value="3">Rosado</option>
-                     </select>
+                     <option value="1">Tinto</option>
+                     <option value="2">Blanco</option>
+                     <option value="3">Rosado</option>
+                  </select>
+                  <% if( locals.errors){ %>
+                  <% for(let i = 0; i < errors.length; i++){ %>
+                  <% if(errors[i].param == "classification_id"){ %>
+                  <small class="text-danger"> <%= errors[i].msg%> </small>
+                  <% } %>
+                  <% } %>
+                  <% } %>
                </div>
             </div>
             <div class="row">
@@ -38,6 +53,13 @@
                      <option value="4">Syrah</option>
                   </select>
                </div>
+               <% if( locals.errors){ %>
+                  <% for(let i = 0; i < errors.length; i++){ %>
+                  <% if(errors[i].param == "variety_id"){ %>
+                  <small class="text-danger"> <%= errors[i].msg%> </small>
+                  <% } %>
+                  <% } %>
+                  <% } %>
             </div>
             <div class="row">
                <div class="col-25">
@@ -46,6 +68,13 @@
                <div class="col-75">
                   <input type="number" id="price" name="price" placeholder="Precio">
                </div>
+               <% if( locals.errors){ %>
+                  <% for(let i = 0; i < errors.length; i++){ %>
+                  <% if(errors[i].param == "price"){ %>
+                  <small class="text-danger"> <%= errors[i].msg%> </small>
+                  <% } %>
+                  <% } %>
+                  <% } %>
             </div>
             <div class="row">
                <div class="col-25">
@@ -73,11 +102,18 @@
                <div class="col-75">
                   <textarea id="subject" name="description" placeholder="Descripción del producto..."></textarea>
                </div>
+               <% if( locals.errors){ %>
+                  <% for(let i = 0; i < errors.length; i++){ %>
+                  <% if(errors[i].param == "description"){ %>
+                  <small class="text-danger"> <%= errors[i].msg%> </small>
+                  <% } %>
+                  <% } %>
+                  <% } %>
             </div>
             <br>
             <div class="row">
                <input type="submit" id='createProduct' value="Crear producto" class="confirmButton">
-                  
+
             </div>
       </form>
    </main>

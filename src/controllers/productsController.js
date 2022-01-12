@@ -103,7 +103,7 @@ const productsController = {
                 res.redirect("/products");
             })
         } else {
-            res.redirect('/products/create');
+            res.render('products/productCreate', {errors: errors.array()})
         }
     }
 }

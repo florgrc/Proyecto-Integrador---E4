@@ -12,7 +12,7 @@ formCreate.addEventListener('submit', function(e){
       swal('El nombre debe tener al menos 5 caracteres')
     } else if (formCreate.productImage.value == '') {
       swal('Debes cargar una imagen de Producto') 
-    }else if (!(regexImageFormat.test(formCreate.productImage.value))) {
+    } else if (!(regexImageFormat.test(formCreate.productImage.value))) {
       swal('El formato de imagen debe ser ".jpg", ".png", ".gif",".jpeg"')
     } else if (formCreate.description.value == '') {
       swal('Debes escribir la descripcion de Producto')
