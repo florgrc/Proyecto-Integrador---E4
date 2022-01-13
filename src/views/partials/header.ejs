@@ -1,11 +1,13 @@
 <header class="header">
   <article class="header-top">
     <div class="logo"><a href="/"><img src="/images/LogoWeb.svg" alt="logo" class="logo"></a></div>
-    <form class="search" action="/busqueda" method="GET">
+    
+    <form class="search" action="/products/search" method="GET">
       <label for="busqueda"></label>
-      <input type="text" placeholder="¿Qué estás buscando?" name="search">
+      <input type="text" name="term" placeholder="¿Qué estás buscando?" >
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
+
     <div class="icons">
       <% if (locals.isLogged) { %>
         

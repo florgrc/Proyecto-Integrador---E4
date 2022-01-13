@@ -23,6 +23,7 @@ const storage = multer.diskStorage({
  const authProductMiddleware = require ('../middlewares/authProductMiddleware');
 
  router.get("/", authProductMiddleware, productsController.product);
+ router.get("/search", productsController.search);
  router.post("/", upload.single("productImage"), productCreationValidation, productsController.store);
  router.get("/detail/:idProduct", productsController.detail);
  router.get("/cart", productsController.cart);
