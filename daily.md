@@ -1,3 +1,24 @@
+    
+    DAILY 12.01.2022:
+
+FLOR
+    - Qué Hice: Complete mi asignacion del proyecto integrador.
+    - Qué voy a hacer: Prepararme para el siguiente sprint con el contenido correspondiente.
+    - Qué problemas tuve: Con este sprint ninguno que valga mencionar.
+JUAN
+    - Qué Hice: Complete mi asignacion del proyecto integrador y corregi errores varios del sitio
+    - Qué voy a hacer: Preparar el contenido de las siguientes clases.
+    - Qué problemas tuve: Tuve que corregir detalles a ultimo momento.
+DIANA
+    - Qué Hice: Complete mi asignacion del proyecto integrador y ayude a mis compañeros con enlaces relevantes para los suyos.
+    - Qué voy a hacer: Preparar el contenido de React de playground.
+    - Qué problemas tuve: Tuve que corregir cosas a ultimo momento pero lo pude hacer bien.
+MATI
+    - Qué Hice: Complete mi asignacion del proyecto integrador.
+    - Qué voy a hacer: Acomodar detalles del sitio y preparar el contenido proximo.
+    - Qué problemas tuve: Ninguno en este sprint.
+
+        
     DAILY 9.11.2021:
 
 FLOR
