@@ -91,20 +91,45 @@ const productsController = {
     },
     search: (req, res) => {
         let { term } = req.query;
+        let { termPmin } = req.query;
+        let { termPmax } = req.query;
         term = term.toLowerCase();
-        console.log (term);           
-        db.Products.findAll({ where: 
-            {[Op.or]: [
-                { name: { [Op.like]: '%' + term + '%'} },
-                { description: { [Op.like]: '%' + term + '%'} },
-                { classification_id: { [Op.like]: '%' + term + '%'} }, // Corregir columna de la db a Classification
-                { variety_id: { [Op.like]: '%' + term + '%'} },  // Corregir columna de la db a Variety
-            ]}           
+        console.log (term);  
+        console.log (termPmin);  
+        console.log (termPmax);
+        if(termPmax == '') {
+            db.Products.findAll({ where: 
+                    { price: { [Op.gt]: [termPmin]} },
+                 })
+                .then(products =>res.render('./products/productCatalogue',{ products })) 
+                .catch(error => console.log(error));                 
+        } else if (termPmin == ''){
+            db.Products.findAll({ where: 
+                { price: { [Op.lte]: [termPmax]} },
              })
             .then(products =>res.render('./products/productCatalogue',{ products })) 
             .catch(error => console.log(error)); 
-
-            
+        } else {
+            db.Products.findAll({ where: 
+                {[Op.or]: [
+                    { name: { [Op.like]: '%' + term + '%'} },
+                    { description: { [Op.like]: '%' + term + '%'} },
+                    { price: { [Op.between]: [termPmin, termPmax]} }, // No funciona bien el operador between
+                ]}           
+                 })
+                .then(products =>res.render('./products/productCatalogue',{ products })) 
+                .catch(error => console.log(error)); 
+        }                  
+    },
+    filtroPrecio: (req, res) => {
+        let { term } = req.query;
+        term = term.toLowerCase();
+        console.log (term);           
+        db.Products.findAll({ where: 
+                { price: { [Op.lte]:  term } },                       
+             })
+            .then(products =>res.render('./products/productCatalogue',{ products })) 
+            .catch(error => console.log(error)); 
     },
     store: (req, res) => {
         let errors = validationResult(req);
