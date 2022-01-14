@@ -98,24 +98,33 @@ const productsController = {
         console.log (termPmin);  
         console.log (termPmax);
         if(termPmax == '') {
-            db.Products.findAll({ where: 
-                    { price: { [Op.gt]: [termPmin]} },
+            db.Products.findAll({ 
+                where: { price: { [db.Sequelize.Op.gt]: [termPmin]} },
+                order: [["price", "ASC"]],
+                limit: 6, 
                  })
                 .then(products =>res.render('./products/productCatalogue',{ products })) 
                 .catch(error => console.log(error));                 
         } else if (termPmin == ''){
-            db.Products.findAll({ where: 
-                { price: { [Op.lte]: [termPmax]} },
+            db.Products.findAll({ 
+                where: { price: { [db.Sequelize.Op.lte]: [termPmax]} },
+                order: [["price", "DESC"]],
+                limit: 6, 
              })
             .then(products =>res.render('./products/productCatalogue',{ products })) 
             .catch(error => console.log(error)); 
         } else {
-            db.Products.findAll({ where: 
-                {[Op.or]: [
-                    { name: { [Op.like]: '%' + term + '%'} },
-                    { description: { [Op.like]: '%' + term + '%'} },
-                    { price: { [Op.between]: [termPmin, termPmax]} }, // No funciona bien el operador between
-                ]}           
+            db.Products.findAll({ 
+                where: 
+                {[db.Sequelize.Op.and]: [
+                    {[db.Sequelize.Op.or]: [
+                        { name: { [db.Sequelize.Op.like]: '%' + term + '%'} },
+                        { description: { [db.Sequelize.Op.like]: '%' + term + '%'} },
+                    ]},
+                    { price: { [db.Sequelize.Op.between]: [termPmin, termPmax]} }, // No funciona bien el operador between
+                ]},
+                    order: [["price", "DESC"]],
+                    limit: 6,           
                  })
                 .then(products =>res.render('./products/productCatalogue',{ products })) 
                 .catch(error => console.log(error)); 
