@@ -3,7 +3,7 @@ const regexImageFormat = /\.(jpg|gif|png|jpeg)$/i
 
 /*edicion de producto*/
 
-formEdit.addEventListener('submit', function(e){
+formEdit.addEventListener('change', function(e){
     e.preventDefault();
     
     let errores = [];
