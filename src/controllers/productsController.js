@@ -101,7 +101,7 @@ const productsController = {
             db.Products.findAll({ 
                 where: { price: { [db.Sequelize.Op.gt]: [termPmin]} },
                 order: [["price", "ASC"]],
-                limit: 6, 
+                limit: 8, 
                  })
                 .then(products =>res.render('./products/productCatalogue',{ products })) 
                 .catch(error => console.log(error));                 
@@ -109,7 +109,7 @@ const productsController = {
             db.Products.findAll({ 
                 where: { price: { [db.Sequelize.Op.lte]: [termPmax]} },
                 order: [["price", "DESC"]],
-                limit: 6, 
+                limit: 8, 
              })
             .then(products =>res.render('./products/productCatalogue',{ products })) 
             .catch(error => console.log(error)); 
@@ -124,7 +124,7 @@ const productsController = {
                     { price: { [db.Sequelize.Op.between]: [termPmin, termPmax]} }, // No funciona bien el operador between
                 ]},
                     order: [["price", "DESC"]],
-                    limit: 6,           
+                    limit: 8,           
                  })
                 .then(products =>res.render('./products/productCatalogue',{ products })) 
                 .catch(error => console.log(error)); 
