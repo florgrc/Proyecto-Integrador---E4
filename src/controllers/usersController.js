@@ -19,6 +19,12 @@ const usersController = {
     register: (req, res) => {
         res.render('users/register');
     },
+    user: (req, res) => {
+        db.Users.findAll()
+            .then(function (users) {
+                res.render("users/usersCatalogue", { users })
+            })
+    },
 
     store: (req, res) => {
 
@@ -89,7 +95,13 @@ const usersController = {
         res.render('users/userProfile')
     },
     edit: (req, res) => {
-        res.render('users/userEdit')
+        db.Users.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then((user) => {
+            res.render('users/userEdit', { user });
+        })
     },
     update: (req, res) => {
         db.Users.update({
@@ -105,6 +117,15 @@ const usersController = {
         }).then((usuario) => {
             res.redirect("/users/profile");
         })
+    },
+    delete: (req, res) => {
+        db.Users.destroy({
+            where: {
+                id: req.params.id
+            },
+        })
+        res.redirect("/users");
+
     },
     logout: (req, res) => {
         req.session.destroy();

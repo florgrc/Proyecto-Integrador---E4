@@ -1,0 +1,62 @@
+<%- include('../partials/head.ejs')  %>
+
+<body>
+   <%- include('../partials/header.ejs')  %>
+   <main>
+      <h2 class="titulo">Listado de Usuarios</h2><br>
+      <div class="createProductButton">
+         <a href="/products/create"><button class="regularButton" id=createProductButton>Nuevo Usuario</button></a>
+      </div>
+      <table>
+         <thead>
+            <th> id </th>
+            <th> Nombre </th>
+            <th> Apellido </th>
+            <th> email </th>
+            <th> Imagen </th>
+
+         </thead>
+         <tbody>
+            <% users.forEach(user => { %>
+            <tr>
+
+                <td class="detail-product"><%= user.id%></td>
+                <td class="detail-product"><%= user.firstname%></td>
+                <td class="detail-product"><%= user.lastname%></td>
+                <td class="detail-product"><%= user.email%></td>
+
+                <td class="detail-product">
+                    <article class="product">
+                       <a href="/users/edit/:id<%= user.id %>">
+                          <div class="productImageDiv">
+                          <img src="/images/users/<%= user.image %>" alt="imgUser" class="productImage">
+                          </div>
+                       </a>
+                    </article>
+                </td>
+
+
+               <td class="detail-product">
+                  <form method="GET" action="/users/edit/<%= user.id %>">
+                     <input type="submit" value="Modificar" class="regularButton">
+                  </form>
+               </td>
+               <td class="detail-product">
+                  <form method="POST" action="/users/edit/delete/<%= user.id%>?_method=DELETE">
+                     <input type="submit" onclick="return confirm('¿Estas seguro que deseas eliminar este usuario?')"
+                        value="Eliminar" class="cancelButton">
+                  </form>
+               </td>
+
+            </tr>
+            <%  }) %>
+         </tbody>
+      </table>
+
+   </main>
+
+   <%- include('../partials/footer.ejs')  %>
+
+</body>
+
+</html>

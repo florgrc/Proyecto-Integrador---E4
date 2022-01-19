@@ -17,6 +17,11 @@ const indexController = {
         })
         
     },
+    about: (req,res) => {
+        {
+            res.render("indexAbout");
+        }
+    },
 };
 
 module.exports = indexController;

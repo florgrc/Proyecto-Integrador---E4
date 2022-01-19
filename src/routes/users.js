@@ -34,6 +34,8 @@ const upload = multer({storage: storage})
 
 //req.session.
 
+// Base Usuarios
+router.get('/', usersController.user);
 // Registro
 router.get('/register', guestMiddleware, usersController.register);
 router.post('/', upload.single('userAvatar'), usersRegisterValidation, usersController.store);
@@ -45,8 +47,9 @@ router.get('/login',guestMiddleware, usersController.login);
 router.post('/login', validateLoginForm,  usersController.loginProccess); 
 
 // Modificar usuario
-router.get('/edit', authMiddleware, usersController.edit);
+router.get('/edit/:id', authMiddleware, usersController.edit);
 router.put('/edit/:id', upload.single('userAvatar'), usersController.update);
+router.delete("/edit/delete/:id", usersController.delete); 
 
 //Logout
 router.get('/logout', usersController.logout);
