@@ -34,10 +34,6 @@ app.use(express.urlencoded({
 
 app.use(express.json());
 
-
-
-
-
 /*Configuracion carpeta public disponible*/
 app.use(express.static(path.resolve(__dirname, '../public')));
 
@@ -50,10 +46,13 @@ app.listen(process.env.APP_PORT, () => {
 /*Rutas*/
 
 let routesIndex = require('./routes/index.js');
+let apiRouter = require('./routes/api.js');
 let productsRouter = require('./routes/products.js');
-let routesUsers = require('./routes/users');
-
+let routesUsers = require('./routes/users.js');
 
 app.use('/', routesIndex);
+app.use('/api', apiRouter);
 app.use('/products', productsRouter);
 app.use('/users', routesUsers);
+
+

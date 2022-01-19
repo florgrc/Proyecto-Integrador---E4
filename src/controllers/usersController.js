@@ -19,11 +19,14 @@ const usersController = {
     register: (req, res) => {
         res.render('users/register');
     },
-    user: (req, res) => {
-        db.Users.findAll()
-            .then(function (users) {
-                res.render("users/usersCatalogue", { users })
-            })
+    list: (req, res) => {
+        db.Users.findAll({include: {all: true}})
+            .then(users=> {
+                //return res.send(users);
+                return  res.render("users/usersCatalogue", { users });
+            }).catch(error=> {
+                return res.send(error)
+            }) 
     },
 
     store: (req, res) => {
