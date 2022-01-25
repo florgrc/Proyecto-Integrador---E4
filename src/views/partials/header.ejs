@@ -11,6 +11,25 @@
       <input type="text" name="term" placeholder="Tipo de vino" >
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
+    <%if(locals.loggedUser != undefined) {%>
+    <% if( locals.loggedUser.type_id === 1 ) { %>
+      <div class="createProductButton">
+        <a href="http://localhost:3000/"><button class="regularButton" id=createProductButton>Dashboard TWS</button></a>
+     </div>
+      <% } %>
+      <% } else { %>
+
+      <% } %>
+
+      <%if(locals.loggedUser != undefined) {%>
+        <% if( locals.loggedUser.type_id === 1 ) { %>
+          <div class="createProductButton">
+            <a href="/products"><button class="regularButton" id=createProductButton>Listado de productos</button></a>
+         </div>
+          <% } %>
+          <% } else { %>
+    
+          <% } %>
 
     <div class="icons">
       <% if (locals.isLogged) { %>
