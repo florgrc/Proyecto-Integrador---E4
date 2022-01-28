@@ -74,7 +74,11 @@ const productsController = {
     },
 
     product: (req, res) => {
-        db.Products.findAll({include: {all: true}})
+        db.Products.findAll({
+                include: {
+                    all: true
+                }
+            })
             .then(function (products) {
                 res.render("products/product", {
                     products
@@ -90,55 +94,102 @@ const productsController = {
             })
     },
     search: (req, res) => {
-        let { term } = req.query;
-        let { termPmin } = req.query;
-        let { termPmax } = req.query;
+        let {
+            term
+        } = req.query;
+        let {
+            termPmin
+        } = req.query;
+        let {
+            termPmax
+        } = req.query;
         term = term.toLowerCase();
-        console.log (term);  
-        console.log (termPmin);  
-        console.log (termPmax);
-        if(termPmax == '') {
-            db.Products.findAll({ 
-                where: { price: { [db.Sequelize.Op.gt]: [termPmin]} },
-                order: [["price", "ASC"]],
-                limit: 8, 
-                 })
-                .then(products =>res.render('./products/productCatalogue',{ products })) 
-                .catch(error => console.log(error));                 
-        } else if (termPmin == ''){
-            db.Products.findAll({ 
-                where: { price: { [db.Sequelize.Op.lte]: [termPmax]} },
-                order: [["price", "DESC"]],
-                limit: 8, 
-             })
-            .then(products =>res.render('./products/productCatalogue',{ products })) 
-            .catch(error => console.log(error)); 
+        console.log(term);
+        console.log(termPmin);
+        console.log(termPmax);
+        if (termPmax == '') {
+            db.Products.findAll({
+                    where: {
+                        price: {
+                            [db.Sequelize.Op.gt]: [termPmin]
+                        }
+                    },
+                    order: [
+                        ["price", "ASC"]
+                    ],
+                    limit: 8,
+                })
+                .then(products => res.render('./products/productCatalogue', {
+                    products
+                }))
+                .catch(error => console.log(error));
+        } else if (termPmin == '') {
+            db.Products.findAll({
+                    where: {
+                        price: {
+                            [db.Sequelize.Op.lte]: [termPmax]
+                        }
+                    },
+                    order: [
+                        ["price", "DESC"]
+                    ],
+                    limit: 8,
+                })
+                .then(products => res.render('./products/productCatalogue', {
+                    products
+                }))
+                .catch(error => console.log(error));
         } else {
-            db.Products.findAll({ 
-                where: 
-                {[db.Sequelize.Op.and]: [
-                    {[db.Sequelize.Op.or]: [
-                        { name: { [db.Sequelize.Op.like]: '%' + term + '%'} },
-                        { description: { [db.Sequelize.Op.like]: '%' + term + '%'} },
-                    ]},
-                    { price: { [db.Sequelize.Op.between]: [termPmin, termPmax]} }, // No funciona bien el operador between
-                ]},
-                    order: [["price", "DESC"]],
-                    limit: 8,           
-                 })
-                .then(products =>res.render('./products/productCatalogue',{ products })) 
-                .catch(error => console.log(error)); 
-        }                  
+            db.Products.findAll({
+                    where: {
+                        [db.Sequelize.Op.and]: [{
+                                [db.Sequelize.Op.or]: [{
+                                        name: {
+                                            [db.Sequelize.Op.like]: '%' + term + '%'
+                                        }
+                                    },
+                                    {
+                                        description: {
+                                            [db.Sequelize.Op.like]: '%' + term + '%'
+                                        }
+                                    },
+                                ]
+                            },
+                            {
+                                price: {
+                                    [db.Sequelize.Op.between]: [termPmin, termPmax]
+                                }
+                            }, // No funciona bien el operador between
+                        ]
+                    },
+                    order: [
+                        ["price", "DESC"]
+                    ],
+                    limit: 8,
+                })
+                .then(products => res.render('./products/productCatalogue', {
+                    products
+                }))
+                .catch(error => console.log(error));
+        }
     },
     filtroPrecio: (req, res) => {
-        let { term } = req.query;
+        let {
+            term
+        } = req.query;
         term = term.toLowerCase();
-        console.log (term);           
-        db.Products.findAll({ where: 
-                { price: { [Op.lte]:  term } },                       
-             })
-            .then(products =>res.render('./products/productCatalogue',{ products })) 
-            .catch(error => console.log(error)); 
+        console.log(term);
+        db.Products.findAll({
+                where: {
+                    price: {
+                        [Op.lte]: term
+                    }
+                },
+            })
+            .then(products => res.render('./products/productCatalogue', {
+                products
+            }))
+            .catch(error => console.log(error));
     },
     store: (req, res) => {
         let errors = validationResult(req);
@@ -156,7 +207,9 @@ const productsController = {
                 res.redirect("/products");
             })
         } else {
-            res.render('products/productCreate', {errors: errors.array()})
+            res.render('products/productCreate', {
+                errors: errors.array()
+            })
         }
     }
 }

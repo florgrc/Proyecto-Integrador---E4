@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
 
-    const Classifications = sequelize.define (alias, cols, config);
+    const Classifications = sequelize.define(alias, cols, config);
 
     Classifications.associate = function (models) {
         Classifications.hasMany(models.Products, {

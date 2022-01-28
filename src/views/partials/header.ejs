@@ -1,66 +1,73 @@
 <header class="header">
-  <article class="header-top">
-    <div class="logo"><a href="/"><img src="/images/LogoWeb.svg" alt="logo" class="logo"></a></div>
-    
-    <form class="search" action="/products/search" method="GET">
-      <label for="busqueda"></label>
-      <input type="text" name="termPmin" placeholder="Precio minimo" >
-      <label for="busqueda"></label>
-      <input type="text" name="termPmax" placeholder="Precio máximo" >
-      <label for="busqueda"></label>
-      <input type="text" name="term" placeholder="Tipo de vino" >
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-    <%if(locals.loggedUser != undefined) {%>
+  <div class="logo">
+    <a href="/"><img src="/images/LogoWeb.svg" alt="logo" class="logo"></a>
+  </div>
+  <div class="header-right">
+    <div class="header-r-t">
+      <div class="spacer"></div>
+      <div class="header-search">
+        <form class="search" action="/products/search" method="GET">
+          <label for="busqueda"></label>
+          <input type="text" name="termPmin" placeholder="Precio minimo">
+          <label for="busqueda"></label>
+          <input type="text" name="termPmax" placeholder="Precio máximo">
+          <label for="busqueda"></label>
+          <input type="text" name="term" placeholder="Tipo de vino">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      <div class="spacer"></div>
+    </div>
+    <div class="navbar">
+      <a href="/products/catalogue">Nuestros Productos</a>
+      <a href="/contact">Contactanos</a>
+      <a href="/about">Quienes somos</a>
+    </div>
+  </div>
+  <div class="userControl">
+    <% if( locals.loggedUser != undefined ) {%>
     <% if( locals.loggedUser.type_id === 1 ) { %>
+    <div class="adminButtons">
       <div class="createProductButton">
         <a href="http://localhost:3000/"><button class="regularButton" id=createProductButton>Dashboard TWS</button></a>
-     </div>
+      </div>
       <% } %>
       <% } else { %>
-
       <% } %>
-
       <%if(locals.loggedUser != undefined) {%>
-        <% if( locals.loggedUser.type_id === 1 ) { %>
-          <div class="createProductButton">
-            <a href="/products"><button class="regularButton" id=createProductButton>Listado de productos</button></a>
-         </div>
-          <% } %>
-          <% } else { %>
-    
-          <% } %>
-
-    <div class="icons">
+      <% if( locals.loggedUser.type_id === 1 ) { %>
+      <div class="createProductButton">
+        <a href="/products"><button class="regularButton" id=createProductButton>Listado de productos</button></a>
+      </div>
+    </div>
+    <% } %>
+    <% } else { %>
+    <% } %>
+    <div class="loggedUser">
       <% if (locals.isLogged) { %>
-        
-        <div class="dropdown">
-          <a class="nav-link dropdown" href="#" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="/images/users/<%= loggedUser.image %>" width="15" style="border-radius: 100%"> Hi <%= loggedUser.firstname %>
-        </a>
-          <div class="dropdown-content">
-            <a href="/users/profile">Mi perfil</a>
-            <a href="/users/logout">Logout</a> 
-          </div>
+      <div class="userButtons">
+        <!-- <a class="nav-link-dropdown" href="#" id="dropUser" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+        </a> -->
+        <img src="/images/users/<%= loggedUser.image %>" width="15" style="border-radius: 100%"> 
+        <a href="/users/profile"><%= loggedUser.firstname %></a>
+        <div class="dropdownArrow">
           <i class="fas fa-sort-down"></i>
-        </br>
+          <div class="dropdown">
+            <div class="dropdown-content">
+              <a href="/users/logout">Logout</a>
+            </div>
+          </div>
         </div>
         <% } else { %>
-      <a href="/users/login"><i class="fas fa-user-circle"></i></a>
-      <a href="/users/register">Registrate</a>
-      <a href="/users/login">Login</a>
-
+        <a href="/users/login"><i class="fas fa-user-circle"></i></a>
+        <a href="/users/register">Registrate</a>
+        <a href="/users/login">Login</a>
         <% } %>
         <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
+      </div>
     </div>
-  </article>
-  <article class="sections">
-    <a href="/products/catalogue">Nuestros Productos</a>
-    <a href="/contact">Contactanos</a>
-    <a href="/about">Quienes somos</a>
-    
-  </article>
-
+  </div>
 </header>
 <div class="content">
   <!-- apertura de div que engloba el contenido de la pagina, necesario para que el footer quede fijo al pie de la pagina -->

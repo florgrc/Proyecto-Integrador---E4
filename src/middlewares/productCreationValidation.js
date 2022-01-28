@@ -3,7 +3,7 @@ const {
 } = require('express-validator');
 const productCreationValidation = [
     check('name').notEmpty().withMessage('Debes indicar el nombre del producto.').bail().isString().withMessage('El nombre del producto solo puede contener letras y numeros.').bail(),
-    
+
     check('description').notEmpty().withMessage('No puede estar vacio').bail().isLength({
         min: 20,
         max: 100

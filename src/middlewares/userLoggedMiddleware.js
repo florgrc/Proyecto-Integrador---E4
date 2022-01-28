@@ -1,6 +1,6 @@
 /*const User = require("../db/models/Users")*/
 
-function userLoggedMiddleware (req,res,next) {
+function userLoggedMiddleware(req, res, next) {
     res.locals.isLogged = false;
 
     if (req.session && req.session.loggedUser) {

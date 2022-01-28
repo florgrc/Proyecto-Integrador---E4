@@ -37,7 +37,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false // si no existen las columnas created@ y updated@
     };
 
-    const Users = sequelize.define (alias, cols, config);
+    const Users = sequelize.define(alias, cols, config);
 
 
     return Users;

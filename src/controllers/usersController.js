@@ -3,7 +3,9 @@ const fs = require('fs');
 const res = require('express/lib/response');
 const bcrypt = require('bcryptjs');
 const db = require("../db/models");
-const { validationResult } = require("express-validator");
+const {
+    validationResult
+} = require("express-validator");
 
 const newId = () => {
     let ultimo = 0;
@@ -20,13 +22,19 @@ const usersController = {
         res.render('users/register');
     },
     list: (req, res) => {
-        db.Users.findAll({include: {all: true}})
-            .then(users=> {
+        db.Users.findAll({
+                include: {
+                    all: true
+                }
+            })
+            .then(users => {
                 //return res.send(users);
-                return  res.render("users/usersCatalogue", { users });
-            }).catch(error=> {
+                return res.render("users/usersCatalogue", {
+                    users
+                });
+            }).catch(error => {
                 return res.send(error)
-            }) 
+            })
     },
 
     store: (req, res) => {
@@ -42,13 +50,16 @@ const usersController = {
             /*admin: false*/
 
         }
-        if(errors.isEmpty()){
-        db.Users.create(newUser)
-            .then(usuario => {
-                return res.redirect("/users/login")
-            })} else {
-                res.render("users/register", {errors: errors.array()})
-            }
+        if (errors.isEmpty()) {
+            db.Users.create(newUser)
+                .then(usuario => {
+                    return res.redirect("/users/login")
+                })
+        } else {
+            res.render("users/register", {
+                errors: errors.array()
+            })
+        }
 
     },
     login: (req, res) => {
@@ -103,7 +114,9 @@ const usersController = {
                 id: req.params.id
             }
         }).then((user) => {
-            res.render('users/userEdit', { user });
+            res.render('users/userEdit', {
+                user
+            });
         })
     },
     update: (req, res) => {

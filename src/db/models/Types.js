@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
 
-    const Types = sequelize.define (alias, cols, config);
+    const Types = sequelize.define(alias, cols, config);
 
     Types.assoaciate = function (models) {
         Types.hasmany(models.Users, {

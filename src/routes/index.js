@@ -7,5 +7,3 @@ router.get('/about', indexController.about);
 router.get('/contact', indexController.contact);
 
 module.exports = router;
-
-
