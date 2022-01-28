@@ -1,0 +1,63 @@
+<%- include('partials/head')  %>
+
+<body>
+
+  <%- include('partials/header')  %>
+
+
+    <section class="productos-destacados">
+
+    <h3 class="seccion">Acá va un formulario de contacto</h3>
+    <div class="products">
+            <form>FORMULARIO VER EL LINK SIGUIENTE https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_contact_form</form>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae natus, consequuntur asperiores atque exercitationem expedita ut quod ab labore delectus quia itaque vero ipsum dolor quis libero alias similique quos!</p>
+      <h3>Contact Form</h3>
+
+      <div class="container">
+        <form action="/action_page.php">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+      
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      
+          <input type="submit" value="Submit">
+        </form>
+  </div>
+    </section>
+
+
+
+    </section>
+
+    <section class="aditional-info">
+      <div class="dato">
+        <i class="fas fa-credit-card"></i>
+        <h4>Pagá con tarjeta o en efectivo</h4>
+        <p>Ademas tenemos cuotas sin interés!</p>
+      </div>
+      <div class="dato">
+        <i class="fas fa-shipping-fast"></i>
+        <h4>Envío gratis desde los $5.000</h4>
+        <p>Envio gratis a CABA y GBA sin minimo de compra.</p>
+      </div>
+      <div class="dato">
+        <i class="fas fa-wine-glass-alt"></i>
+        <h4>Ofrecemos las mejores experiencias</h4>
+        <p>¡Descubrí las mejores experiencias de la mano de expertos!</p>
+      </div>
+    </section>
+  <%- include('partials/footer')  %>
+</body>
+
+</html>

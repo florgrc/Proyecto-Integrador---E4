@@ -22,6 +22,11 @@ const indexController = {
             res.render("indexAbout");
         }
     },
+    contact: (req,res) => {
+        {
+            res.render("indexContact");
+        }
+    },
 };
 
 module.exports = indexController;

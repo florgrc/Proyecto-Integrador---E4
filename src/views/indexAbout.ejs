@@ -3,87 +3,159 @@
 <body>
 
   <%- include('partials/header')  %>
-    <div class="slide">
-      <div class="slide-inner">
-        <input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true" hidden="" checked="checked">
-        <div class="slide-item">
-          <img src="images/uvas.jpg">
+ 
+  
+      <h2>Quienes somos</h2>
+      <div >
+        <p>Somos Flor, Diana, Juan y Mati. Y juntos formamos el equipo 4 de DH!</p>
+      </div>
+
+
+    <section>
+      <div class="swiper mySwiper container">
+          <div class="swiper-wrapper content">
+              
+              <div class="swiper-slide card">
+                  <div class="card-content">
+                      <div class="image">
+                          <img src="images/about/img1.png" alt="">
+                      </div>
+                      <div class="media-icons">
+                        <img src="images/about/logo-dh-blanco.png" alt="80" width="80">
+                      </div>
+                  <div class="name-profession">
+                      <span class="name">Florencia García</span>
+                      <span class="profession">Web developer Full Stack / Especialista React</span>
+                  </div>
+                  <div class="button">
+                    <button class="aboutMe"><a href="https://github.com/florgrc"><i class="fab fa-github"></i></a></button>
+                </div>
+                  </div>
+              </div>
+
+              <div class="swiper-slide card">
+                <div class="card-content">
+                    <div class="image">
+                        <img src="images/about/img2.png" alt="">
+                    </div>
+                    <div class="media-icons">
+                      <img src="images/about/logo-dh-blanco.png" alt="80" width="80">
+                    </div>
+                <div class="name-profession">
+                    <span class="name">Juan F. Montenegro</span>
+                    <span class="profession">Web developer Full Stack / Especialista Bases de Datos</span>
+                </div>
+                <div class="button">
+                  <button class="aboutMe"><a href="https://github.com/jf-mb"><i class="fab fa-github"></i></a></button>
+              </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide card">
+              <div class="card-content">
+                  <div class="image">
+                      <img src="images/about/img3.jpeg" alt="">
+                  </div>
+                  <div class="media-icons">
+                    <img src="images/about/logo-dh-blanco.png" alt="80" width="80">
+                  </div>
+              <div class="name-profession">
+                  <span class="name">Matías Larroulet</span>
+                  <span class="profession">Web developer Full Stack / Especialista Javascript</span>
+              </div>
+              <div class="button">
+                <button class="aboutMe"><a href="https://github.com/CaciqueLarru"><i class="fab fa-github"></i></a></button>
+            </div>
+              </div>
+          </div>
+
+          <div class="swiper-slide card">
+            <div class="card-content">
+                <div class="image">
+                    <img src="images/about/img4.jpg" alt="">
+                </div>
+                <div class="media-icons">
+                  <img src="images/about/logo-dh-blanco.png" alt="80" width="80">
+                </div>
+            <div class="name-profession">
+                <span class="name">Diana Gay</span>
+                <span class="profession">Web developer Full Stack / Especialista diseño CSS</span>
+            </div>
+            <div class="button">
+              <button class="aboutMe"><a href="https://github.com/dianaegaya"><i class="fab fa-github"></i></a></button>
+          </div>
+            </div>
         </div>
-        <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="">
-        <div class="slide-item">
-          <img src="images/vino-copa.jpg">
+
+        <div class="swiper-slide card">
+          <div class="card-content">
+              <div class="image">
+                  <img src="images/about/img5.jpg" alt="">
+              </div>
+              <div class="media-icons">
+                <img src="images/about/logo-dh-blanco.png" alt="80" width="80">
+              </div>
+          <div class="name-profession">
+              <span class="name">Uriel Sosa</span>
+              <span class="profession">Profesor Full Stack DH / Especialista MercadoLiebre</span>
+          </div>
+          <div class="button">
+            <button class="aboutMe"><a href="https://github.com/UrielSosa"><i class="fab fa-github"></i></a></button>
         </div>
-        <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="">
-        <div class="slide-item">
-          <img src="images/barricas.jpg">
+          </div>
+      </div>
+
+      <div class="swiper-slide card">
+        <div class="card-content">
+            <div class="image">
+                <img src="images/about/img6.png" alt="">
+            </div>
+            <div class="media-icons">
+              <img src="images/about/logo-dh-blanco.png" alt="80" width="80">
+            </div>
+        <div class="name-profession">
+            <span class="name">Leonardo Baña</span>
+            <span class="profession">Profesor Full Stack DH</span>
         </div>
-        <label for="slide-3" class="slide-control prev control-1">‹</label>
-        <label for="slide-2" class="slide-control next control-1">›</label>
-        <label for="slide-1" class="slide-control prev control-2">‹</label>
-        <label for="slide-3" class="slide-control next control-2">›</label>
-        <label for="slide-2" class="slide-control prev control-3">‹</label>
-        <label for="slide-1" class="slide-control next control-3">›</label>
-        <ol class="slide-indicador">
-          <li>
-            <label for="slide-1" class="slide-circulo">•</label>
-          </li>
-          <li>
-            <label for="slide-2" class="slide-circulo">•</label>
-          </li>
-          <li>
-            <label for="slide-3" class="slide-circulo">•</label>
-          </li>
-        </ol>
-      </div>
+
+        <div class="button">
+            <button class="aboutMe"><a href="https://github.com/UrielSosa"><i class="fab fa-github"></i></a></button>
+        </div>
+        </div>
     </div>
+              
+          </div>
+      </div>
 
-    <section class="productos-destacados">
-      <h3 class="seccion">Acá decimos Quienes somos</h3>
-      <div class="products">
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+  </section>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae natus, consequuntur asperiores atque exercitationem expedita ut quod ab labore delectus quia itaque vero ipsum dolor quis libero alias similique quos!</p>
-      
-    </div>
-    <h3 class="seccion">Acá va un formulario de contacto</h3>
-    <div class="products">
-            <form>FORMULARIO</form>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae natus, consequuntur asperiores atque exercitationem expedita ut quod ab labore delectus quia itaque vero ipsum dolor quis libero alias similique quos!</p>
-    
-  </div>
-    </section>
-    <div class="pic-collage">
-      <div class="pic-collage1">
-        <a href="#" class="ahref"><img src="/images/cata.jpg" alt="carroussel" class="pic"></a>
-        <h2 class="text-pic1">Las mejores degustaciones de vinos</h2>
-        <a href="#"><img src="/images/HomeCarroussel1.jpg" alt="carroussel" class="pic"></a>
-        <h2 class="text-pic2">Adherite a nuestro club de puntos y recibi los mejores beneficios</h2>
-      </div>
-      <div class="pic-collage2">
-        <a href="#"><img src="/images/bodega.jpg" alt="carroussel" class="pic2"></a>
-        <h2 class="text-pic3">Esta es nuestra seleccion de bodegas mas recomendadas</h2>
-      </div>
-    </div>
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <video src="video.mp4" autoplay muted loop></video>
-    </section>
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    slidesPerGroup: 3,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
 
-    <section class="aditional-info">
-      <div class="dato">
-        <i class="fas fa-credit-card"></i>
-        <h4>Pagá con tarjeta o en efectivo</h4>
-        <p>Ademas tenemos cuotas sin interés!</p>
-      </div>
-      <div class="dato">
-        <i class="fas fa-shipping-fast"></i>
-        <h4>Envío gratis desde los $5.000</h4>
-        <p>Envio gratis a CABA y GBA sin minimo de compra.</p>
-      </div>
-      <div class="dato">
-        <i class="fas fa-wine-glass-alt"></i>
-        <h4>Ofrecemos las mejores experiencias</h4>
-        <p>¡Descubrí las mejores experiencias de la mano de expertos!</p>
-      </div>
-    </section>
+
+
   <%- include('partials/footer')  %>
 </body>
 
