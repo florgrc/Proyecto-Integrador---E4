@@ -1254,33 +1254,7 @@ hr .new1 {
 /* About */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-   
-/*
-* {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins','sans-serif';
-}
 
-body {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f2f2f2;
-
-}
-
-section{
-    position: relative;
-    height: 450px;
-    width: 1075px;
-    display: flex;
-    align-items: center;
-    
-}*/
 
 .swiper {
     width: 950px;
@@ -1394,7 +1368,6 @@ section .card .image img{
     justify-content: space-around;
     margin-top: 20px;
 }
-/* empieza*/
 
 
 .card .button i{
@@ -1414,7 +1387,6 @@ section .card .image img{
     background: #630518;
 }
 
-/* termina*/
 .card .button button{
     background: #cb1e40;
     outline: none;
@@ -1450,11 +1422,3 @@ section .card .image img{
     font-size: 1.75em;
 }
 
-
-.stack {
-    height: 400px;
-    width: 400px;
-    color: #cb1e40;
-    list-style-type: square;
-    
-}

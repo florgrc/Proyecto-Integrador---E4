@@ -1,4 +1,26 @@
-    
+    DAILY 28.01.2022:
+
+# DAILY 28.01.2022: 
+1.  FLOR
+ - Qué Hice: Avancé con el Dashboard de React.
+ - Qué voy a hacer: Vincular el Dashboard con los API Endpoints de Productos y de Usuarios.
+ - Qué problemas tuve: Los endpoints de productos no corrían en la apliación.
+
+2.  JUAN
+ - Qué Hice: Completé el API Endpoint de Productos 
+ - Qué voy a hacer: Preparar el contenido de las siguientes clases.
+ - Qué problemas tuve: Tuve que corregir detalles a ultimo momento.
+
+3.  DIANA
+ - Qué Hice: N/A.
+ - Qué voy a hacer: Preparar el contenido de React de playground.
+ - Qué problemas tuve: Problema familiar que está limitando mis tiempos en la cursada.
+
+4.  MATI
+ - Qué Hice: Completé el API Endpoint de Usuarios. Armé las vistas, rutas y búsqueda en DB de Dashboard de Usuarios. Armé vista y rutas de inedex/about y index/contact
+ - Qué voy a hacer: Acomodar devoluciones Uri de Sprint 8 - JSFront en validaciones de Productos y lógica de la Search box.
+ - Qué problemas tuve: Lógica de la search box. CSS de vista /About.
+
     DAILY 12.01.2022:
 
 FLOR

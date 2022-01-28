@@ -1,27 +1,31 @@
 # RETROSPECTIVA
 
 **Respecto al objetivo de mejorar como equipo:**
-FARO SPRINT 7: FLORENCIA
+FARO SPRINT 9: MATIAS
 
 1.  Comenzar a hacer:
-        Cumplir las fechas limites dispuestas y asignadas para cada tarea.
-        Reuniones mas eficientes y eficaces para optimizar el tiempo disponible sobre el o los temas a tratar: mostrar los avances del trabajo efectuado para evaluar en equipo soluciones, mejoras y deteccion de errores.
+        Buena organización para llegar a la presentación final del curso. FECHA OBJETIVO 3/FEBRERO.
+        Redistribución de tareas ya que una compañera tuvo problemas familiares.
+        Mejorar en Softskills. Motivas al grupo y dar mucho push en esta última etapa donde todos llegan cansados.
+        Ser proactivos. Si vemos que hay un BUG cambiarlo y no esperar a consultar con el equipo.
 
-2.  Hacer mas:
-        Comunicar al equipo sobre las dudas o problemas en la ejecucion de los puntos asignados y evitar las demoras que esto puede ocasionar al resto: ser mas previsibles.
-        Actualizar Trello mas frecuentemente y que sea una herramienta de hoja de ruta en el desarrollo del sprint.
-        Mas actualizaciones y commits en la medida que vamos avanzando en las tareas individuales del proyecto para cuantificar si vamos al ritmo y en la direccion planificada.
+2.  Continuar haciendo:
+        Como el equipo ya pasó por una situación similar con Matías quien atravesó una mudanza, ahora sabe como adaptarse a este tipo de situaciones.
 
-3.  Continuar haciendo:
-        Compromiso y responsabilidad en el cumplimiento del trabajo asumido y solidaridad en el apoyo al equipo respecto a dudas que se generan al momento de implementar y ejecutar los puntos a desarrollar. 
-        Revisar los avances del proyecto y del sprint en general para detectar errores que puedan corregirse o resolverse con mas tiempo antes de la entrega.
+        Comunicar al equipo sobre las dudas o problemas en la ejecucion de los puntos asignados y evitar las demoras que esto puede ocasionar al resto: ser mas previsibles. --> Este punto se logró pulir mucho en los últimos sprints y estamos llegando con tiempo a la presentación.
+
+3.  Hacer mas:
+        
+        Aprovechar la clase práctica para sacar puntos pendientes de trello. --> Nos esta sirviendo para ser más eficientes con el tiempo.
+
+        Actualizar Trello mas frecuentemente.
         
 4.  Hacer menos: 
-        Reuniones de trabajo que no conduzcan a comunicar el avance del proyecto y  la presentacion del trabajo realizado por cada uno. 
+        Reuniones de trabajo que no conduzcan a comunicar el avance del proyecto.. 
         No comentar los problemas o dudas que tengamos en el desarrollo del sprint.
 
 5.  Dejar de hacer: 
-        Dejar los commits para ultimo momento.
-        Tareas o dudas al momento de entregar el sprint.
+        Dejar los commits para ultimo momento.  --> Este punto se logró pulir mucho
+        Tareas o dudas al momento de entregar el sprint.  --> Este punto se logró pulir mucho
 
 
