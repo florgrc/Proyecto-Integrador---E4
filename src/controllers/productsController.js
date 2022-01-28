@@ -74,7 +74,7 @@ const productsController = {
     },
 
     product: (req, res) => {
-        db.Products.findAll()
+        db.Products.findAll({include: {all: true}})
             .then(function (products) {
                 res.render("products/product", {
                     products

@@ -149,4 +149,27 @@ module.exports = {
                 })
             })
     },
+    productDetails: (req, res) => {
+        /* findOne
+            limit 1
+            order Desc */
+        db.Products.findByPk(req.params.id, {
+                include: {
+                    all: true
+                }
+            })
+            .then(product => {
+                return res.status(200).json({
+                    productID: product.id,
+                    productName: product.name,
+                    description: product.description,
+                    image: "http://localhost:3000/images/products/" + product.image,
+                    classification: [product.classification_id],
+                    variety: [product.variety_id],
+                    price: product.price,
+                    featured: product.featured,
+                    status: 200
+                })
+            })
+    }
 }
