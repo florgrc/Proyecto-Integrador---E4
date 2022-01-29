@@ -32,6 +32,8 @@ window.addEventListener('load', function(){
       nameError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
     } else {
       nameError.innerText = 'ok';
+      nameError.style.color = "Green";
+      nameError.style.fontWeight = "900";
     }; 
 
     if (classification.value == '') {
@@ -39,6 +41,8 @@ window.addEventListener('load', function(){
       classificationError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
     } else {
       classificationError.innerText = 'ok';
+      classificationError.style.color = "Green";
+      classificationError.style.fontWeight = "900";
     };
 
     if (variety.value == '') {
@@ -46,6 +50,8 @@ window.addEventListener('load', function(){
       varietyError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
     } else {
       varietyError.innerText = 'ok';
+      varietyError.style.color = "Green";
+      varietyError.style.fontWeight = "900";
     };
     
     if (validator.isEmpty(price.value)) {
@@ -56,6 +62,8 @@ window.addEventListener('load', function(){
       priceError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
     } else {
       priceError.innerText = 'ok';
+      priceError.style.color = "Green";
+      priceError.style.fontWeight = "900";
     };
 
     if (formCreate.productImage.value == '') {
@@ -67,6 +75,8 @@ window.addEventListener('load', function(){
       imageError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
     }  else {
       imageError.innerText = 'ok';
+      imageError.style.color = "Green";
+      imageError.style.fontWeight = "900";
     };
 
     if (validator.isEmpty(subject.value)) {
@@ -77,6 +87,8 @@ window.addEventListener('load', function(){
       subjectError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
     } else {
       subjectError.innerText = 'ok';
+      subjectError.style.color = "Green";
+      subjectError.style.fontWeight = "900";
     };
 
 
@@ -84,7 +96,7 @@ window.addEventListener('load', function(){
       formCreate.addEventListener('submit', function () {
   
         console.log('Se envio el formulario');
-        swal("¡ PRODUCTO CREADO !");
+        swal("¡ PRODUCTO CREADO !", "", "success");
   
         formCreate.submit();
       })

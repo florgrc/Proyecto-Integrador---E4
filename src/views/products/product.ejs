@@ -33,9 +33,9 @@
                   </form>
                </td>
                <td class="detail-product">
-                  <form method="POST" action="/products/edit/delete/<%= product.id%>?_method=DELETE">
+                  <form method="POST" action="/products/edit/delete/<%= product.id%>?_method=DELETE" class="deleteForm">
                      <input type="submit" onclick="return confirm('¿Estas seguro que deseas eliminar el producto?')"
-                        value="Eliminar" class="cancelButton">
+                        value="Eliminar" class="cancelButton" id="deleteFormId">
                   </form>
                </td>
 
@@ -47,6 +47,7 @@
    </main>
 
    <%- include('../partials/footer.ejs')  %>
+   <script src="/js/productDelete.js"></script>
 
 </body>
 

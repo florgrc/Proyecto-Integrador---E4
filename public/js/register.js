@@ -48,6 +48,8 @@ window.addEventListener('load', function () {
             firstNameError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
         } else {
             firstNameError.innerText = 'Genial!';
+            firstNameError.style.color = "Green";
+            firstNameError.style.fontWeight = "900";
         }
 
         // Lastname
@@ -60,6 +62,8 @@ window.addEventListener('load', function () {
             lastNameError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
         } else {
             lastNameError.innerText = 'Que lindo apellido. Qué origen tiene?';
+            lastNameError.style.color = "Green";
+            lastNameError.style.fontWeight = "900";
         }
 
         // Email
@@ -71,6 +75,8 @@ window.addEventListener('load', function () {
             emailError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
         } else {
             emailError.innerText = 'Ok! Dale que falta menos';
+            emailError.style.color = "Green";
+            emailError.style.fontWeight = "900";
         }
 
         //Password
@@ -90,6 +96,8 @@ window.addEventListener('load', function () {
             passwordError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
         } else {
             passwordError.innerText = 'Pass nivel HULK!! Guardala en un lugar seguro';
+            passwordError.style.color = "Green";
+            passwordError.style.fontWeight = "900";
         }
         //Re-Password
         if (validator.isEmpty(repassword.value)) {
@@ -102,6 +110,8 @@ window.addEventListener('load', function () {
             repasswordError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
         } else {
             repasswordError.innerText = 'Coninciden! Te acordaste de guardarla!';
+            repasswordError.style.color = "Green";
+            repasswordError.style.fontWeight = "900";
         }
         // Si el largo de nuestra variable de errores no contiene errores, enviamos el formulario  
 
