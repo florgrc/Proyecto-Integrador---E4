@@ -34,9 +34,7 @@ const productsController = {
                 id: req.params.idProduct
             }
         }).then((producto) => {
-            res.render("products/productEdit", {
-                producto
-            });
+            res.render("products/productEdit", { producto });
         })
     },
 
