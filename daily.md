@@ -1,5 +1,3 @@
-    DAILY 28.01.2022:
-
 # DAILY 28.01.2022: 
 1.  FLOR
  - Qué Hice: Avancé con el Dashboard de React.

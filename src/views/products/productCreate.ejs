@@ -11,16 +11,16 @@
                   <label for="name">Nombre</label>
                </div>
                <div class="col-75">
-                  <input type="text" id="name" name="name" placeholder="Nombre del producto">
+                  <input type="text" id="nameProduct" name="name" placeholder="Nombre del producto">
+                  <small class="text-danger" id="nameProductError"></small>
+                  <% if( locals.errors){ %>
+                  <% for(let i = 0; i < errors.length; i++){ %>
+                  <% if(errors[i].param == "nameProduct"){ %>
+                  <small class="text-danger"> <%= errors[i].msg%> </small>
+                  <% } %>
+                  <% } %>
+                  <% } %>
                </div>
-               <small class="text-danger" id="firstNameError"></small>
-               <% if( locals.errors){ %>
-               <% for(let i = 0; i < errors.length; i++){ %>
-               <% if(errors[i].param == "name"){ %>
-               <small class="text-danger"> <%= errors[i].msg%> </small>
-               <% } %>
-               <% } %>
-               <% } %>
             </div>
             <div class="row">
                <div class="col-25">
@@ -28,13 +28,16 @@
                </div>
                <div class="col-75">
                   <select name="classification_id" id="classification">
+                     <option value="">Elija una Opción</option>
                      <option value="1">Tinto</option>
                      <option value="2">Blanco</option>
-                     <option value="3">Rosado</option>
+                     <option value="3">Rosé</option>
+                     <option value="4">Espumante</option>
                   </select>
+                  <small class="text-danger" id="classificationError"></small>
                   <% if( locals.errors){ %>
                   <% for(let i = 0; i < errors.length; i++){ %>
-                  <% if(errors[i].param == "classification_id"){ %>
+                  <% if(errors[i].param == "classification"){ %>
                   <small class="text-danger"> <%= errors[i].msg%> </small>
                   <% } %>
                   <% } %>
@@ -47,34 +50,46 @@
                </div>
                <div class="col-75">
                   <select name="variety_id" id="variety">
+                     <option value="">Elija una opción</option>
                      <option value="1">Malbec</option>
-                     <option value="2">Cavernet</option>
+                     <option value="2">Cabernet</option>
                      <option value="3">Merlot</option>
                      <option value="4">Syrah</option>
+                     <option value="5">Semillón</option>
+                     <option value="6">Bonarda</option>
+                     <option value="7">Torrontés</option>
+                     <option value="8">Sauvignon</option>
+                     <option value="9">Brut</option>
+                     <option value="10">Extra Brut</option>
+                     <option value="11">Sec</option>
+                     <option value="12">Demi-Sec</option>
+                     <option value="13">Blend</option>
                   </select>
-               </div>
-               <% if( locals.errors){ %>
+                  <small class="text-danger" id="varietyError"></small>
+                  <% if( locals.errors){ %>
                   <% for(let i = 0; i < errors.length; i++){ %>
-                  <% if(errors[i].param == "variety_id"){ %>
+                  <% if(errors[i].param == "variety"){ %>
                   <small class="text-danger"> <%= errors[i].msg%> </small>
                   <% } %>
                   <% } %>
                   <% } %>
+               </div>
             </div>
             <div class="row">
                <div class="col-25">
                   <label for="price">Precio</label>
                </div>
                <div class="col-75">
-                  <input type="number" id="price" name="price" placeholder="Precio">
-               </div>
-               <% if( locals.errors){ %>
+                  <input id="price" name="price" placeholder="Precio">
+                  <small class="text-danger" id="priceError"></small>
+                  <% if( locals.errors){ %>
                   <% for(let i = 0; i < errors.length; i++){ %>
                   <% if(errors[i].param == "price"){ %>
                   <small class="text-danger"> <%= errors[i].msg%> </small>
                   <% } %>
                   <% } %>
                   <% } %>
+               </div>
             </div>
             <div class="row">
                <div class="col-25">
@@ -93,6 +108,14 @@
                      <i class="fas fa-cloud-upload-alt"></i> Subir imagen
                   </label>
                   <input id="file-upload" type="file" name="productImage" accept=".png, .jpg, .jpeg" required>
+                  <small class="text-danger" id="imageError"></small>
+                  <% if( locals.errors){ %>
+                     <% for(let i = 0; i < errors.length; i++){ %>
+                     <% if(errors[i].param == "file-upload"){ %>
+                     <small class="text-danger"> <%= errors[i].msg%> </small>
+                     <% } %>
+                     <% } %>
+                     <% } %>
                </div>
             </div>
             <div class="row">
@@ -101,14 +124,15 @@
                </div>
                <div class="col-75">
                   <textarea id="subject" name="description" placeholder="Descripción del producto..."></textarea>
+                  <small class="text-danger" id="subjectError"></small>
+                  <% if( locals.errors){ %>
+                     <% for(let i = 0; i < errors.length; i++){ %>
+                     <% if(errors[i].param == "subject"){ %>
+                     <small class="text-danger"> <%= errors[i].msg%> </small>
+                     <% } %>
+                     <% } %>
+                     <% } %>
                </div>
-               <% if( locals.errors){ %>
-                  <% for(let i = 0; i < errors.length; i++){ %>
-                  <% if(errors[i].param == "description"){ %>
-                  <small class="text-danger"> <%= errors[i].msg%> </small>
-                  <% } %>
-                  <% } %>
-                  <% } %>
             </div>
             <br>
             <div class="row">
