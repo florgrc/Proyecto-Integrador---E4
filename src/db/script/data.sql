@@ -49,14 +49,14 @@ INSERT INTO `products` VALUES
   (14,"Cordero con Piel de Lobo",           "Este vino es un Cordero con Piel de Lobo Rosé Cabernet",       "VINO14.JPG",  	3,2,    "4241", "1","2021-04-27 02:20:47","2021-11-21 19:08:07"),
   (15,"Lagarde Organic",                    "Este vino es un Lagarde Organic Rosé Semillón",                "VINO15.JPG", 	3,5,    "4376", "1","2021-06-25 15:12:53","2021-03-21 17:05:18"),
   (16,"Champagne Finca Las Moras",          "Este es un Champagne Finca Las Moras Espumante Syrah",         "VINO16.JPG", 	4,4,    "3435", "1","2021-01-17 12:02:16","2021-04-18 11:45:07"),
-  (17,"Champagne Valdivieso",               "Este es un Champagne Valdivieso Espumante Brut",               "VINO25.JPG",   4,9,    "4328", "1","2021-02-28 02:37:41","2021-09-11 00:11:24");
+  (17,"Champagne Valdivieso",               "Este es un Champagne Valdivieso Espumante Brut",               "VINO25.JPG",   4,9,    "4328", "1","2021-02-28 02:37:41","2021-09-11 00:11:24"),
   (18,"Bohemia Sekt",                       "Este vino es un Bohemia Sekt Rosé Demi-Sec",                   "VINO18.JPG",  	3,12,   "776",  "1","2021-12-21 15:02:44","2021-12-13 20:31:33"),
   (19,"Andeluna SEMILLON",                  "Este vino es un Andeluna SEMILLON Blanco Semillón",            "VINO19.JPG",  	2,5,    "1249", "1","2021-06-19 02:47:04","2021-04-25 22:59:48"),
   (20,"Marco Zunino",                       "Este vino es un Marco Zunino Rosé Bonarda",                    "VINO20.JPG",  	3,6,    "4558", "0","2021-07-09 01:16:49","2021-09-04 10:52:37"),
   (21,"Elementos",                          "Este vino es un Elementos Rosé Torrontés",                     "VINO21.JPG", 	3,7,    "3405", "0","2021-02-02 19:21:31","2021-01-27 15:27:36"),
   (22,"Finca Las Moras BONARDA",            "Este vino es un Finca Las Moras BONARDA Tinto Bonarda",        "VINO22.JPG", 	1,6,    "5920", "1","2021-03-29 23:18:18","2021-02-28 23:18:51"),
   (23,"Champagne Vilarnau Barcelona ICE",   "Este es un Champagne Vilarnau Barcelona ICE Espumante Sec",    "VINO23.JPG",   4,11,   "5592", "0","2021-01-16 23:26:17","2021-11-18 23:16:02"),
-  (24,"Pays d'Oc Charette",                 "Este vino es un Pays d'Oc Charette Rosé Syrah",                "VINO24.JPG",   3,4,    "2797", "1","2021-08-31 05:42:39","2021-03-19 23:26:22"),
+  (24,"Pays d'Oc Charette",                 "Este vino es un Pays d'Oc Charette Rosé Syrah",                "VINO24.JPG",   3,4,    "2797", "1","2021-08-31 05:42:39","2021-03-19 23:26:22");
 /*  (25,"Andeluna ROSE",                      "Este vino es un Andeluna ROSE Rosé Malbec",                    "VINO25.JPG",  	3,1,    "6683", "1","2021-06-26 07:36:35","2021-11-18 18:08:11"),
 
 UPDATE `products` SET `id` = 1, `name` = "Alma Mora", `description` = "Este vino es un Alma Mora Tinto Malbec", `image` = "VINO1.JPG", `classification_id` = 1, `variety_id` = 1, `price` = "6070", `featured` = "0", `created_at` = "2021-09-02 11:48:46", `updated_at` = "2021-06-04 07:33:15" WHERE `id` = 1;
