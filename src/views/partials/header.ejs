@@ -29,7 +29,7 @@
     <% if( locals.loggedUser.type_id === 1 ) { %>
     <div class="adminButtons">
       <div class="createProductButton">
-        <a href="http://localhost:3000/"><button class="regularButton" id=createProductButton>Dashboard TWS</button></a>
+        <a href="http://localhost:3000/"><button class="regularButton">Dashboard TWS</button></a>
       </div>
       <% } %>
       <% } else { %>
@@ -37,7 +37,7 @@
       <%if(locals.loggedUser != undefined) {%>
       <% if( locals.loggedUser.type_id === 1 ) { %>
       <div class="createProductButton">
-        <a href="/products"><button class="regularButton" id=createProductButton>Listado de productos</button></a>
+        <a href="/products"><button class="regularButton">Listado de productos</button></a>
       </div>
     </div>
     <% } %>

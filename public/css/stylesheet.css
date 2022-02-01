@@ -14,16 +14,20 @@
 
 .regularButton {
     border: none;
+    font-size: 12px;
     padding: 10px;
     /*border-radius: 10px;*/
     background-color: #361718;
     color: #ffffff;
     font-weight: bold;
     transition: all 0.5s;
+    border-radius: 7%;
+    max-width: 90%;
+    background-color: #444444;
 }
 
 .regularButton:hover {
-    background-color: rgb(49, 80, 100);
+    background-color: rgb(97, 56, 56);
 }
 
 .confirmButton {
@@ -450,6 +454,7 @@ a {
 .product .productImage {
     width: 80%;
     justify-content: center;
+    max-height: 220px;
 }
 
 .product:hover {
@@ -735,10 +740,11 @@ th {
 
 .createProductButton {
     text-align: right;
+
 }
 
 #createProductButton:hover {
-    background-color: green;
+    background-color: rgb(189, 188, 188);
 }
 
 /* CARRITO */
