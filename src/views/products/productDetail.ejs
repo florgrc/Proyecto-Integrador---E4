@@ -5,9 +5,9 @@
    <form action="/product-detail" method="POST" class="productDetail-form">
       <h3>Detalle del producto</h3>
       <div class="product-details">
-         <img src="/images/products/<%= producto.image %>" alt="150" width="150">
          <div class="productDetailed">
             <p class="name"><%= producto.name %></p>
+            <img src="/images/products/<%= producto.image %>" alt="150" width="150">
             <p class="type"><%= producto.variety %></p>
             <p class="price"><%= producto.price %></p>
             <p class="info"><%= producto.description %></p>

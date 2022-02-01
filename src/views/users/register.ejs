@@ -2,106 +2,102 @@
 
 <body>
    <%- include('../partials/header.ejs')  %>
-   <div class="loginBody">
+   <div class="loginContainer">
       <form action="/users" method="POST" class="form-style" enctype="multipart/form-data">
          <div class="login-wrap">
-            <div class="login-html">
-               <label for="tab-1" class="tab">Registrarse</label>
-               <div class="login-form">
-                  <div class="sign-up-htm">
-                     <div class="group">
-                        <label for="user" class="label">Nombre</label>
-                        <input id="firstname" type="text" name="firstname" class="input">
-                        <small class="text-danger" id="firstNameError"></small>
-                        <% if( locals.errors){ %>
+            <div class="login-background">
+               <div class="login-html">
+                  <label for="tab-1" class="tab">Registrarse</label>
+                  <div class="login-form">
+                     <div class="sign-up-htm">
+                        <div class="group">
+                           <label for="user" class="label">Nombre</label>
+                           <input id="firstname" type="text" name="firstname" class="input">
+                           <small class="text-danger" id="firstNameError"></small>
+                           <% if( locals.errors){ %>
                            <% for(let i = 0; i < errors.length; i++){ %>
                            <% if(errors[i].param == "firstname"){ %>
                            <small class="text-danger"> <%= errors[i].msg%> </small>
                            <% } %>
                            <% } %>
                            <% } %>
-                     
-                     </div>
-                     <div class="group">
-                        <label for="user" class="label">Apellido</label>
-                        <input id="lastname" type="text" name="lastname" class="input">
-                        <small class="text-danger" id="lastNameError"></small>
-                        <% if(locals.errors){ %>
+                        </div>
+                        <div class="group">
+                           <label for="user" class="label">Apellido</label>
+                           <input id="lastname" type="text" name="lastname" class="input">
+                           <small class="text-danger" id="lastNameError"></small>
+                           <% if(locals.errors){ %>
                            <% for(let i = 0; i < errors.length; i++){ %>
                            <% if(errors[i].param == "lastname"){ %>
                            <small class="text-danger"> <%= errors[i].msg%> </small>
                            <% } %>
                            <% } %>
                            <% } %>
-                     </div>
+                        </div>
 
-                     <div class="group">
-                        <label for="email" class="label">Email</label>
-                        <input id="email" type="email" name="email" placeholder="usuario@tudominio.com" class="input">
-                        <small class="text-danger" id="emailError"></small>
-                        <% if(locals.errors){ %>
+                        <div class="group">
+                           <label for="email" class="label">Email</label>
+                           <input id="email" type="email" name="email" placeholder="usuario@tudominio.com"
+                              class="input">
+                           <small class="text-danger" id="emailError"></small>
+                           <% if(locals.errors){ %>
                            <% for(let i = 0; i < errors.length; i++){ %>
                            <% if(errors[i].param == "email"){ %>
                            <small class="text-danger"> <%= errors[i].msg%> </small>
                            <% } %>
                            <% } %>
                            <% } %>
-                     </div>
+                        </div>
 
-                     <div class="group">
-                        <label for="file-upload" class="custom-file-upload">
-                           <i class="fas fa-cloud-upload-alt"></i> Subir imagen
-                        </label>
-                        <input id="file-upload" type="file" name="userAvatar" accept=".png, .jpg, .jpeg" required>
-                        <% if(locals.errors){ %>
+                        <div class="group">
+                           <label for="file-upload" class="custom-file-upload">
+                              <i class="fas fa-cloud-upload-alt"></i> Subir imagen
+                           </label>
+                           <input id="file-upload" type="file" name="userAvatar" accept=".png, .jpg, .jpeg" required>
+                           <% if(locals.errors){ %>
                            <% for(let i = 0; i < errors.length; i++){ %>
                            <% if(errors[i].param == "userAvatar"){ %>
                            <small class="text-danger"> <%= errors[i].msg%> </small>
                            <% } %>
                            <% } %>
                            <% } %>
-                     </div>
+                        </div>
 
-                     <div>
-                        <select name="type_id" id="type">
-                           <option value="1">Administrador</option>
-                           <option value="2">Usuario</option>
-                        </select>
-                     </div>
-                     
-                     <div class="group">
-                        <label for="user" class="label">Contraseña</label>
-                        <input id="password" type="password" name="password" placeholder="Mínimo 8 caracteres"
-                           class="input">
+                        <div class="group">
+                           <label for="user" class="label">Contraseña</label>
+                           <input id="password" type="password" name="password" placeholder="Mínimo 8 caracteres"
+                              class="input">
                            <small class="text-danger" id="passwordError"></small>
                            <% if(locals.errors){ %>
-                              <% for(let i = 0; i < errors.length; i++){ %>
-                              <% if(errors[i].param == "password"){ %>
-                              <small class="text-danger"> <%= errors[i].msg%> </small>
-                              <% } %>
-                              <% } %>
-                              <% } %>
-                     </div>
+                           <% for(let i = 0; i < errors.length; i++){ %>
+                           <% if(errors[i].param == "password"){ %>
+                           <small class="text-danger"> <%= errors[i].msg%> </small>
+                           <% } %>
+                           <% } %>
+                           <% } %>
+                        </div>
 
-                     <div class="group">
-                        <label for="pass" class="label">Repetir Contraseña</label>
-                        <input id="repassword" type="password" name="repassword" class="input" data-type="password">
-                        <small class="text-danger" id="repasswordError"></small>
-                        <% if(locals.errors){ %>
+                        <div class="group">
+                           <label for="pass" class="label">Repetir Contraseña</label>
+                           <input id="repassword" type="password" name="repassword" class="input" data-type="password">
+                           <small class="text-danger" id="repasswordError"></small>
+                           <% if(locals.errors){ %>
                            <% for(let i = 0; i < errors.length; i++){ %>
                            <% if(errors[i].param == "repassword"){ %>
                            <small class="text-danger"> <%= errors[i].msg%> </small>
                            <% } %>
                            <% } %>
                            <% } %>
-                     </div>
+                        </div>
 
-                     <div class="group">
-                        <a href="#"><button type="submit" id="buttonRegister" class="button" value="Registrarse">Registrarse</button></a>
-                     </div>
-                     <div class="hr"></div>
-                     <div class="foot-lnk">
-                        <label for="tab-1"><a href="/users/login"> Ya tengo una cuenta</label></a>
+                        <div class="group">
+                           <a href="#"><button type="submit" id="buttonRegister" class="button"
+                                 value="Registrarse">Registrarse</button></a>
+                        </div>
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                           <label for="tab-1"><a href="/users/login"> Ya tengo una cuenta</label></a>
+                        </div>
                      </div>
                   </div>
                </div>

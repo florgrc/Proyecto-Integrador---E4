@@ -47,9 +47,9 @@ const usersController = {
             ...req.body,
             password: bcrypt.hashSync(req.body.password, 8),
             image: userAvatar,
-            /*admin: false*/
-
+            type_id: 2,
         }
+        console.log(newUser);
         if (errors.isEmpty()) {
             db.Users.create(newUser)
                 .then(usuario => {

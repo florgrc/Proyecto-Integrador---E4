@@ -2,47 +2,49 @@
 
 <body>
    <%- include('../partials/header.ejs')  %>
-   <div class="loginBody">
-      <form action="/users/login" method="POST" class="form-style">
-         <div class="login-wrap">
+   <div class="loginContainer">
+      <div class="login-wrap">
+         <div class="login-background">
             <div class="login-html">
-               <input id="tab-1" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Ingresar</label>
+               <label class="tab">Ingresar</label>
                <div class="login-form">
-                  <div class="sign-in-htm">
-                     <div class="group">
-                        <label for="email" class="label">email</label>
-                        <input id="email" name="email" type="email" class="input" name="emailLogin">
-                        <small class="text-danger" id="emailError"></small>
-                     </div>
-                     <div class="group">
-                        <label for="pass" class="label">Password</label>
-                        <input id="password" name="password" type="password" class="input" data-type="password"
-                           name="passwordLogin">
-                           <small class="text-danger" id="passwordError"></small>
-                        <% if (locals.errors && errors.email) { %>
-                        <div class="text-danger">
-                           <%= errors.email.msg %>
+                  <form action="/users/login" method="POST" class="form-style">
+                     <div class="sign-in-htm">
+                        <div class="group">
+                           <label for="email" class="label">email</label>
+                           <input id="email" name="email" type="email" class="input" name="emailLogin">
+                           <small class="text-danger" id="emailError"></small>
                         </div>
-                        <% } %>
+                        <div class="group">
+                           <label for="pass" class="label">Password</label>
+                           <input id="password" name="password" type="password" class="input" data-type="password"
+                              name="passwordLogin">
+                           <small class="text-danger" id="passwordError"></small>
+                           <% if (locals.errors && errors.email) { %>
+                           <div class="text-danger">
+                              <%= errors.email.msg %>
+                           </div>
+                           <% } %>
+                        </div>
+                        <div class="group">
+                           <input id="check" type="checkbox" class="check" checked>
+                           <label for="check"><input class="icon" type="checkbox" id="box1" name="remember_user"
+                                 value="password"> Recordarme </label>
+                        </div>
+                        <div class="group">
+                           <a href="/users/login"><button type="submit" class="button"
+                                 value="Sign In">Ingresar</button></a>
+                        </div>
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                           <a href="#forgot">Olvidé mi contraseña</a><br>
+                           <a href="/users/register">¿No tenes cuenta? Registrate!</a>
+                        </div>
                      </div>
-                     <div class="group">
-                        <input id="check" type="checkbox" class="check" checked>
-                        <label for="check"><input class="icon" type="checkbox" id="box1" name="remember_user"
-                              value="password"> Recordarme </label>
-                     </div>
-                     <div class="group">
-                        <a href="/users/login"><button type="submit" class="button"
-                              value="Sign In">Ingresar</button></a>
-                     </div>
-                     <div class="hr"></div>
-                     <div class="foot-lnk">
-                        <a href="#forgot">Olvidé mi contraseña</a><br>
-                        <a href="/users/register">¿No tenes cuenta? Registrate!</a>
-                     </div>
-                  </div>
                </div>
             </div>
          </div>
+      </div>
       </form>
    </div>
    <%- include('../partials/footer.ejs')  %>
