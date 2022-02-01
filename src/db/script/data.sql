@@ -18,10 +18,12 @@
 --
 -- Dumping data for table `classifications`
 --
-
+USE wines_db
 LOCK TABLES `classifications` WRITE;
 /*!40000 ALTER TABLE `classifications` DISABLE KEYS */;
-INSERT INTO `classifications` VALUES (1,'Tinto'),(2,'Blanco'),(3,'Rosado');
+
+INSERT INTO `classifications` (id, name) VALUES (1,'Tinto'),(2,'Blanco'),(3,'Rosado')
+ON DUPLICATE KEY UPDATE name = VALUES (name);
 /*!40000 ALTER TABLE `classifications` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +63,8 @@ UNLOCK TABLES;
 
 LOCK TABLES `varieties` WRITE;
 /*!40000 ALTER TABLE `varieties` DISABLE KEYS */;
-INSERT INTO `varieties` VALUES (1,'Malbec'),(2,'Cavernet'),(3,'Merlot'),(4,'Syrah');
+INSERT INTO `varieties` VALUES (1,'Malbec'),(2,'Cabernet'),(3,'Merlot'),(4,'Syrah'),(5,'Semillón'),(6,'Bonarda'),(7,'Torrontés'),(8,'Sauvignon'),(9,'Brut'),(10,'Extra Brut'),(11,'Sec'),(12,'Demi-Sec'),(13,'Blend')
+ON DUPLICATE KEY UPDATE name = VALUES (name);
 /*!40000 ALTER TABLE `varieties` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
