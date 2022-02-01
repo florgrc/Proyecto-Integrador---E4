@@ -97,12 +97,12 @@ module.exports = {
                         id: product.id,
                         name: product.name,
                         description: product.description,
-                        //image: "http://localhost:3000/images/products/" + product.image,
+                        image: "http://localhost:3000/images/products/" + product.image,
                         //class_id: product.classification_id,
                         variety_id: product.variety_id,
                         //price: product.price,
                         //featured: product.featured,
-                        detail: "http://localhost:3000/products/detail/" + product.id,
+                        detail: "http://localhost:3001/products/detail/" + product.id,
                     })
                 })
                 let countByVariety = []
@@ -163,7 +163,7 @@ module.exports = {
                     productID: product.id,
                     productName: product.name,
                     description: product.description,
-                    image: "http://localhost:3000/images/products/" + product.image,
+                    image: "http://localhost:3001/images/products/" + product.image,
                     classification: [product.classification_id],
                     variety: [product.variety_id],
                     price: product.price,
