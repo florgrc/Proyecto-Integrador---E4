@@ -49,7 +49,7 @@ INSERT INTO `products` VALUES
   (14,"Cordero con Piel de Lobo",           "Este vino es un Cordero con Piel de Lobo Rosé Cabernet",       "VINO14.JPG",  	3,2,    "4241", "1","2021-04-27 02:20:47","2021-11-21 19:08:07"),
   (15,"Lagarde Organic",                    "Este vino es un Lagarde Organic Rosé Semillón",                "VINO15.JPG", 	3,5,    "4376", "1","2021-06-25 15:12:53","2021-03-21 17:05:18"),
   (16,"Champagne Finca Las Moras",          "Este es un Champagne Finca Las Moras Espumante Syrah",         "VINO16.JPG", 	4,4,    "3435", "1","2021-01-17 12:02:16","2021-04-18 11:45:07"),
-  (17,"Champagne Valdivieso",               "Este es un Champagne Valdivieso Espumante Brut",               "VINO25.JPG",   4,9,    "4328", "1","2021-02-28 02:37:41","2021-09-11 00:11:24"),
+  (17,"Champagne Valdivieso",               "Este es un Champagne Valdivieso Espumante Brut",               "VINO17.JPG",   4,9,    "4328", "1","2021-02-28 02:37:41","2021-09-11 00:11:24"),
   (18,"Bohemia Sekt",                       "Este vino es un Bohemia Sekt Rosé Demi-Sec",                   "VINO18.JPG",  	3,12,   "776",  "1","2021-12-21 15:02:44","2021-12-13 20:31:33"),
   (19,"Andeluna SEMILLON",                  "Este vino es un Andeluna SEMILLON Blanco Semillón",            "VINO19.JPG",  	2,5,    "1249", "1","2021-06-19 02:47:04","2021-04-25 22:59:48"),
   (20,"Marco Zunino",                       "Este vino es un Marco Zunino Rosé Bonarda",                    "VINO20.JPG",  	3,6,    "4558", "0","2021-07-09 01:16:49","2021-09-04 10:52:37"),
