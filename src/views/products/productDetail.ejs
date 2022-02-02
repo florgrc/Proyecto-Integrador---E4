@@ -3,13 +3,18 @@
 <body>
    <%- include('../partials/header.ejs')  %>
    <form action="/product-detail" method="POST" class="productDetail-form">
-      <h3>Detalle del producto</h3>
       <div class="product-details">
          <div class="productDetailed">
             <p class="name"><%= producto.name %></p>
-            <img src="/images/products/<%= producto.image %>" alt="150" width="150">
-            <p class="type"><%= producto.variety %></p>
-            <p class="price"><%= producto.price %></p>
+            <img src="/images/products/<%= producto.image %>" alt="200" width="200">
+            <p class="variety"><%= producto.variety.name %></p>
+            <p class="price"><% const formatter = new Intl.NumberFormat('en-US', {
+               style: 'currency',
+               currency: 'USD',
+               minimumFractionDigits: 0
+             })
+             var value = producto.price%>
+             <%= formatter.format(value) %></p>
             <p class="info"><%= producto.description %></p>
             <select name="cantidad" id="cantidad">
                <option value="0" selected disabled>Seleccione una cantidad</option>
@@ -35,25 +40,17 @@
          </li>
          <li>
             <img src="/images/products/vino3.jpg">
-            <div class=line></div>
+            <div class="line"></div>
             <div class="product-details">
                <p class="name">Vino 3</p>
                <p class="price">$800</p>
             </div>
          <li>
             <img src="/images/products/vino4.jpg">
-            <div class=line></div>
+            <div class="line"></div>
             <div class="product-details">
                <p class="name">Vino 4</p>
                <p class="price">$1.200</p>
-            </div>
-         </li>
-         <li>
-            <img src="/images/products/vino5.jpg">
-            <div class=line></div>
-            <div class="product-details">
-               <p class="name">Vino 5</p>
-               <p class="price">$500</p>
             </div>
          </li>
       </ol>

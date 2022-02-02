@@ -9,6 +9,9 @@ const indexController = {
         let others = [];
 
         db.Products.findAll({
+            include: {
+                all: true
+            },
             where: {
                 featured: 1
             }

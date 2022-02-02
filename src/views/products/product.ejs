@@ -24,12 +24,18 @@
                <td class="detail-product"><%= product.description%></td>
                <td class="detail-product"><%= product.classification.name%></td>
                <td class="detail-product"><%= product.variety.name%></td>
-               <td class="detail-product"><%= product.price%></td>
+               <td class="detail-product"><% const formatter = new Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                  minimumFractionDigits: 0
+                })
+                var value = product.price%>
+                <%= formatter.format(value) %></td>
                <td class="detail-product"><%= product.featured%></td>
 
                <td class="detail-product">
                   <form method="GET" action="/products/edit/<%= product.id %>">
-                     <input type="submit" value="Modificar" class="regularButton">
+                     <input type="submit" value="Modificar" class="modifyButton">
                   </form>
                </td>
                <td class="detail-product">

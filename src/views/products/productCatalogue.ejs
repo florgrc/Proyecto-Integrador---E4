@@ -20,7 +20,14 @@
                         </div>
                         <div class="main-article">
                           <h4 class="description"><%= product.name %></h4>
-                          <p class="precio"> <%= product.price %> </p>
+                          <p class="description"><%= product.variety.name %></p>
+                          <p class="precio"> <% const formatter = new Intl.NumberFormat('en-US', {
+                            style: 'currency',
+                            currency: 'USD',
+                            minimumFractionDigits: 0
+                          })
+                          var value = product.price%>
+                          <%= formatter.format(value) %> </p>
                         </div>
                       </a>
                     </article>

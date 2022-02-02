@@ -15,6 +15,9 @@ const productsController = {
     detail: (req, res) => {
 
         db.Products.findOne({
+            include: {
+                all: true
+            },
             where: {
                 id: req.params.idProduct
             }
@@ -84,7 +87,11 @@ const productsController = {
             })
     },
     catalogue: (req, res) => {
-        db.Products.findAll()
+        db.Products.findAll({
+            include: {
+                all: true
+            }
+        })
             .then(function (products) {
                 res.render("products/productCatalogue", {
                     products

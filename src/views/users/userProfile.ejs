@@ -37,15 +37,22 @@
                      <a href="/users/edit/<%= loggedUser.id %>"><button type="submit" class="button"
                            value="Registrarse">Modificar Información</button></a>
                   </div>
-                  <label for="tab-1" class="tab">Panel de Control: </label>
-                  <div class="group">
-                     <a href="/users"><button type="submit" id=createProductButton class="button"
-                           value="Registrarse">Base
-                           de Usuarios</button></a>
-                     </br>
-                     <a href="/products"><button type="submit" id=createProductButton class="button"
-                           value="Registrarse">Base de Productos</button></a>
-                  </div>
+                  <% if( locals.loggedUser != undefined ) {%>
+                     <% if( locals.loggedUser.type_id === 1 ) { %>
+                        <label for="tab-1" class="tab">Panel de Control: </label>
+                  
+                        <div class="group">
+                           
+                           <a href="/users"><button type="submit" id=createProductButton class="button"
+                                 value="Registrarse">Base
+                                 de Usuarios</button></a>
+                           </br>
+                           <a href="/products"><button type="submit" id=createProductButton class="button"
+                                 value="Registrarse">Base de Productos</button></a>
+                        </div>
+                       <% } %>
+                       <% } else { %>
+                       <% } %>
                </div>
             </div>
          </div>
