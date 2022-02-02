@@ -1,59 +1,56 @@
 <%- include('../partials/head.ejs')  %>
-
 <body>
    <%- include('../partials/header.ejs')  %>
+   
    <div class="loginContainer">
-      <div class="login-wrap">
-         <div class="login-background">
-            <div class="login-html">
-               <img src="/images/users/<%= loggedUser.image %>" alt="Avatar" class="avatar">
-               <label for="tab-1" class="tab">Hola <%= loggedUser.firstname %> <%= loggedUser.lastname %> </label>
-               <label for="tab-1" class="tab">Tu información: </label>
-               <div class="login-form">
-                  <div class="group">
-                     <label for="user" class="label">Nombre</label>
-                     <input id="user" type="text" name="firstname" class="input" value="<%= loggedUser.firstname %>"
-                        readonly>
-                     <% if (locals.errors && errors.firstname ) { %>
-                     <%= errors.firstname.msg %>
-                     <% } %>
-                  </div>
-                  <div class="group">
-                     <label for="user" class="label">Apellido</label>
-                     <input id="user" type="text" name="lastname" class="input" value="<%= loggedUser.lastname %>"
-                        readonly>
-                     <% if (locals.errors && errors.lastname ) { %>
-                     <%= errors.lastname.msg %>
-                     <% } %>
-                  </div>
-                  <div class="group">
-                     <label for="email" class="label">Email</label>
-                     <input id="email" type="email" name="email" class="input" value="<%= loggedUser.email %>" readonly>
-                     <% if (locals.errors && errors.email ) { %>
-                     <%= errors.email.msg %>
-                     <% } %>
-                  </div>
-                  <div class="group">
-                     <a href="/users/edit/<%= loggedUser.id %>"><button type="submit" class="button"
-                           value="Registrarse">Modificar Información</button></a>
-                  </div>
-                  <% if( locals.loggedUser != undefined ) {%>
-                     <% if( locals.loggedUser.type_id === 1 ) { %>
-                        <label for="tab-1" class="tab">Panel de Control: </label>
-                  
-                        <div class="group">
-                           
-                           <a href="/users"><button type="submit" id=createProductButton class="button"
-                                 value="Registrarse">Base
-                                 de Usuarios</button></a>
-                           </br>
-                           <a href="/products"><button type="submit" id=createProductButton class="button"
-                                 value="Registrarse">Base de Productos</button></a>
-                        </div>
-                       <% } %>
-                       <% } else { %>
-                       <% } %>
+      <div class="login-background">
+         <div class="login-html">
+            <img src="/images/users/<%= loggedUser.image %>" alt="Avatar" class="avatar">
+            <label for="tab-1" class="tab">Hola <%= loggedUser.firstname %> <%= loggedUser.lastname %> </label>
+            <label for="tab-1" class="tab">Tu información: </label>
+            <div class="login-form">
+               <div class="group">
+                  <label for="user" class="label">Nombre</label>
+                  <input id="user" type="text" name="firstname" class="input" value="<%= loggedUser.firstname %>"
+                     readonly>
+                  <% if (locals.errors && errors.firstname ) { %>
+                  <%= errors.firstname.msg %>
+                  <% } %>
                </div>
+               <div class="group">
+                  <label for="user" class="label">Apellido</label>
+                  <input id="user" type="text" name="lastname" class="input" value="<%= loggedUser.lastname %>"
+                     readonly>
+                  <% if (locals.errors && errors.lastname ) { %>
+                  <%= errors.lastname.msg %>
+                  <% } %>
+               </div>
+               <div class="group">
+                  <label for="email" class="label">Email</label>
+                  <input id="email" type="email" name="email" class="input" value="<%= loggedUser.email %>" readonly>
+                  <% if (locals.errors && errors.email ) { %>
+                  <%= errors.email.msg %>
+                  <% } %>
+               </div>
+               <div class="group">
+                  <a href="/users/edit/<%= loggedUser.id %>"><button type="submit" class="button"
+                        value="Registrarse">Modificar Información</button></a>
+               </div>
+               <% if( locals.loggedUser != undefined ) {%>
+               <% if( locals.loggedUser.type_id === 1 ) { %>
+               <label for="tab-1" class="tab">Panel de Control: </label>
+
+               <div class="group">
+
+                  <a href="/users"><button type="submit" id=createProductButton class="button" value="Registrarse">Base
+                        de Usuarios</button></a>
+                  </br>
+                  <a href="/products"><button type="submit" id=createProductButton class="button"
+                        value="Registrarse">Base de Productos</button></a>
+               </div>
+               <% } %>
+               <% } else { %>
+               <% } %>
             </div>
          </div>
       </div>

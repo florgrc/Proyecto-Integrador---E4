@@ -3,98 +3,96 @@
 <body>
 
   <%- include('partials/header')  %>
-    <div class="slide">
-      <div class="slide-inner">
-        <input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true" hidden="" checked="checked">
-        <div class="slide-item">
-          <img src="images/uvas.jpg">
-        </div>
-        <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="">
-        <div class="slide-item">
-          <img src="images/vino-copa.jpg">
-        </div>
-        <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="">
-        <div class="slide-item">
-          <img src="images/barricas.jpg">
-        </div>
-        <label for="slide-3" class="slide-control prev control-1">‹</label>
-        <label for="slide-2" class="slide-control next control-1">›</label>
-        <label for="slide-1" class="slide-control prev control-2">‹</label>
-        <label for="slide-3" class="slide-control next control-2">›</label>
-        <label for="slide-2" class="slide-control prev control-3">‹</label>
-        <label for="slide-1" class="slide-control next control-3">›</label>
-        <ol class="slide-indicador">
-          <li>
-            <label for="slide-1" class="slide-circulo">•</label>
-          </li>
-          <li>
-            <label for="slide-2" class="slide-circulo">•</label>
-          </li>
-          <li>
-            <label for="slide-3" class="slide-circulo">•</label>
-          </li>
-        </ol>
+  <div class="slide">
+    <div class="slide-inner">
+      <input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true" hidden="" checked="checked">
+      <div class="slide-item">
+        <img src="images/uvas.jpg">
       </div>
+      <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="">
+      <div class="slide-item">
+        <img src="images/vino-copa.jpg">
+      </div>
+      <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="">
+      <div class="slide-item">
+        <img src="images/barricas.jpg">
+      </div>
+      <label for="slide-3" class="slide-control prev control-1">‹</label>
+      <label for="slide-2" class="slide-control next control-1">›</label>
+      <label for="slide-1" class="slide-control prev control-2">‹</label>
+      <label for="slide-3" class="slide-control next control-2">›</label>
+      <label for="slide-2" class="slide-control prev control-3">‹</label>
+      <label for="slide-1" class="slide-control next control-3">›</label>
+      <ol class="slide-indicador">
+        <li>
+          <label for="slide-1" class="slide-circulo">•</label>
+        </li>
+        <li>
+          <label for="slide-2" class="slide-circulo">•</label>
+        </li>
+        <li>
+          <label for="slide-3" class="slide-circulo">•</label>
+        </li>
+      </ol>
     </div>
+  </div>
 
-    <section class="productos-destacados">
-      <h3 class="seccion">Nuestros productos destacados</h3>
-      <div class="products">
-        <% featured.forEach(product => { %>
-        <article class="product">
-          <a href="/products/detail/<%= product.id %>">
-            <div class="productImageDiv">
-              <img src="/images/products/<%= product.image %>" alt="producto1" class="productImage">
-            </div>
-            <div class="main-article">
-              <h4 class="description"><%= product.name %></h4>
-              <p class="variety">  <%= product.variety.name%> </p>
-              <p class="precio">  <% const formatter = new Intl.NumberFormat('en-US', {
+  <section class="productos-destacados">
+    <h3 class="seccion">Nuestros productos destacados</h3>
+    <div class="products">
+      <% featured.forEach(product => { %>
+      <article class="product">
+        <a href="/products/detail/<%= product.id %>">
+          <div class="productImageDiv">
+            <img src="/images/products/<%= product.image %>" alt="producto1" class="productImage">
+          </div>
+          <div class="main-article">
+            <h4 class="description"><%= product.name %></h4>
+            <p class="variety"> <%= product.variety.name%> </p>
+            <p class="precio"> <% const formatter = new Intl.NumberFormat('en-US', {
                 style: 'currency',
                 currency: 'USD',
                 minimumFractionDigits: 0
               })
               var value = product.price%>
               <%= formatter.format(value) %> </p>
-            </div>
-          </a>
-        </article>
-        <% }) %>;
-      </div>
-    </section>
-    <div class="pic-collage">
-      <div class="pic-collage1">
-        <a href="#" class="ahref"><img src="/images/cata.jpg" alt="carroussel" class="pic"></a>
-        <h2 class="text-pic1">Las mejores degustaciones de vinos</h2>
-        <a href="#"><img src="/images/HomeCarroussel1.jpg" alt="carroussel" class="pic"></a>
-        <h2 class="text-pic2">Adherite a nuestro club de puntos y recibi los mejores beneficios</h2>
-      </div>
-      <div class="pic-collage2">
-        <a href="#"><img src="/images/bodega.jpg" alt="carroussel" class="pic2"></a>
-        <h2 class="text-pic3">Esta es nuestra seleccion de bodegas mas recomendadas</h2>
-      </div>
+          </div>
+        </a>
+      </article>
+      <% }) %>;
     </div>
+  </section>
+  <div class="pic-collage">
+    <div class="pic-collage1">
+      <a href="#" class="ahref"><img src="/images/cata.jpg" alt="carroussel" class="pic"></a>
+      <h2 class="text-pic1">Las mejores degustaciones de vinos</h2>
+      <a href="#"><img src="/images/HomeCarroussel1.jpg" alt="carroussel" class="pic"></a>
+      <h2 class="text-pic2">Adherite a nuestro club de puntos y recibi los mejores beneficios</h2>
+    </div>
+    <div class="pic-collage2">
+      <a href="#"><img src="/images/bodega.jpg" alt="carroussel" class="pic2"></a>
+      <h2 class="text-pic3">Esta es nuestra seleccion de bodegas mas recomendadas</h2>
+    </div>
+  </div>
+  </section>
 
-    <video src="video.mp4" autoplay muted loop></video>
-    </section>
-
-    <section class="aditional-info">
-      <div class="dato">
-        <i class="fas fa-credit-card"></i>
-        <h4>Pagá con tarjeta o en efectivo</h4>
-        <p>Ademas tenemos cuotas sin interés!</p>
-      </div>
-      <div class="dato">
-        <i class="fas fa-shipping-fast"></i>
-        <h4>Envío gratis desde los $5.000</h4>
-        <p>Envio gratis a CABA y GBA sin minimo de compra.</p>
-      </div>
-      <div class="dato">
-        <i class="fas fa-wine-glass-alt"></i>
-        <h4>Ofrecemos las mejores experiencias</h4>
-        <p>¡Descubrí las mejores experiencias de la mano de expertos!</p>
-      </div>
-    </section>
+  <section class="aditional-info">
+    <div class="dato">
+      <i class="fas fa-credit-card"></i>
+      <h4>Pagá con tarjeta o en efectivo</h4>
+      <p>Ademas tenemos cuotas sin interés!</p>
+    </div>
+    <div class="dato">
+      <i class="fas fa-shipping-fast"></i>
+      <h4>Envío gratis desde los $5.000</h4>
+      <p>Envio gratis a CABA y GBA sin minimo de compra.</p>
+    </div>
+    <div class="dato">
+      <i class="fas fa-wine-glass-alt"></i>
+      <h4>Ofrecemos las mejores experiencias</h4>
+      <p>¡Descubrí las mejores experiencias de la mano de expertos!</p>
+    </div>
+  </section>
   <%- include('partials/footer')  %>
 </body>
 

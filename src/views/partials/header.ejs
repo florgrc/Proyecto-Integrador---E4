@@ -3,7 +3,7 @@
     <a href="/"><img src="/images/LogoWeb.svg" alt="logo" class="logo" width="130"></a>
   </div>
   <div class="header-right">
-    <div class="header-r-t">
+    <div class="header-r-top">
       <div class="spacer"></div>
       <div class="header-search">
         <form class="search" action="/products/search" method="GET">
@@ -18,54 +18,46 @@
       </div>
       <div class="spacer"></div>
     </div>
-    <div class="navbar">
-      <a href="/products/catalogue">Nuestros Productos</a>
-      <a href="/contact">Contactanos</a>
-      <a href="/about">Quienes somos</a>
-    </div>
-  </div>
-  <div class="userControl">
-    <% if( locals.loggedUser != undefined ) {%>
-    <% if( locals.loggedUser.type_id === 1 ) { %>
-    <div class="adminButtons">
-      <div class="createProductButton">
-        <a href="http://localhost:3000/"><button class="regularButton">Dashboard TWS</button></a>
+    <div class="header-r-bot">
+      <div class="navbar">
+        <a href="/products/catalogue">Nuestros Productos</a>
+        <a href="/contact">Contactanos</a>
+        <a href="/about">Quienes somos</a>
       </div>
-      <% } %>
-      <% } else { %>
-      <% } %>
-      <%if(locals.loggedUser != undefined) {%>
-      <% if( locals.loggedUser.type_id === 1 ) { %>
-      <div class="createProductButton">
-        <a href="/products"><button class="regularButton">Listado de productos</button></a>
-      </div>
-    </div>
-    <% } %>
-    <% } else { %>
-    <% } %>
-    <div class="loggedUser">
-      <% if (locals.isLogged) { %>
-      <div class="userButtons">
-        <!-- <a class="nav-link-dropdown" href="#" id="dropUser" role="button" data-bs-toggle="dropdown"
-          aria-expanded="false">
-        </a> -->
-        <img src="/images/users/<%= loggedUser.image %>" width="15%" style="border-radius: 100%"> 
-        <a href="/users/profile"><%= loggedUser.firstname %></a>
-        <div class="dropdownArrow">
-          <i class="fas fa-sort-down"></i>
-          <div class="dropdown">
-            <div class="dropdown-content">
-              <a href="/users/logout">Logout</a>
+      <div class="loggedUser">
+        <% if (locals.isLogged) { %>
+        <div class="userButtons">
+          <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
+          <img src="/images/users/<%= loggedUser.image %>" width="15%" style="border-radius: 100%">
+          <a href="/users/profile"><%= loggedUser.firstname %></a>
+          <div class="dropdownArrow">
+            <i class="fas fa-sort-down"></i>
+            <div class="dropdown">
+              <div class="dropdown-content">
+                <a href="/users/logout">Logout</a>
+                <% if( locals.loggedUser != undefined ) {%>
+                <% if( locals.loggedUser.type_id === 1 ) { %>
+                <a href="http://localhost:3000/"><button class="regularButton">Dashboard TWS</button></a>
+                <% } %>
+                <% } else { %>
+                <% } %>
+                <%if(locals.loggedUser != undefined) {%>
+                <% if( locals.loggedUser.type_id === 1 ) { %>
+                <a href="/products"><button class="regularButton">Listado de productos</button></a>
+                <% } %>
+                <% } else { %>
+                <% } %>
+              </div>
             </div>
+            <% } else { %>
+            <a href="/users/register">Registrate</a>
+            <a href="/users/login">Login</a>
+            <% } %>
           </div>
         </div>
-        <% } else { %>
-        <a href="/users/register">Registrate</a>
-        <a href="/users/login">Login</a>
-        <% } %>
-        <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
       </div>
     </div>
   </div>
 </header>
-<div class="content">
+<div class="footerFix">
+  <div class="viewContent">
