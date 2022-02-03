@@ -215,27 +215,15 @@ body {
 }
 /* Dropdown menu de Header.ejs */
 
-/*
-.userControl{
+.userPanel{
     display: flex;
-    width: 30%;
-    margin-bottom: 15px;
-    flex-direction: column;
-    align-items: center;
-    align-self:flex-end;
-    font-style: italic;
-}*/
-.loggedUser{
-    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 30%;
-    flex-direction: row;
-    left: 0;
-    font-size: 15px;
-    width: 100%;
+    width: 40%;
+    font-style: italic;
 }
-.loggedUser a{
+.userPanel a{
     font-size: 15px;
 }
 .userButtons{

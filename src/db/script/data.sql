@@ -59,7 +59,7 @@ INSERT INTO `products` (id, name, description, image, classification_id, variety
   (20,"Marco Zunino",                       "Este vino es un Marco Zunino Rosé Bonarda",                    "VINO20.JPG",  	 3,6,    "4558", "0"),
   (21,"Elementos",                          "Este vino es un Elementos Rosé Torrontés",                     "VINO21.JPG", 	 3,7,    "3405", "0"),
   (22,"Finca Las Moras BONARDA",            "Este vino es un Finca Las Moras BONARDA Tinto Bonarda",        "VINO22.JPG", 	 1,6,    "5920", "1"),
-  (23,"Champagne Vilarnau Barcelona ICE",   "Este es un Champagne Vilarnau Barcelona ICE Espumante Sec",    "VINO23.JPG",    4,11,   "5592", "0"),
+  (23,"Champagne Vilarnau",                 "Este es un Champagne Vilarnau Barcelona ICE Espumante Sec",    "VINO23.JPG",    4,11,   "5592", "0"),
   (24,"Pays d'Oc Charette",                 "Este vino es un Pays d'Oc Charette Rosé Syrah",                "VINO24.JPG",    3,4,    "2797", "1")
 ON DUPLICATE KEY UPDATE id=VALUES(id), name=VALUES (name), description=VALUES (description), image=VALUES (image), classification_id=VALUES (classification_id), variety_id=VALUES (variety_id), price=VALUES (price), featured=VALUES (featured);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
@@ -85,16 +85,16 @@ UNLOCK TABLES;
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (id, firstname, lastname, email, password, image, type_id) VALUES 
-  (1,'Rayna','Sambidge','rsambidge0@gmpg.org','$2a$12$O13HZm3x9I/pVnkLFvz.quFSxPUUpaB36qfo1Q','https://robohash.org/ipsamdeseruntdoloremque.',1),
-  (2,'Law','Trodler','ltrodler1@huffingtonpost.com','fjjah2CgMp','https://robohash.org/repellendusexplicabout.p',2),
-  (3,'Amy','Baildon','abaildon2@issuu.com','kmn5vsCvE33Z','https://robohash.org/estsaepefugiat.png?size=',2),
-  (4,'Matthus','Dewick','mdewick3@elpais.com','TE27XEUM','https://robohash.org/verononet.png?size=50x50',2),
-  (5,'Flora','Faichnie','ffaichnie4@ibm.com','aKDjyb','https://robohash.org/quifugiattemporibus.png?',2),
-  (6,'Hoyt','Merryfield','hmerryfield5@sciencedirect.com','PHw73PC7Ye','https://robohash.org/possimusvoluptascorporis',2),
-  (7,'Hadleigh','Kamien','hkamien6@pcworld.com','EV5Jru','https://robohash.org/laboreodioenim.png?size=',2),
-  (8,'Bearnard','Chamberlain','bchamberlain7@narod.ru','02qByZ','https://robohash.org/quidemetaperiam.png?size',2),
-  (9,'Dan','Corrie','dcorrie8@ning.com','uXbvzC0RwLGl','https://robohash.org/repudiandaeetmagni.png?s',2),
-  (10,'Lorie','Gabel','lgabel9@unicef.org','QVT1AGTZh','https://robohash.org/voluptateadexcepturi.png',2)
+  (1,'Administrador','TWS','admin@tws.org','$2a$08$0oZD6kEh6a8MpA7FOMTkqehYjgb/EDn8tWBByqhb0ikB/AjBhrrEG','defaultUsers/admin.svg',1),
+  (2,'Law','Trodler','ltrodler1@huffingtonpost.com','$2a$12$a2vjbcbodXOASXDReeKK8OciYPJGUPdMHoBstQwHplCOma83LNNuC','defaultUsers/2.png',2),
+  (3,'Amy','Baildon','abaildon2@issuu.com','$2a$12$p6vKvVkALyoZf15NhuV0KeXwXOx53jQDKgnMgMj.qeAlyw4/PBTQW','defaultUsers/3.png',2),
+  (4,'Matthus','Dewick','mdewick3@elpais.com','$2a$12$nAj2B0fv/nw/lMMYZsCza.cdQmEvczpaZINICYNdk1CKzJ1Suddt6','defaultUsers/4.png',2),
+  (5,'Flora','Faichnie','ffaichnie4@ibm.com','$2a$12$soje7PuZJ1liHIU.UrIeyut.KQQTEsZekPvWVXAhT0TyNTcpdLE2W','defaultUsers/5.png',2),
+  (6,'Hoyt','Merryfield','hmerryfield5@sciencedirect.com','$2a$12$rADXbPSoXRDenH9mOKmT8uQO4u/isPzo9Vn1ZTTBXMRYRXK9kZGZu','defaultUsers/6.png',2),
+  (7,'Hadleigh','Kamien','hkamien6@pcworld.com','$2a$12$3kR1wGJWzHQUhgR0r27azO.O7h9ak/mWUg7Wd5JKnnPTvD3QmhFt.','defaultUsers/7.png',2),
+  (8,'Bearnard','Chamberlain','bchamberlain7@narod.ru','$2a$12$SZSd4WnT1OgLjUSUvT4.te.5UqfqFcyfeyYhl1cUHK5wGz/H4x6XG','defaultUsers/8.png',2),
+  (9,'Dan','Corrie','dcorrie8@ning.com','$2a$12$1lIz.rTqNJhScTGXVPRGFet4P4kZFf9JHoGdJWi4Ts5iDEWeYeOT.','defaultUsers/9.png',2),
+  (10,'Lorie','Gabel','lgabel9@unicef.org','$2a$12$9txwpyaKjCVMth2/4ywxguz5YoRy7bPn5fxZL8V6cjIYfRccyNCWG','defaultUsers/10.png',2)
 ON DUPLICATE KEY UPDATE id=VALUES(id), firstname=VALUES(firstname), lastname=VALUES(lastname), email=VALUES(email), password=VALUES(password), image=VALUES(image), type_id=VALUES(type_id);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
