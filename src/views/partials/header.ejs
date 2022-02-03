@@ -16,7 +16,20 @@
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
-      <div class="spacer"></div>
+      <div class="adminButtons">
+        <% if( locals.loggedUser != undefined ) {%>
+          <% if( locals.loggedUser.type_id === 1 ) { %>
+          <a href="http://localhost:3000/">Dashboard TWS</a>
+          <% } %>
+          <% } else { %>
+          <% } %>
+          <%if(locals.loggedUser != undefined) {%>
+          <% if( locals.loggedUser.type_id === 1 ) { %>
+          <a href="/products">Listado de productos</a>
+          <% } %>
+          <% } else { %>
+          <% } %>
+      </div>
     </div>
     <div class="header-r-bot">
       <div class="navbar">
@@ -27,41 +40,21 @@
       <div class="userPanel">
         <% if (locals.isLogged) { %>
         <div class="userButtons">
-          <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
-          <img src="/images/users/<%= loggedUser.image %>" width="15%" style="border-radius: 100%">
-          <a href="/users/profile"><%= loggedUser.firstname %></a>
-          <div class="dropdownArrow">
+          <div class="dropdownarrow">
             <i class="fas fa-sort-down"></i>
             <div class="dropdown">
-              <div class="dropdown-content">
-                <a href="/users/logout">Logout</a>
-                <% if( locals.loggedUser != undefined ) {%>
-                <% if( locals.loggedUser.type_id === 1 ) { %>
-                <a href="http://localhost:3000/"><button class="regularButton">Dashboard TWS</button></a>
-                <% } %>
-                <% } else { %>
-                <% } %>
-                <%if(locals.loggedUser != undefined) {%>
-                <% if( locals.loggedUser.type_id === 1 ) { %>
-                <a href="/products"><button class="regularButton">Listado de productos</button></a>
-                <% } %>
-                <% } else { %>
-                <% } %>
-              </div>
+              <a href="/users/logout">Cerrar sesión</a>
             </div>
-            
-            <% } else { %>
-            <a href="/users/register">Registrate</a>
-            <a href="/users/login">Login</a>
-            <% } %>
           </div>
-
+          <img src="/images/users/<%= loggedUser.image %>" width="15%" style="border-radius: 100%">
+          <a href="/users/profile"><%= loggedUser.firstname %></a>
+          <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
+          <% } else { %>
+          <a href="/users/register">Registrate</a>
+          <a href="/users/login">Login</a>
+          <% } %>
         </div>
       </div>
-
-
-      
-
     </div>
   </div>
 </header>
