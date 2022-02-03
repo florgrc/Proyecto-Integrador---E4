@@ -5,8 +5,8 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser') 
-const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware")
 require('dotenv').config();
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware")
 var validator = require('validator');
 
 
@@ -54,5 +54,8 @@ app.use('/', routesIndex);
 app.use('/api', apiRouter);
 app.use('/products', productsRouter);
 app.use('/users', routesUsers);
-
+app.use('*', function(req, res, next) {
+  res.status(404).render('errors/404');
+  next();
+});
 
