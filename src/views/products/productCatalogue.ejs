@@ -30,10 +30,17 @@
                     <% }) %>;
                   </div>
                 </section>
-              <div class=".swiper-pagination-bullet">
-                <a href="/products/catalogue/0" class="swiper-button-prev"></a>
-                <a href="/products/catalogue/1" class="swiper-button-next"></a>
+                <% if( locals.desp !=0){ %>
+               <div class=".swiper-pagination-bullet">
+                <a href="/products/catalogue/<%= locals.prev%>" class="swiper-button-prev"></a>
+                <a href="/products/catalogue/<%= locals.next%>" class="swiper-button-next"></a>
               </div>
+               <% } %>
+               <% if( locals.desp ==0){ %>
+               <div class=".swiper-pagination-bullet">
+                <a href="/products/catalogue/<%= locals.next%>" class="swiper-button-next"></a>
+              </div>
+               <% } %>
          </tbody>
       </table>
    </main>
