@@ -77,10 +77,7 @@ body {
     min-height: 100vh;
 }
 
-.footerFix {
-    display: flex;
-    flex-grow: 1;
-}
+
 .viewContent{
     display: flex;
     width: 100%;
@@ -1287,11 +1284,6 @@ hr .new1 {
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/*
-.about{
-    display: flex;
-    flex-direction: column;
-}*/
 
 .swiper {
     width: 950px;
@@ -1302,7 +1294,7 @@ section .card .image {
     width: 140px;
     border-radius: 50%;
     padding: 3px;
-    background: #cb1e40;
+    background: #63292b;
 }
 
 section .card .image img {
@@ -1319,14 +1311,14 @@ section .card .image img {
     border-radius: 20px;
     margin: 20px 0;
 }
-
+/* SARASA*/
 
 .card::before {
     content: "";
     position: absolute;
     height: 40%;
     width: 100%;
-    background: #cb1e40;
+    background: #666666;
     border-radius: 20px 20px 0 0;
 }
 
@@ -1393,7 +1385,7 @@ section .card .image img {
 .card .rating i {
     font-size: 18px;
     margin: 0 2px;
-    color: #cb1e40;
+    color: #63292b;
 
 }
 
@@ -1423,7 +1415,7 @@ section .card .image img {
 }
 
 .card .button button {
-    background: #cb1e40;
+    background: #63292b;
     outline: none;
     border: none;
     color: #fff;
@@ -1438,20 +1430,20 @@ section .card .image img {
     height: 7px;
     width: 26px;
     border-radius: 25px;
-    background: #cb1e40;
+    background: #63292b;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
     opacity: 0.7;
-    color: #cb1e40;
+    color: #63292b;
     transition: all 0.3s ease;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev {
     opacity: 1;
-    color: #cb1e40;
+    color: #63292b;
 
 }
 
