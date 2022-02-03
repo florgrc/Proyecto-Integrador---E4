@@ -75,12 +75,10 @@ const usersController = {
                 if (passwordOk) {
                     delete usuario.password;
                     req.session.loggedUser = usuario;
-                    console.log(req.session.loggedUser)
                     if (req.body.remember_user != undefined) {
                         res.cookie("userEmail", req.body.email, {
                             maxAge: (1000 * 60) * 2
                         })
-                        console.log(req.cookies.userEmail)
                     }
 
                     return res.redirect("/users/profile")

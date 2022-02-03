@@ -2,7 +2,7 @@
 
 <body>
    <%- include('../partials/header.ejs')  %>
-   <form action="/product-detail" method="POST" class="productDetail-form">
+   <form action="/products/cart" method="GET" class="productDetail-form">
       <div class="product-details">
          <div class="productDetailed">
             <p class="name"><%= producto.name %></p>
@@ -34,23 +34,23 @@
             <img src="/images/products/vino1.jpg">
             <div class="line"></div>
             <div class="product-details">
-               <p class="name">Vino 2</p>
-               <p class="price">$1.100</p>
+               <p class="name">Alma Mora</p>
+               <p class="price">$4.382</p>
             </div>
          </li>
          <li>
             <img src="/images/products/vino3.jpg">
             <div class="line"></div>
             <div class="product-details">
-               <p class="name">Vino 3</p>
-               <p class="price">$800</p>
+               <p class="name">Mendel</p>
+               <p class="price">$1.264</p>
             </div>
          <li>
             <img src="/images/products/vino4.jpg">
             <div class="line"></div>
             <div class="product-details">
-               <p class="name">Vino 4</p>
-               <p class="price">$1.200</p>
+               <p class="name">Famiglia Bianchi</p>
+               <p class="price">$510</p>
             </div>
          </li>
       </ol>

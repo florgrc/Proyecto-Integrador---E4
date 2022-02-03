@@ -246,6 +246,10 @@ body {
     justify-content: center;
     align-items: center;
 }
+.adminButtons a {
+    background-color: #aaaaaa;
+}
+
 .adminButtons a:hover {
     background-color: #ffffff;
     color: #000000;

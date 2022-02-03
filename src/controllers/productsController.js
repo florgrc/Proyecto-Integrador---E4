@@ -81,7 +81,7 @@ const productsController = {
                 }
             })
             .then(function (products) {
-                res.render("products/productCatalogue", {
+                res.render("products/products", {
                     products
                 })
             })
@@ -90,8 +90,6 @@ const productsController = {
         let desp = parseInt(req.params.idOffset); 
         let next = desp+1;
         let prev = desp-1;
-
-        console.log("El nro de desplazamiento es: " + desp);
         db.Products.findAll({
             include: {
                 all: true
@@ -227,6 +225,7 @@ const productsController = {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
             let productImage = req.file.filename || "default-image1.png"
+            console.log(req.body)
             db.Products.create({
                 name: req.body.name,
                 description: req.body.description,
