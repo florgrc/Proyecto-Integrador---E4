@@ -75,11 +75,12 @@ const usersController = {
                 if (passwordOk) {
                     delete usuario.password;
                     req.session.loggedUser = usuario;
-                    (req.body.remember_user)
-                    if (req.body.remember_user == "remember") {
-                        res.cookie("email", req.body.email, {
+                    console.log(req.session.loggedUser)
+                    if (req.body.remember_user != undefined) {
+                        res.cookie("userEmail", req.body.email, {
                             maxAge: (1000 * 60) * 2
                         })
+                        console.log(req.cookies.userEmail)
                     }
 
                     return res.redirect("/users/profile")
@@ -104,6 +105,7 @@ const usersController = {
             res.send(e)
         })
     },
+
     profile: (req, res) => {
         res.render('users/userProfile')
     },
