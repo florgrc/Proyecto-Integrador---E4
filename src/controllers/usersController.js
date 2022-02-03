@@ -29,7 +29,7 @@ const usersController = {
             })
             .then(users => {
                 //return res.send(users);
-                return res.render("users/usersCatalogue", {
+                return res.render("users/userList", {
                     users
                 });
             }).catch(error => {
@@ -49,7 +49,6 @@ const usersController = {
             image: userAvatar,
             type_id: 2,
         }
-        console.log(newUser);
         if (errors.isEmpty()) {
             db.Users.create(newUser)
                 .then(usuario => {

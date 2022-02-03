@@ -8,6 +8,7 @@ const usersController = require('../controllers/usersController');
 /*middleware*/
 const guestMiddleware = require ('../middlewares/guestMiddleware');
 const authMiddleware = require ('../middlewares/authMiddleware');
+const authAdminMiddleware = require ('../middlewares/authAdminMiddleware');
 const usersRegisterValidation = require("../middlewares/usersRegisterValidation")
 
 const validateLoginForm = [
@@ -34,10 +35,10 @@ const upload = multer({storage: storage})
 
 
 // Base Usuarios + Modificar usuario
-router.get('/', usersController.list);
-router.get('/edit/:id', authMiddleware, usersController.edit);
-router.put('/edit/:id', upload.single('userAvatar'), usersController.update);
-router.delete("/edit/delete/:id", usersController.delete); 
+router.get('/', authAdminMiddleware, usersController.list);
+router.get('/edit/:id', authAdminMiddleware, usersController.edit);
+router.put('/edit/:id', authAdminMiddleware, upload.single('userAvatar'), usersController.update);
+router.delete("/edit/delete/:id", authAdminMiddleware, usersController.delete); 
 
 // Registro
 router.get('/register', guestMiddleware, usersController.register);
@@ -46,7 +47,7 @@ router.post('/', upload.single('userAvatar'), usersRegisterValidation, usersCont
 router.get('/profile', authMiddleware, usersController.profile);
 
 
-router.get('/login',guestMiddleware, usersController.login);
+router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', validateLoginForm,  usersController.loginProccess); 
 
 

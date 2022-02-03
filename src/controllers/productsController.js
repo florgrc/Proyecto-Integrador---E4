@@ -81,7 +81,7 @@ const productsController = {
                 }
             })
             .then(function (products) {
-                res.render("products/product", {
+                res.render("products/productCatalogue", {
                     products
                 })
             })
@@ -109,12 +109,8 @@ const productsController = {
             termPmax
         } = req.query;
         term = term.toLowerCase();
-        console.log("term = " + term);
-        console.log("termPmin = " + termPmin);
-        console.log("termPmax = " + termPmax); 
 
         if (term != '' && termPmax !='' && termPmax !='') {
-            console.log("entro al primer if. term es: " + term);
             db.Products.findAll({
                     include: {
                         all: true
@@ -150,7 +146,6 @@ const productsController = {
                 }))
                 .catch(error => console.log(error));
         } else if (term != '' && termPmax =='' && termPmax =='') {
-            console.log("entro al segundo if. term es: " + term);
             db.Products.findAll({
                     include: {
                         all: true
@@ -198,7 +193,6 @@ const productsController = {
                 .then(products => res.render('./products/productCatalogue', { products }))
                 .catch(error => console.log(error));
         } else if (termPmin == '') {
-            console.log("entro al else if. termPmax es: " + termPmax);
             db.Products.findAll({
                     include: {
                         all: true

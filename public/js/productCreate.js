@@ -1,4 +1,4 @@
-window.addEventListener('load', function(){
+window.addEventListener('load', function () {
 
   let formCreate = document.querySelector(".createForm");
   // let name = document.querySelector("#nameProduct");
@@ -16,14 +16,14 @@ window.addEventListener('load', function(){
   let subjectError = document.querySelector("#subjectError");
 
   const regexImageFormat = /\.(jpg|gif|png|jpeg)$/i
-  
+
   /*creacion de producto*/
-  
+
   formCreate.addEventListener('change', function (e) {
     e.preventDefault();
-  
+
     let errores = [];
-  
+
     if (formCreate.name.value == '') {
       errores.push("Este campo debe estar completo");
       nameError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
@@ -34,7 +34,7 @@ window.addEventListener('load', function(){
       nameError.innerText = 'ok';
       nameError.style.color = "Green";
       nameError.style.fontWeight = "900";
-    }; 
+    };
 
     if (classification.value == '') {
       errores.push("Debe elegir un tipo de Clasificación");
@@ -53,7 +53,7 @@ window.addEventListener('load', function(){
       varietyError.style.color = "Green";
       varietyError.style.fontWeight = "900";
     };
-    
+
     if (validator.isEmpty(price.value)) {
       errores.push("Debes cargar un precio");
       priceError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
@@ -73,7 +73,7 @@ window.addEventListener('load', function(){
 
       errores.push('El formato de imagen debe ser ".jpg", ".png", ".gif",".jpeg"');
       imageError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
-    }  else {
+    } else {
       imageError.innerText = 'ok';
       imageError.style.color = "Green";
       imageError.style.fontWeight = "900";
@@ -94,10 +94,9 @@ window.addEventListener('load', function(){
 
     if (!errores.length >= 1) {
       formCreate.addEventListener('submit', function () {
-  
-        console.log('Se envio el formulario');
+
         swal("¡ PRODUCTO CREADO !", "", "success");
-  
+
         formCreate.submit();
       })
     }

@@ -95,7 +95,6 @@ window.addEventListener('load', function(){
     if (!errores.length >= 1) {
       formEdit.addEventListener('submit', function () {
   
-        console.log('Se envio el formulario');
         swal("¡ PRODUCTO ACTUALIZADO !");
   
         formEdit.submit();

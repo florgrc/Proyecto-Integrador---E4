@@ -15,20 +15,6 @@ window.addEventListener('load', function () {
     let passwordError = document.querySelector("#passwordError");
     let repasswordError = document.querySelector("#repasswordError");
 
-    console.log(form);
-    console.log(firstname);
-    console.log(lastname);
-    console.log(email);
-    //console.log(avatar);
-    console.log(password);
-    console.log(repassword);
-    console.log(button);
-    console.log(firstNameError);
-    console.log(lastNameError);
-    console.log(emailError);
-    console.log(passwordError);
-    console.log(repasswordError);
-
     // Poner en escucha al formulario para detectar cuando el usuario quiere enviar el formulario.
     form.addEventListener('change', function (event) {
 
@@ -68,8 +54,6 @@ window.addEventListener('load', function () {
 
         // Email
         if (!validator.isEmail(email.value) || validator.isEmpty(email.value)) {
-            console.log('El isEmail es verdadero ' + email.value)
-            console.log('El isEmail esta vaci? ' + validator.isEmpty(email.value));
             errores.push("Este campo debe estar completo con un email válido");
             // OPCIONAL: Falta verificar que no sea un mail repetido 
             emailError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
@@ -81,7 +65,6 @@ window.addEventListener('load', function () {
 
         //Password
         if (validator.isEmpty(password.value)) {
-            console.log("password está vacio? " + validator.isEmpty(password.value))
             errores.push("Este campo no puede estar vacío");
             passwordError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
             // OPCIONAL :  → Deberá tener letras mayúsculas, minúsculas, un número y un carácter especial.
@@ -101,11 +84,9 @@ window.addEventListener('load', function () {
         }
         //Re-Password
         if (validator.isEmpty(repassword.value)) {
-            console.log("password está vacio? " + validator.isEmpty(repassword.value))
             errores.push("Este campo no puede estar vacío");
             repasswordError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
         } else if (password.value != repassword.value) {
-            console.log("password coinciden? " + repassword.value)
             errores.push("Debe coincidir con la contraseña");
             repasswordError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
         } else {
@@ -116,10 +97,7 @@ window.addEventListener('load', function () {
         // Si el largo de nuestra variable de errores no contiene errores, enviamos el formulario  
 
         if (!errores.length >= 1) {
-            console.log("entró en el if");
             form.addEventListener('submit', function () {
-
-                console.log("se envió el form");
                 swal("Buen trabajo!", "Ya estas registrado!", "success");
                 form.submit();
             })

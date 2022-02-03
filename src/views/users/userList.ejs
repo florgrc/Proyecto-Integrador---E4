@@ -4,9 +4,6 @@
    <%- include('../partials/header.ejs')  %>
    <main>
       <h2 class="titulo">Listado de Usuarios</h2><br>
-      <div class="createProductButton">
-         <a href="/products/create"><button class="regularButton" id=createProductButton>Nuevo Usuario</button></a>
-      </div>
       <table>
          <thead>
             <th> id </th>
@@ -14,17 +11,14 @@
             <th> Apellido </th>
             <th> email </th>
             <th> Imagen </th>
-
          </thead>
-         <tbody>
+         <tbody class="productList">
             <% users.forEach(user => { %>
             <tr>
-
                 <td class="detail-product"><%= user.id%></td>
                 <td class="detail-product"><%= user.firstname%></td>
                 <td class="detail-product"><%= user.lastname%></td>
                 <td class="detail-product"><%= user.email%></td>
-
                 <td class="detail-product">
                     <article class="product">
                        <a href="/users/edit/:id<%= user.id %>">
@@ -34,8 +28,6 @@
                        </a>
                     </article>
                 </td>
-
-
                <td class="detail-product">
                   <form method="GET" action="/users/edit/<%= user.id %>">
                      <input type="submit" value="Modificar" class="regularButton">
@@ -47,12 +39,10 @@
                         value="Eliminar" class="cancelButton">
                   </form>
                </td>
-
             </tr>
             <%  }) %>
          </tbody>
       </table>
-
    </main>
 
    <%- include('../partials/footer.ejs')  %>

@@ -7,14 +7,6 @@ window.addEventListener('load', function () {
     let emailError = document.querySelector("#emailError");
     let passwordError = document.querySelector("#passwordError");
 
-
-    console.log(form);
-    console.log(email);
-    console.log(password);
-    console.log(button);
-    console.log(emailError);
-    console.log(passwordError);
-
     // Poner en escucha al formulario para detectar cuando el usuario quiere enviar el formulario.
     form.addEventListener('change', function (event) {
 
@@ -26,8 +18,6 @@ window.addEventListener('load', function () {
 
         // Email
         if (!validator.isEmail(email.value) || validator.isEmpty(email.value)) {
-            console.log('El isEmail es verdadero ' + email.value)
-            console.log('El isEmail esta vaci? ' + validator.isEmpty(email.value));
             errores.push("Este campo debe estar completo con un email válido");
             // OPCIONAL: Falta verificar que no sea un mail repetido 
             emailError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
@@ -39,7 +29,6 @@ window.addEventListener('load', function () {
 
         //Password
         if (validator.isEmpty(password.value)) {
-            console.log("password está vacio? " + validator.isEmpty(password.value))
             errores.push("Este campo no puede estar vacío");
             passwordError.innerText = (errores[errores.length - 1]) ? errores[errores.length - 1] : '';
             // OPCIONAL :  → Deberá tener letras mayúsculas, minúsculas, un número y un carácter especial.
@@ -62,10 +51,7 @@ window.addEventListener('load', function () {
         // Si el largo de nuestra variable de errores no contiene errores, enviamos el formulario  
 
         if (!errores.length >= 1) {
-            console.log("entró en el if");
             form.addEventListener('submit', function () {
-
-                console.log("se envió el form");
                 swal("Login ok", "Login!", "success");
                 form.submit();
             })

@@ -77,6 +77,10 @@ body {
     min-height: 100vh;
 }
 
+.footerFix {
+    display: flex;
+    flex-grow: 1;
+}
 
 .viewContent{
     display: flex;

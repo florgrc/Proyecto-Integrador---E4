@@ -33,6 +33,16 @@ const indexController = {
             res.render("indexContact");
         }
     },
+    error401: (req, res) => {
+        {
+            res.render("errors/401");
+        }
+    },
+    error404: (req, res) => {
+        {
+            res.render("errors/404");
+        }
+    },
 };
 
 module.exports = indexController;
