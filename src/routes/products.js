@@ -34,7 +34,7 @@ router.put("/edit/:idProduct", upload.single("productImage"), productCreationVal
 router.get("/create", productsController.create);
 router.delete("/edit/delete/:idProduct", productsController.delete);
 
-router.get("/catalogue", productsController.catalogue);
+router.get("/catalogue/:idOffset", productsController.catalogue);
 
 /*Procesamiento de datos*/
 

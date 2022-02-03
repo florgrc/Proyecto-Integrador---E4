@@ -87,10 +87,17 @@ const productsController = {
             })
     },
     catalogue: (req, res) => {
+        let desp = req.params.idOffset;
+        console.log("El nro de desplazamiento es: " + desp);
         db.Products.findAll({
             include: {
                 all: true
-            }
+            },
+            order: [
+                ["price", "DESC"]
+            ],
+            limit: 8,
+            offset: 8 * desp,
         })
             .then(function (products) {
                 res.render("products/productCatalogue", {
