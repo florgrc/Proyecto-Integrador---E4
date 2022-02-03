@@ -87,15 +87,11 @@ const productsController = {
             })
     },
     catalogue: (req, res) => {
-<<<<<<< HEAD
-        let desp = req.params.idOffset;
-=======
         let desp = parseInt(req.params.idOffset); 
         let next = desp+1;
         let prev = desp-1;
 
         console.log("El nro de desplazamiento es: " + desp);
->>>>>>> 4f70023ce847cc16bef0f50c9b5d203b5a34a65e
         db.Products.findAll({
             include: {
                 all: true
