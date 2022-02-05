@@ -16,20 +16,7 @@
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
-      <div class="adminButtons">
-        <% if( locals.loggedUser != undefined ) {%>
-          <% if( locals.loggedUser.type_id === 1 ) { %>
-          <a href="http://localhost:3000/">Dashboard TWS</a>
-          <% } %>
-          <% } else { %>
-          <% } %>
-          <%if(locals.loggedUser != undefined) {%>
-          <% if( locals.loggedUser.type_id === 1 ) { %>
-          <a href="/products">Listado de productos</a>
-          <% } %>
-          <% } else { %>
-          <% } %>
-      </div>
+      <div class="spacer"></div>
     </div>
     <div class="header-r-bot">
       <div class="navbar">
@@ -37,25 +24,37 @@
         <a href="/contact">Contactanos</a>
         <a href="/about">Quienes somos</a>
       </div>
-      <div class="userPanel">
-        <% if (locals.isLogged) { %>
-        <div class="userButtons">
-          <div class="dropdownarrow">
-            <i class="fas fa-sort-down"></i>
-            <div class="dropdown">
-              <a href="/users/logout">Cerrar sesión</a>
+      <% if (locals.isLogged) { %>
+      <div class="userButtons">
+        <img src="/images/users/<%= loggedUser.image %>">
+        <div class="userActions">
+          <div class="dropwrap">
+            <%= loggedUser.firstname %>
+            <div class="dropdownArrow"><i class="fas fa-sort-down"></i>
+              <div class="dropdown">
+                <a href="/users/profile">Perfil</a>
+                <% if( locals.loggedUser != undefined ) {%>
+                <% if( locals.loggedUser.type_id === 1 ) { %>
+                <a href="http://localhost:3000/">Dashboard TWS</a>
+                <a href="/products">Listado de productos</a>
+                <% } %>
+                <% } else { %>
+                <% } %>
+                <a href="/users/logout">Cerrar sesión</a>
+              </div>
             </div>
           </div>
-          <img src="/images/users/<%= loggedUser.image %>" width="15%" style="border-radius: 100%">
-          <a href="/users/profile"><%= loggedUser.firstname %></a>
-          <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
-          <% } else { %>
+        </div>
+        <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
+        <% } else { %>
+        <div class="loginRegister">
           <a href="/users/register">Registrate</a>
           <a href="/users/login">Login</a>
-          <% } %>
         </div>
+        <% } %>
       </div>
     </div>
+  </div>
   </div>
 </header>
 <div class="footerFix">
